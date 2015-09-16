@@ -1,0 +1,18 @@
+<div ui-view></div>
+
+
+<div class="row">
+  <div class="col-xs-2 pull-right">
+    <select ng-model = "categoryFilter" class = "form-control">
+      <option value="">Filter Products</option>
+      <option ng-repeat = "category in categories" value = "{{ category.id }}">{{ category.name }}</option>
+    </select>
+  </div>
+</div>
+
+
+<div class="row">
+  <div ng-repeat = "product in products | filter: {categoryId: categoryFilter}" class="col-md-4 col-xs-6 text-center">
+    <product product = "product"></product>
+  </div>
+</div>

@@ -6,7 +6,7 @@ store.factory("products", ["categories", function(categories){
 
   var catgs = categories.getAll()
 
-  for (var i = 0; i < 20; i++) {
+  for (var i = 1; i < 22; i++) {
     var product = {};
 
     product.id = i;
