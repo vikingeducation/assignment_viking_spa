@@ -12,7 +12,7 @@
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
   <!-- Router -->
-  <script src="services/angularUIRouter.js"></script>
+  <script src="js/services/uiRouter.js"></script>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -57,21 +57,10 @@
 
   <!-- Page Content -->
 
-<!--     <div ui-view></div>
+    <div ui-view></div>
 
-    <a ui-sref=""></a>
-    <a ui-sref=""></a> -->
-
-    <table>
-      <tbody>
-        <tr ng-repeat="p in products()">
-          <td>{{p.name}}</td>
-          <td>{{p.category}}</td>
-          <td>{{p.price}}</td>
-          <td>{{p.description}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <a ui-sref="products.index"> All Products </a>
+    <a ui-sref="products.show({productID: product.id})"> See Product</a>
 
   <!-- Footer -->
 
@@ -90,14 +79,13 @@
   </nav>
 
 
+    <!-- Faker -->
+    <script src = "js/services/faker.js" type = "text/javascript"></script>
 
     <!-- modules -->
     <script src="js/app.js"></script>
 
     <!-- directives -->
-
-    <!-- Faker -->
-    <script src = "js/services/faker.js" type = "text/javascript"></script>
 
     <!-- services -->
     <script src="js/services/categoriesService.js"></script>

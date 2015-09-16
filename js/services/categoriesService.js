@@ -4,20 +4,20 @@ clothingStore.factory('categoriesService', [function(){
   var _categories = [];
 
   obj.createCategories = function() {
-    var category = {}
+    var category = {};
     for (var i=0; i<15; i++) {
       category = {
         id: i,
-        name: faker.department
-      }
+        name: faker.commerce.department()
+      };
 
       _categories.push(category);
     }
-  }
+  };
 
   obj.categories = function(){
     return _categories;
-  }
+  };
 
   return obj;
 

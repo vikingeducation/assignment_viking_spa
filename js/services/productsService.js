@@ -1,20 +1,20 @@
 clothingStore.factory('productsService', [
-  'categoriesService', 
+  'categoriesService',
   function(categoriesService){
 
   var obj = {};
   var _products = [];
 
   obj.createProducts = function() {
-    var product = {}
+    var product = {};
     for (var i=0; i<50; i++) {
       product = {
         id: i,
-        name: faker.productName,
-        price: faker.price,
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
         description: faker.lorem.sentences(2),
-        category: categoriesService.categories[Math.floor(Math.rand()*15)]
-      }
+        category: categoriesService.categories[Math.floor(Math.random()*15)]
+      };
 
       _products.push(product);
     }
@@ -22,7 +22,7 @@ clothingStore.factory('productsService', [
 
   obj.products = function(){
     return _products;
-  }
+  };
 
   return obj;
 
