@@ -11,6 +11,10 @@ app.config(function($stateProvider, $urlRouterProvider){
     url: '/show/:id',
     templateUrl: 'js/templates/show.html',
     controller: "MainCtrl"
+  }).state('cart-page', {
+    url: '/cart',
+    templateUrl: 'js/templates/cart.html',
+    controller: "MainCtrl"
   });
 });
 
