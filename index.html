@@ -14,6 +14,7 @@
 
   <!-- app -->
   <script src="app.js"></script>
+  <script type="text/javascript" src = "services/categories.js"></script>
   <script type="text/javascript" src = "services/productsService.js"></script>
 
 </head>
@@ -34,12 +35,6 @@
   </nav>
 
   <div ui-view>
-  </div>
-
-  <div ng-controller = "productsCtrl">
-    <div ng-repeat = "product in products">
-      {{ product.name }}
-    </div>
   </div>
 
   <footer>
