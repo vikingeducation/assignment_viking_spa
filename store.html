@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Store</title>
+  <title>Viking Store</title>
     <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
@@ -16,11 +16,12 @@
   <!-- app -->
   <script src="app.js"></script>
 
-  <script src="controllers/productsController.js"></script>
+  <script type="text/javascript" src = "controllers/productsController.js"></script>
+  <script type="text/javascript" src = "controllers/shoppingCartCtrl.js"></script>
 
   <script type="text/javascript" src = "services/categories.js"></script>
   <script type="text/javascript" src = "services/productsService.js"></script>
-   <script type="text/javascript" src = "services/shoppingCarts.js"></script>
+  <script type="text/javascript" src = "services/shoppingCart.js"></script>
 
   <script type="text/javascript" src = "directives/product.js"></script>
 
@@ -34,9 +35,9 @@
         Viking
       </a>
     </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li>Your Cart</li>
-        <li>Sign In</li>
+      <ul class="nav navbar-nav navbar-right" ng-controller = "shoppingCartCtrl">
+        <li><a>Your Cart ({{ cartItems.length }})</a></li>
+        <li><a>Sign In</a></li>
       </ul>
     </div>
   </nav>
