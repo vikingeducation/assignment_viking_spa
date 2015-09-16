@@ -3,3 +3,24 @@
   background-color: #444;
   color: #fff;
  }
+
+ .product-wrapper {
+  background-color: #333333;
+  color: white;
+  margin: 10px 0px;
+  /*padding: 10px 0px 10px 0px;*/
+ }
+
+ .price-tag {
+  position: absolute;
+  right: 30px;
+  background-color: white;
+  color: black; 
+  padding: 5px 10px;
+ }
+
+ .add-button {
+  background-color: #F6B26B;
+  padding: 5px 10px;
+  margin: 10px auto;
+ }

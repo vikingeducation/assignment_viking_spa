@@ -1,7 +1,12 @@
-<div>
-  <div ng-repeat = "product in products">
-    {{ product.name }}
-    {{ product.categoryId }}
-    {{ product.image }}
+<div class="row">
+  <div ng-repeat = "product in products" class="col-md-4 text-center">
+    <div class="product-wrapper">
+      {{ product.name }}
+      <div class="price-tag">{{product.price}}</div>
+      <img class="img-responsive img-rounded" ng-src="{{ product.image }}">
+      <div class="text-center">
+        <div class="add-button btn ">Add to Cart</div>
+      </div>
+    </div>
   </div>
 </div>
