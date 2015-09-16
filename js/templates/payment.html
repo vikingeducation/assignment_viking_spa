@@ -2,7 +2,7 @@
   <label>
     Card number <br>
     <input type="text" name="cardnumber" ng-model="formData.cardnumber"
-           ng-minlength="15" ng-maxlength="15" placeholder="1234-1234-1234-1234" class = "form-control" required>
+           ng-minlength="19" ng-maxlength="19" placeholder="1234-1234-1234-1234" class = "form-control" required>
   </label>
   <hr>
   <label>
@@ -33,4 +33,11 @@
            class = "form-control" placeholder="James Smith" required>
   </label>
 </div>
+<a ui-sref="checkout.billing" class = "btn btn-primary">
+  Back to Billing
+</a>
 
+<a ui-sref="checkout.confirm" class = "btn btn-primary"
+   ng-if="checkoutForm.$valid">
+  Preview Order
+</a>

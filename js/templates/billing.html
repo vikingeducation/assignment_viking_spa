@@ -1,35 +1,42 @@
+<form id="checkout-form" name="checkoutForm" class="panel">
+  <div class = "form-group">
+    <label>
+      billing Address 1 <br>
+      <input type="text" name="billing1" ng-model="formData.billing1"
+             ng-minlength="10" class ="form-control" ng-value="formData.street1" required>
+    </label>
+    <label>
+      billing Address 2 <br>
+      <input type="text" name="billing2" ng-model="formData.billing2"
+             class = "form-control" ng-value="formData.street2">
+    </label>
 
-<div class = "form-group">
-  <label>
-    Street Address 1 <br>
-    <input type="text" name="street1" ng-model="formData.street1"
-           ng-minlength="10" class = "form-control" required>
-  </label>
-  <label>
-    Street Address 2 <br>
-    <input type="text" name="street2" ng-model="formData.street2"
-           class = "form-control">
-  </label>
+    <label>
+      City <br>
+      <input type="text" name="city" ng-model="formData.bcity"
+             ng-maxlength ="100" class = "form-control" ng-value="formData.city" required>
+    </label>
+    <label>
+      State <br>
+      <input type="text" name="state" ng-model="formData.bstate"
+             ng-maxlength="2" class = "form-control" ng-value="formData.state" required>
+    </label>
+    <label>
+      ZIP <br>
+      <input type="text" name="zip" ng-model="formData.bzip"
+             ng-minlength="5" ng-maxlength="10"
+             class = "form-control" ng-value="formData.zip" required>
+    </label>
+  </div>
+</form>
 
-  <label>
-    City <br>
-    <input type="text" name="city" ng-model="formData.city"
-           ng-maxlength ="100" class = "form-control" required>
-  </label>
-  <label>
-    State <br>
-    <input type="text" name="state" ng-model="formData.state"
-           ng-maxlength="2" class = "form-control" required>
-  </label>
-  <label>
-    ZIP <br>
-    <input type="text" name="zip" ng-model="formData.zip"
-           ng-minlength="5" ng-maxlength="10"
-           class = "form-control" required>
-  </label>
-</div>
 
-<a ui-sref="checkout.billing" class = "btn btn-primary"
-   ng-if="checkout.$valid">
-  Billing
+<a ui-sref="checkout.shipping" class = "btn btn-primary">
+  Back to Shipping
+</a>
+
+
+<a ui-sref="checkout.payment" class = "btn btn-primary"
+   ng-if="checkoutForm.$valid">
+  Go to Payment
 </a>
