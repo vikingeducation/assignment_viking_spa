@@ -56,24 +56,31 @@
   </div>
 
   <!-- Page Content -->
+  <div class='row'>
+    <div class='col-sm-10 col-sm-offset-1'>
+      <a ui-sref="products.index" class='btn btn-success'> All Products </a>
+    </div>
+  </div>
 
-    <div ui-view></div>
+  <div class='row'>
+    <div class='col-sm-10 col-sm-offset-1'>
+      <div ui-view></div>
+    </div>
+  </div>
 
-    <a ui-sref="products.index"> All Products </a>
-    <a ui-sref="products.show({productID: product.id})"> See Product</a>
 
   <!-- Footer -->
 
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid text-center">
       <div class='row'>
-        Contact <br>
+        <b>Contact</b> <br>
       </div>
       <div class='row'>
-        <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 1-000-000-0000<br>
+        <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>  1-000-000-0000<br>
       </div>
       <div class='row'>
-        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>contact@clothingstore.com<br>
+        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  contact@clothingstore.com<br>
       </div>
     </div>
   </nav>
@@ -91,6 +98,7 @@
     <!-- services -->
     <script src="js/services/categoriesService.js"></script>
     <script src="js/services/productsService.js"></script>
+    <script src="js/services/shoppingCartService.js"></script>
 
     <!-- controllers -->
     <script src="js/controllers/mainController.js"></script>
