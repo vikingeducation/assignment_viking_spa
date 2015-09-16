@@ -66,11 +66,11 @@
 
     <!-- Page Content -->
     <div class="container" ng-app="app">
-
+        <a ui-sref="cart-page">Cart</a>
         <div ui-view>
         </div>
         <div ng-controller="MainCtrl">
-         
+          {{ cart }}
         </div>
 
         <hr>

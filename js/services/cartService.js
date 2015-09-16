@@ -17,21 +17,21 @@ app.factory('cartService', function(){
   // If quantity becomes negative remove from cart
 
   obj.addItem = function(product, qty){
-    // if (!qty) return;
-    // If we found the product, update the quantity.
-    if (_cart[product.id]) {
-      _cart[product.id].quantity = qty;
-    } else {
-      // If we didn't add it to the _cart with the current quantity.
-      _cart[product.id] = { product: product, quantity: qty };
-    }
+    // Get or add product to our cart
+    var newProduct = _cart[product.id] || JSON.parse(JSON.stringify(product)) // make an exact copy but not same object
+    _cart[product.id] = newProduct
 
-    // If there are 0 or negative amount of products, remove the product.
-    if (_cart[product.id].quantity < 1) removeItem(product);
+    // Update the quantity of the product in the cart
+    _cart[newProduct.id].quantity = qty;
+
+    // If there are 0 or negative amount of newProducts, remove the newProduct.
+    if (_cart[newProduct.id].quantity < 1) {
+      obj.removeItem(newProduct);
+    }
   }
 
   obj.removeItem = function(product){
-    _cart[product.id] = null;
+    delete _cart[product.id];
   }
 
 
