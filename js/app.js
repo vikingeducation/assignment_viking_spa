@@ -15,6 +15,37 @@ app.config(function($stateProvider, $urlRouterProvider){
     url: '/cart',
     templateUrl: 'js/templates/cart.html',
     controller: "MainCtrl"
+  })
+
+  .state('checkout',{
+    url: '/checkout',
+    templateUrl: 'js/templates/checkout.html',
+    controller: "OrderCtrl"
+  })
+
+  .state('checkout.shipping',{
+    url: '/shipping',
+    templateUrl: 'js/templates/shipping.html'
+  })
+
+  .state('checkout.billing',{
+    url: '/billing',
+    templateUrl: 'js/templates/billing.html'
+  })
+
+  .state('checkout.payment',{
+    url: '/payment',
+    templateUrl: 'js/templates/payment.html'
+  })
+
+  .state('checkout.confirm',{
+    url: '/confirm',
+    templateUrl: 'js/templates/confirm.html'
+  })
+
+  .state('checkout.placed',{
+    url: '/placed',
+    templateUrl: 'js/templates/placed.html'
   });
 });
 
