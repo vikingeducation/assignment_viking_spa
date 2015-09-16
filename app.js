@@ -23,6 +23,18 @@ store.config(function($stateProvider, $urlRouterProvider) {
       url: '/:id',
       templateUrl: 'templates/products/show.html',
       controller: 'productsCtrl'
+    })
+
+    .state("cart", {
+      url: '/cart',
+      templateUrl: 'templates/cart/cart-layout.html',
+      controller: 'shoppingCartCtrl'
+    })
+
+    .state("cart.show", {
+      url: '/show',
+      templateUrl: 'templates/cart/show.html',
+      controller: 'shoppingCartCtrl'
     });
 
 });

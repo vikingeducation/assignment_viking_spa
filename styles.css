@@ -33,3 +33,11 @@
  #product-container {
   border: 3px solid #444;
  }
+
+ input.ng-valid {
+  border: 2px solid green!important;
+}
+
+input.ng-invalid {
+  border: 2px solid red!important;
+}

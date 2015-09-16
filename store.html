@@ -24,6 +24,7 @@
   <script type="text/javascript" src = "services/shoppingCart.js"></script>
 
   <script type="text/javascript" src = "directives/product.js"></script>
+   <script type="text/javascript" src = "directives/shoppingCartItem.js"></script>
 
 </head>
 <body ng-app = "store">
@@ -36,7 +37,7 @@
       </a>
     </div>
       <ul class="nav navbar-nav navbar-right" ng-controller = "shoppingCartCtrl">
-        <li><a>Your Cart ({{ cartItems.length }})</a></li>
+        <li><a ui-sref="cart.show" >Your Cart ({{ cartItems.length }})</a></li>
         <li><a>Sign In</a></li>
       </ul>
     </div>

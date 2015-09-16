@@ -10,20 +10,30 @@ store.factory("shoppingCart", function(){
 
   obj.addItem = function(product, quantity){
 
-    console.log("add " + quantity + " to product " + product.name)
+    console.log("add " + quantity + " to product " + product.name);
     for (var i = 0; i < _cartItems.length; i++) {
       if (_cartItems[i].product.name == product.name) {
-        _cartItems[i].quantity += quantity
+        _cartItems[i].quantity += quantity;
         return;
       }
-    };
+    }
     _cartItems.push({ product: product,
-                      quantity: quantity })
+                      quantity: quantity });
   };
 
   obj.removeItem = function(product){
     for (var i = 0; i < _cartItems.length; i++) {
       if (_cartItems[i].name === product.name) _cartItems.splice(i, 1);
+    }
+  };
+
+  obj.update = function(product, newQuantity){
+    for (var i = 0; i < _cartItems.length; i++) {
+      if (_cartItems[i].product.name == product.name) {
+        _cartItems[i].quantity = newQuantity;
+        console.log(_cartItems);
+        return;
+      }
     }
   };
 

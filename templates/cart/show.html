@@ -1,0 +1,5 @@
+<h1>My Shopping Cart</h1>
+
+<div ng-repeat="item in cartItems">
+  <shopping-cart-item item="item" update-cart="updateCart(item.product, item.quantity)"></shopping-cart-item>
+</div>
