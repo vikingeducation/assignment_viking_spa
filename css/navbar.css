@@ -4,6 +4,8 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
+  margin: 0px;
+  padding: 0px;
 }
 
 #cover-image h1 {
@@ -12,4 +14,23 @@
   position: absolute;
   bottom: 40px;
   left: 33%;
+}
+
+#cover-text {
+  height: 80px;
+  background-color: gray;
+  margin: 0px;
+  padding: 0px;
+}
+
+#cover-text h2 {
+  font-size: 2em;
+  color: white;
+  margin: 0px;
+  padding: 25px;
+}
+
+#cover-headline {
+  border: 1px solid gray;
+  font-style: italic;
 }
