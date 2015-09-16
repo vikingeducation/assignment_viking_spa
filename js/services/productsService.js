@@ -7,13 +7,15 @@ clothingStore.factory('productsService', [
 
   obj.createProducts = function() {
     var product = {};
+    var categories = categoriesService.categories();
     for (var i=0; i<50; i++) {
       product = {
         id: i,
         name: faker.commerce.productName(),
         price: faker.commerce.price(),
         description: faker.lorem.sentences(2),
-        category: categoriesService.categories[Math.floor(Math.random()*15)]
+        imageUrl: "http://www.campbethel.org/uploads/6/2/6/7/6267826/9120222_orig.png",
+        category: categories[Math.floor(Math.random()*categories.length)]
       };
 
       _products.push(product);

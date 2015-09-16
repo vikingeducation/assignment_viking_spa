@@ -5,7 +5,7 @@ clothingStore.factory('categoriesService', [function(){
 
   obj.createCategories = function() {
     var category = {};
-    for (var i=0; i<15; i++) {
+    for (var i=0; i<10; i++) {
       category = {
         id: i,
         name: faker.commerce.department()

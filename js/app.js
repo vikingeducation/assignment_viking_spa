@@ -15,14 +15,14 @@ clothingStore.config(function($stateProvider, $urlRouterProvider){
   // Products index
   $stateProvider.state('products.index',{
       url: '/index',
-      templateUrl: 'js/partials/products.html',
+      templateUrl: 'js/partials/index.html',
       controller: 'MainCtrl',
     });
 
   // Product show
   $stateProvider.state('products.show',{
       url: '/:productID',
-      templateUrl: 'partials/product.html',
+      templateUrl: 'js/partials/show.html',
       controller: 'MainCtrl',
     });
 
