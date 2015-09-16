@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Store</title>
+  
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+  <script type="text/javascript" src="angular-ui-router.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+       <a class="navbar-brand" href="#">
+        Viking
+      </a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>Your Cart</li>
+        <li>Sign In</li>
+      </ul>
+    </div>
+  </nav>
+
+  <div ui-view>
+  </div>
+
+  <footer>
+    <h3>Contact</h3>
+    <ul>
+      <li>1-800-000-0000</li>
+      <li>contact@vikingstore.com</li>
+    </ul>
+  </footer>
+
+  <!-- app -->
+  <script src="app.js"></script>
+  
+</body>
+</html>
