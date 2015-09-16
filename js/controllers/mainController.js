@@ -1,10 +1,15 @@
 clothingStore.controller('MainCtrl', ['$scope',
                             'productsService',
+                            'categoriesService',
                             function( $scope,
-                                      productsService){
+                                      productsService,
+                                      categoriesService){
 
+                              categoriesService.createCategories();
+                              $scope.categories = categoriesService.categories;
 
-  $scope.randomName = faker.name.findName();
+                              productsService.createProducts();
+                              $scope.products = productsService.products;
 
 
 }]);

@@ -1,1 +1,1 @@
-var clothingStore = angular.module('clothingStore',[]);
+var clothingStore = angular.module('clothingStore',['ui.router']);
