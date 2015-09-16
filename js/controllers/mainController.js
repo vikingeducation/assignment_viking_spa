@@ -1,3 +1,5 @@
 app.controller("MainCtrl", ['$scope', 'productService', function($scope, productService){
-  console.log(productService.getCategories());
+  $scope.categories = productService.getCategories();
+  $scope.products = productService.getProducts();
+  
 }])
