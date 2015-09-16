@@ -1,10 +1,12 @@
 <div class="product-wrapper">
   <h3>
-    <a ui-sref = "product({ id: product.id })">{{ product.name }}</a>
+    <a ui-sref = "products.show({ id: product.id })">{{ product.name }}</a>
   </h3>
   <div class="price-tag">{{product.price | currency }}</div>
   <img class="img-responsive img-rounded" ng-src="{{ product.image }}">
   <div class="text-center">
-    <div class="add-button btn">Add to Cart</div>
+    <div class="add-button btn">
+      <a ngclick="addToCart(product, 1)">Add to Cart</a>
+    </div>
   </div>
 </div>

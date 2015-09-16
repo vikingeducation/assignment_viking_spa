@@ -1,33 +1,28 @@
 var store = angular.module("store", ['ui.router'] );
 
-store.controller('productsCtrl',
-  ['$scope', 'products', 'categories', '$stateParams',
-  function($scope, products, categories, $stateParams) {
 
-  $scope.products = products.getProducts();
-
-  $scope.categories = categories.getAll();
-
-  $scope.product = $scope.products[$stateParams.id]
-
-
-}])
 
 store.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise("/products");
+  $urlRouterProvider.otherwise("/products/index");
 
   $stateProvider
 
     .state("products", {
       url: '/products',
+      templateUrl: 'templates/products/products-layout.html',
+      controller: 'productsCtrl'
+    })
+
+    .state('products.index', {
+      url: '/index',
       templateUrl: 'templates/products/index.html',
       controller: 'productsCtrl'
     })
 
-    .state("product", {
-      url: '/product/:id',
+    .state("products.show", {
+      url: '/:id',
       templateUrl: 'templates/products/show.html',
       controller: 'productsCtrl'
-    })
+    });
 
-})
+});
