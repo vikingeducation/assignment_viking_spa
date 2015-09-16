@@ -1,6 +1,13 @@
-            <!-- Projects Row -->
-            <div class="row" >
-            <product-template ng-repeat="product in products" product="product">
-            </product-template>
-            </div>
-            <!-- /.row -->
+<div class="row">
+  <div class="col-md-6 pull-right">
+    <select ng-model="selectedCategory">
+      <option ng-repeat="category in categories">{{ category }}</option>
+    </select>
+    {{ selectedCategory }}
+  </div>
+</div>
+
+<div class="row" >
+  <product-template ng-repeat="product in products | filter: {category: selectedCategory}" product="product">
+  </product-template>
+</div>
