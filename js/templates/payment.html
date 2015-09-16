@@ -1,0 +1,36 @@
+<div class = "form-group">
+  <label>
+    Card number <br>
+    <input type="text" name="cardnumber" ng-model="formData.cardnumber"
+           ng-minlength="15" ng-maxlength="15" placeholder="1234-1234-1234-1234" class = "form-control" required>
+  </label>
+  <hr>
+  <label>
+    Card Type <br>
+    <select class = "form-control" ng-model="formData.cardtype">
+      <option>Visa</option>
+      <option>MasterCard</option>
+    </select>
+  </label>
+
+  <label>
+    Expiration date <br>
+    <input type="text" name="exp" ng-model="formData.exp"
+           ng-maxlength ="5" class = "form-control" placeholder="01/15" required>
+
+  </label>
+
+  <label>
+    CVC <br>
+    <input type="text" name="cvc" ng-model="formData.cvc"
+           ng-minlength="3"  ng-maxlength="3" placeholder="111" class = "form-control" required>
+  </label>
+<hr>
+  <label>
+    Name on the card <br>
+    <input type="text" name="cardname" ng-model="formData.cardname"
+           ng-minlength="5" ng-maxlength="20"
+           class = "form-control" placeholder="James Smith" required>
+  </label>
+</div>
+
