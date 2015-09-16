@@ -26,6 +26,12 @@ clothingStore.config(function($stateProvider, $urlRouterProvider){
       controller: 'MainCtrl',
     });
 
+  // Cart show
+  $stateProvider.state('products.cart',{
+      url: '/cart',
+      templateUrl: 'js/partials/cart.html',
+      controller: 'MainCtrl',
+    });
 
 });
 

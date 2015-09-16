@@ -5,7 +5,8 @@ clothingStore.directive("productDirective", function(){
     restrict: "E",
     scope: {
       product: "=",
-      findCategory: "&"
+      findCategory: "&",
+      addToCart: "&"
     }
-  }
-})
+  };
+});

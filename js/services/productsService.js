@@ -26,6 +26,15 @@ clothingStore.factory('productsService', [
     return _products;
   };
 
+
+  obj.findProduct = function(id) {
+    for (var i=0; i<_products.length; i++) {
+      if (_products[i].id == id) {
+        return _products[i];
+      }
+    }
+  };
+
   return obj;
 
 }]);

@@ -1,17 +1,42 @@
 clothingStore.controller('MainCtrl', ['$scope',
                             'productsService',
                             'categoriesService',
+                            'shoppingCartService',
+                            '$stateParams',
                             function( $scope,
                                       productsService,
-                                      categoriesService){
+                                      categoriesService,
+                                      shoppingCartService,
+                                      $stateParams){
 
-                              categoriesService.createCategories();
-                              $scope.categories = categoriesService.categories;
+// Categories
 
-                              productsService.createProducts();
-                              $scope.products = productsService.products;
+  categoriesService.createCategories();
+  $scope.categories = categoriesService.categories;
 
-                              $scope.findCategory = function(id) {
-                                return categoriesService.findCategory(id);
-                              }
+  $scope.findCategory = function(id) {
+    return categoriesService.findCategory(id);
+  };
+
+// Products
+
+  productsService.createProducts();
+  $scope.products = productsService.products;
+
+  $scope.findProduct = function() {
+    return productsService.findProduct($stateParams.productID);
+  };
+
+// Shopping Cart
+
+  $scope.cart = shoppingCartService.listAll;
+
+  $scope.addToCart = function(productID, quantity){
+    shoppingCartService.addItem(productID, quantity);
+  };
+
+  $scope.removeFromCart = function(productID){
+    shoppingCartService.removeItem(productID);
+  };
+
 }]);

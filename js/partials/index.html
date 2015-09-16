@@ -1,14 +1,24 @@
 <div class="row">
 <div class="panel panel-default">
   <div class="panel-heading">
-    <select ng-model="categoryFilter">
-      <option>None</option>
-      <option ng-repeat="c in categories()" value="{{c.id}}">{{c.name}}</option>
-    </select>
+    <div class='row'>
+      <div class='col-sm-2 col-sm-offset-9'>
+        <label name='categoryFilter'>Filter by Category</label>
+        <select name='categoryFilter' ng-model="categoryFilter">
+          <option>None</option>
+          <option ng-repeat="c in categories()" value="{{c.id}}">{{c.name}}</option>
+        </select>
+      </div>
+    </div>
   </div>
-  <div class="panel-body"> 
+
+  <div class="panel-body">
     <div class="col-xs-6 col-md-4 text-center" ng-repeat="p in products() | filter: { category: findCategory(categoryFilter) } ">
       <product-directive product="p"></product-directive>
+      <button class="btn btn-lg btn-primary"
+              ng-click='addToCart(p.id, 1)'>
+        Add to Cart
+      </button>
     </div>
   </div>
 </div>
