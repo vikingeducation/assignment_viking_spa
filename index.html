@@ -66,11 +66,11 @@
 
     <!-- Page Content -->
     <div class="container" ng-app="app">
+
         <div ui-view>
-        
-
-        
-
+        </div>
+        <div ng-controller="MainCtrl">
+          {{ cart }}
         </div>
 
         <hr>
@@ -131,6 +131,7 @@
 
     <!-- services -->
     <script src="js/services/productService.js"></script>
+    <script src="js/services/cartService.js"></script>
 
     <!-- controllers -->
     <script src="js/controllers/mainController.js"></script>

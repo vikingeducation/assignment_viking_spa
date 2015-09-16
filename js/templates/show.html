@@ -13,14 +13,13 @@
         <!-- /.row -->
 
 <div class="col-md-offset-3 col-md-6 portfolio-item">
-      
-        <img class="img-responsive" ng-src='{{product.image}}' alt="">
-    
-    <p>
-       {{product.description}}
-    </p>
-    <p>{{product.price | currency}}</p>
-    <input type='text' ng-model='productQuantity' ng-required="true" ng-pattern = "/^\d*$/">
-    
-    <button class="btn btn-success">Buy</button>
+  <img class="img-responsive" ng-src='{{product.image}}' alt="">
+
+  <p>
+     {{product.description}}
+  </p>
+  <p>{{product.price | currency}}</p>
+
+  <input type='text' ng-model='productQuantity' ng-required="true" ng-pattern = "/^\d*$/">
+  <button class="btn btn-success" ng-click='addItem(product, productQuantity)' ">Buy</button>
 </div>
