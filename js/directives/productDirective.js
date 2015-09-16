@@ -4,7 +4,8 @@ clothingStore.directive("productDirective", function(){
     templateUrl: "js/directives/product.html",
     restrict: "E",
     scope: {
-      product: "="
+      product: "=",
+      findCategory: "&"
     }
   }
 })

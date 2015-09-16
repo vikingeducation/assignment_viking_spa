@@ -1,14 +1,13 @@
 <div class="row">
 <div class="panel panel-default">
   <div class="panel-heading">
-  cat:{{c.id}}
     <select ng-model="categoryFilter">
       <option>None</option>
-      <option ng-repeat="c in categories()" value="c.id">{{c.name}}</option>
+      <option ng-repeat="c in categories()" value="{{c.id}}">{{c.name}}</option>
     </select>
   </div>
   <div class="panel-body"> 
-    <div class="col-xs-6 col-md-4 text-center" ng-repeat="p in products() | filter: { category.id: categoryFilter }">
+    <div class="col-xs-6 col-md-4 text-center" ng-repeat="p in products() | filter: { category: findCategory(categoryFilter) } ">
       <product-directive product="p"></product-directive>
     </div>
   </div>

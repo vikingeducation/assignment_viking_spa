@@ -11,5 +11,7 @@ clothingStore.controller('MainCtrl', ['$scope',
                               productsService.createProducts();
                               $scope.products = productsService.products;
 
-
+                              $scope.findCategory = function(id) {
+                                return categoriesService.findCategory(id);
+                              }
 }]);

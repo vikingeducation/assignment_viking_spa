@@ -19,6 +19,14 @@ clothingStore.factory('categoriesService', [function(){
     return _categories;
   };
 
+  obj.findCategory = function(id) {
+    for (var i=0; i<_categories.length; i++) {
+      if (_categories[i].id == id) {
+        return _categories[i];
+      }
+    }
+  }
+
   return obj;
 
 }]);
