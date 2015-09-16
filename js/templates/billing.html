@@ -3,33 +3,33 @@
     <label>
       billing Address 1 <br>
       <input type="text" name="billing1" ng-model="formData.billing1"
-             ng-minlength="10" class ="form-control" ng-value="formData.street1" required>
+             ng-minlength="10" class ="form-control"  required>
     </label>
+    
     <label>
       billing Address 2 <br>
       <input type="text" name="billing2" ng-model="formData.billing2"
-             class = "form-control" ng-value="formData.street2">
+             class = "form-control" >
     </label>
-
+   
     <label>
       City <br>
       <input type="text" name="city" ng-model="formData.bcity"
-             ng-maxlength ="100" class = "form-control" ng-value="formData.city" required>
+             ng-maxlength ="100" class = "form-control"  required>
     </label>
     <label>
       State <br>
       <input type="text" name="state" ng-model="formData.bstate"
-             ng-maxlength="2" class = "form-control" ng-value="formData.state" required>
+             ng-maxlength="2" class = "form-control"  required>
     </label>
     <label>
       ZIP <br>
       <input type="text" name="zip" ng-model="formData.bzip"
              ng-minlength="5" ng-maxlength="10"
-             class = "form-control" ng-value="formData.zip" required>
+             class = "form-control"  required>
     </label>
   </div>
 </form>
-
 
 <a ui-sref="checkout.shipping" class = "btn btn-primary">
   Back to Shipping

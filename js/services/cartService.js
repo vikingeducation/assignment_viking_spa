@@ -1,13 +1,24 @@
 app.factory('cartService', function(){
-  var obj={}
+  var obj={};
 
   // _cart = {id: {product: product, quantity: integer}}
 
   _cart = {};
 
+  obj.total = function(){
+    return Object.keys(_cart).reduce(function(total, current){
+      return total+_cart[current].quantity*_cart[current].price;
+    }, 0);
+  };
+
+  obj.placeOrder = function(){
+    _cart={};
+  };
+
+
   obj.listAll = function(){
     return _cart;
-  }
+  };
 
   // If we have 1 of product 3
   // Then we add 8 more of product 3
@@ -18,8 +29,8 @@ app.factory('cartService', function(){
 
   obj.addItem = function(product, qty){
     // Get or add product to our cart
-    var newProduct = _cart[product.id] || JSON.parse(JSON.stringify(product)) // make an exact copy but not same object
-    _cart[product.id] = newProduct
+    var newProduct = _cart[product.id] || JSON.parse(JSON.stringify(product)); // make an exact copy but not same object
+    _cart[product.id] = newProduct;
 
     // Update the quantity of the product in the cart
     _cart[newProduct.id].quantity = qty;
