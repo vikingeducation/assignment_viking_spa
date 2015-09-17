@@ -1,19 +1,31 @@
 clothingStore.factory('categoriesService', [function(){
 
   var obj = {};
+  var _names = [];
   var _categories = [];
 
-  obj.createCategories = function() {
+  var _getUniqueName = function() {
+    var name = faker.commerce.department();
+    while (_names.indexOf(name) >= 0) {
+      name = faker.commerce.department();
+    }
+    _names.push(name);
+    return name;
+  }
+  
+  var createCategories = (function() {
+    console.log("create cats")
     var category = {};
     for (var i=0; i<10; i++) {
       category = {
         id: i,
-        name: faker.commerce.department()
+        name: _getUniqueName()
       };
 
       _categories.push(category);
     }
-  };
+  })();
+
 
   obj.categories = function(){
     return _categories;

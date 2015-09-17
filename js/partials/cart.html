@@ -1,0 +1,19 @@
+This is cart
+<table>
+  <thead>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Update</th>
+    <th>Remove</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in cart()">
+      <td>{{findProductByID(item.id).name}}</td>
+      <td>{{findProductByID(item.id).price}}</td>
+      <td>{{item.quantity}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

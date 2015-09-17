@@ -21,7 +21,7 @@ clothingStore.config(function($stateProvider, $urlRouterProvider){
 
   // Product show
   $stateProvider.state('products.show',{
-      url: '/:productID',
+      url: '/show/:productID',
       templateUrl: 'js/partials/show.html',
       controller: 'MainCtrl',
     });
