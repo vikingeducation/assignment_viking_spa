@@ -51,19 +51,21 @@
   <div id="cover-text" class="text-center">
     <h2>The Best Clothes on the Web</h2>
   </div>
-  <div id="cover-headline" class="text-center">
-    <h4>Choose from among our lineup of fine clothes below</h4>
+  <div id="cover-headline">
+    <div class='row text-center'>
+      <div class='col-sm-7 text-center'>
+      <h4>Choose from among our lineup of fine clothes below</h4>
+      </div>
+      <div class='col-sm-2 col-sm-offset-1'>
+        <a ui-sref="products.index" class='btn btn-success pull-right'> All Products </a>
+      </div>
+      <div class='col-sm-1'>
+        <a ui-sref="products.cart" class='btn btn-success pull-right'> Cart </a>
+      </div>
+    </div>
   </div>
 
   <!-- Page Content -->
-  <div class='row'>
-    <div class='col-sm-5 col-sm-offset-1'>
-      <a ui-sref="products.index" class='btn btn-success'> All Products </a>
-    </div>
-    <div class='col-sm-1'>
-      <a ui-sref="products.cart" class='btn btn-success'> Cart </a>
-    </div>
-  </div>
 
   <div class='row'>
     <div class='col-sm-10 col-sm-offset-1'>
