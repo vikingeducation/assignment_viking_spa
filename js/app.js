@@ -25,12 +25,14 @@ app.config(function($stateProvider, $urlRouterProvider){
 
   .state('checkout.shipping',{
     url: '/shipping',
-    templateUrl: 'js/templates/shipping.html'
+    templateUrl: 'js/templates/shipping.html',
+    
   })
 
   .state('checkout.billing',{
     url: '/billing',
-    templateUrl: 'js/templates/billing.html'
+    templateUrl: 'js/templates/billing.html',
+    link: 'generateBilling'
   })
 
   .state('checkout.payment',{
