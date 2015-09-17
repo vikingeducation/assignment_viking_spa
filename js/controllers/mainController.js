@@ -11,7 +11,7 @@ clothingStore.controller('MainCtrl', ['$scope',
 
 // Categories
 
-  // categoriesService.createCategories();
+  // categoriesService.createCategories(); As this gets called everytime the controller is instantiated, we moved the initialization into an IFFE in the categories Service.
   $scope.categories = categoriesService.categories;
 
   $scope.findCategory = function(id) {
@@ -20,7 +20,7 @@ clothingStore.controller('MainCtrl', ['$scope',
 
 // Products
 
-  // productsService.createProducts();
+  // productsService.createProducts(); As this gets called everytime the controller is instantiated, we moved the initialization into an IFFE in the products Service.
   $scope.products = productsService.products;
 
   $scope.findProduct = function() {
@@ -41,6 +41,10 @@ clothingStore.controller('MainCtrl', ['$scope',
 
   $scope.removeFromCart = function(productID){
     shoppingCartService.removeItem(productID);
+  };
+
+  $scope.updateCart = function(productID, quantity){
+    shoppingCartService.updateItem(productID, quantity);
   };
 
 }]);

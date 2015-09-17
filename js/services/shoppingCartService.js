@@ -24,6 +24,13 @@ clothingStore.factory('shoppingCartService',[
       }
     };
 
+    obj.updateItem = function(productID, quantity){
+      if(_cart[productID]){
+        _cart[productID] = parseInt(quantity);
+        console.log(_cart);
+      }
+    };
+
     return obj;
 
   }]);
