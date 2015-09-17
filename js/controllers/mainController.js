@@ -20,7 +20,7 @@ clothingStore.controller('MainCtrl', ['$scope',
 
 // Products
 
-  productsService.createProducts();
+  // productsService.createProducts();
   $scope.products = productsService.products;
 
   $scope.findProduct = function() {

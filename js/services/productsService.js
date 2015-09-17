@@ -5,7 +5,7 @@ clothingStore.factory('productsService', [
   var obj = {};
   var _products = [];
 
-  obj.createProducts = function() {
+  var createProducts = (function() {
     var product = {};
     var categories = categoriesService.categories();
     for (var i=0; i<50; i++) {
@@ -20,7 +20,7 @@ clothingStore.factory('productsService', [
 
       _products.push(product);
     }
-  };
+  })();
 
   obj.products = function(){
     return _products;

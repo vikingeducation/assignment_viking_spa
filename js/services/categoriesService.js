@@ -11,10 +11,9 @@ clothingStore.factory('categoriesService', [function(){
     }
     _names.push(name);
     return name;
-  }
-  
+  };
+
   var createCategories = (function() {
-    console.log("create cats")
     var category = {};
     for (var i=0; i<10; i++) {
       category = {
@@ -37,7 +36,7 @@ clothingStore.factory('categoriesService', [function(){
         return _categories[i];
       }
     }
-  }
+  };
 
   return obj;
 
