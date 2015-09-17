@@ -38,7 +38,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Your Cart</a></li>
+          <li><a ui-sref="products.index">All Products</a></li>
+          <li><a ui-sref="products.cart">Your Cart</a></li>
           <li><a href="#">Sign In</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -53,15 +54,7 @@
   </div>
   <div id="cover-headline">
     <div class='row text-center'>
-      <div class='col-sm-7 text-center'>
       <h4>Choose from among our lineup of fine clothes below</h4>
-      </div>
-      <div class='col-sm-2 col-sm-offset-1'>
-        <a ui-sref="products.index" class='btn btn-success pull-right'> All Products </a>
-      </div>
-      <div class='col-sm-1'>
-        <a ui-sref="products.cart" class='btn btn-success pull-right'> Cart </a>
-      </div>
     </div>
   </div>
 

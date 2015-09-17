@@ -15,22 +15,19 @@ clothingStore.config(function($stateProvider, $urlRouterProvider){
   // Products index
   $stateProvider.state('products.index',{
       url: '/index',
-      templateUrl: 'js/partials/index.html',
-      controller: 'MainCtrl',
+      templateUrl: 'js/partials/index.html'
     });
 
   // Product show
   $stateProvider.state('products.show',{
       url: '/show/:productID',
-      templateUrl: 'js/partials/show.html',
-      controller: 'MainCtrl',
+      templateUrl: 'js/partials/show.html'
     });
 
   // Cart show
   $stateProvider.state('products.cart',{
       url: '/cart',
-      templateUrl: 'js/partials/cart.html',
-      controller: 'MainCtrl',
+      templateUrl: 'js/partials/cart.html'
     });
 
 });

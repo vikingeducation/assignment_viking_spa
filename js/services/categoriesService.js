@@ -25,7 +25,6 @@ clothingStore.factory('categoriesService', [function(){
     }
   })();
 
-
   obj.categories = function(){
     return _categories;
   };
