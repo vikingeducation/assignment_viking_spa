@@ -30,7 +30,7 @@ store.factory("shoppingCart", function(){
   obj.update = function(product, newQuantity){
     for (var i = 0; i < _cartItems.length; i++) {
       if (_cartItems[i].product.name == product.name) {
-        _cartItems[i].quantity = newQuantity;
+        _cartItems[i].quantity = parseInt(newQuantity);
         console.log(_cartItems);
         return;
       }

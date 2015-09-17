@@ -35,6 +35,30 @@ store.config(function($stateProvider, $urlRouterProvider) {
       url: '/show',
       templateUrl: 'templates/cart/show.html',
       controller: 'shoppingCartCtrl'
-    });
+    })
+
+    .state("cart.checkout", {
+      url: '/checkout',
+      templateUrl: 'templates/cart/checkout.html',
+      controller: 'shoppingCartCtrl'
+    })
+
+    .state("cart.checkout.addresses", {
+      url: '/addresses',
+      templateUrl: 'templates/cart/checkout-addresses.html',
+      controller: 'shoppingCartCtrl'
+    })
+
+    .state("cart.checkout.payment", {
+      url: '/payment',
+      templateUrl: 'templates/cart/checkout-payment.html',
+      controller: 'shoppingCartCtrl'
+    })
+
+    .state("cart.checkout.confirm", {
+      url: '/confirm',
+      templateUrl: 'templates/cart/checkout-confirm.html',
+      controller: 'shoppingCartCtrl'
+    })
 
 });
