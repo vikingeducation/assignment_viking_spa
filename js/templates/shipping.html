@@ -1,0 +1,37 @@
+
+<div class = "form-group">
+  <label>
+    Street Address 1 <br>
+    <input type="text" name="street1" ng-model="formData.street1"
+           ng-minlength="10" class = "form-control" required>
+  </label>
+  <label>
+    Street Address 2 <br>
+    <input type="text" name="street2" ng-model="formData.street2"
+           class = "form-control">
+  </label>
+
+  <label>
+    City <br>
+    <input type="text" name="city" ng-model="formData.city"
+           ng-maxlength ="100" class = "form-control" required>
+  </label>
+  <label>
+    State <br>
+    <input type="text" name="state" ng-model="formData.state"
+           ng-maxlength="2" class = "form-control" required>
+  </label>
+  <label>
+    ZIP <br>
+    <input type="text" name="zip" ng-model="formData.zip"
+           ng-minlength="5" ng-maxlength="10"
+           class = "form-control" required>
+  </label>
+</div>
+
+
+<a ui-sref="checkout.billing" class = "btn btn-primary"
+   ng-if="checkoutForm.$valid" ">
+  Billing
+</a>
+

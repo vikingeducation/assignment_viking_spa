@@ -1,0 +1,27 @@
+<!-- Page Header -->
+  <div>
+    <h3>
+      {{ flashText }}
+    </h3>
+  </div>
+  <div class="row">
+      <div class="col-lg-12">
+
+          <h1 class="page-header">Cart
+            <small>Total {{total() | currency}}</small>
+
+          <a class="btn btn-primary pull-right" ng-if="total() > 0" ui-sref="checkout.shipping">Check out</a >
+          </h1>
+
+      </div>
+  </div>
+  <!-- /.row -->
+
+
+<div class="row" >
+
+  <product-template ng-repeat="(key, product) in cart">
+    </product-template>
+
+
+</div>
