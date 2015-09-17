@@ -1,0 +1,48 @@
+<h1>Cart</h1>
+<table class='table table-stripped'>
+  <thead>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Update</th>
+    <th>Remove</th>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="(id,quantity) in cart()">
+      <td>{{findProductByID(id).name}}</td>
+      <td>{{findProductByID(id).price | currency}}</td>
+      <td>{{quantity}}</td>
+      <td>
+        <div class='row'>
+              <div class='col-sm-3'>
+                <select ng-model='quant'>
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                  <option value='6'>6</option>
+                  <option value='7'>7</option>
+                </select>
+              </div>
+
+              <div class='col-sm-5 col-offset-1'>
+                <button class="btn btn-sm btn-primary"
+                        ng-click='updateCart(id, quant)'>
+                  Update Cart
+                </button>
+              </div>
+
+            </div>
+      </td>
+      <td>
+        <button class="btn btn-sm btn-danger"
+                ng-click='removeFromCart(id)'>
+          Remove Item
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 class='text-muted'>Total price {{ cartValue() | currency }}</h3>
