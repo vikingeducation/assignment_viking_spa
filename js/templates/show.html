@@ -19,7 +19,15 @@
      {{product.description}}
   </p>
   <p>{{product.price | currency}}</p>
-
   <input type='text' ng-model='productQuantity' ng-required="true" ng-pattern = "/^\d*$/">
-  <button class="btn btn-success" ng-click='addItem(product, productQuantity)' ">Buy</button>
+  <button class="btn btn-success" ng-click='addItem(product, productQuantity)'>Buy</button>
+
+  <div class='reviews'>
+    <h1> Reviews </h1>
+    <div ng-repeat='review in product.reviews'>
+      <h5> Author: {{review.author}}</h5>
+      <h5> Review: {{review.text}}</h5><hr>
+    </div>
+  </div>
+
 </div>
