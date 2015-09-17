@@ -1,5 +1,6 @@
 clothingStore.factory('shoppingCartService',[
-  function(){
+  'productsService',
+  function(productsService){
 
     var obj = {};
     var _cart = {};  // product.id : quantity
@@ -29,6 +30,17 @@ clothingStore.factory('shoppingCartService',[
         _cart[productID] = parseInt(quantity);
         console.log(_cart);
       }
+    };
+
+    obj.cartTotal = function(){
+      var total = 0;
+      for(var productID in _cart) {
+        var price = productsService.findProduct(productID).price;
+        var quantity = _cart[productID];
+        total += price*quantity;
+      }
+      console.log(total);
+      return total;
     };
 
     return obj;

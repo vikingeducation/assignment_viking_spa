@@ -35,16 +35,20 @@ clothingStore.controller('MainCtrl', ['$scope',
 
   $scope.cart = shoppingCartService.listAll;
 
-  $scope.addToCart = function(productID, quantity){
+  $scope.addToCart = function(productID, quantity) {
     shoppingCartService.addItem(productID, quantity);
   };
 
-  $scope.removeFromCart = function(productID){
+  $scope.removeFromCart = function(productID) {
     shoppingCartService.removeItem(productID);
   };
 
-  $scope.updateCart = function(productID, quantity){
+  $scope.updateCart = function(productID, quantity) {
     shoppingCartService.updateItem(productID, quantity);
+  };
+
+  $scope.cartValue = function() {
+    return shoppingCartService.cartTotal();
   };
 
 }]);
