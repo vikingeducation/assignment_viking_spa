@@ -13,7 +13,7 @@ store.factory("shoppingCart", function(){
     console.log("add " + quantity + " to product " + product.name);
     for (var i = 0; i < _cartItems.length; i++) {
       if (_cartItems[i].product.name == product.name) {
-        _cartItems[i].quantity += quantity;
+        _cartItems[i].quantity += parseInt(quantity);
         return;
       }
     }

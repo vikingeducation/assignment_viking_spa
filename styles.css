@@ -9,7 +9,7 @@
   background-color: #333333;
   color: white;
   margin: 10px 0px;
-  /*padding: 10px 0px 10px 0px;*/
+  padding: 5px 0;
  }
 
  .price-tag {
@@ -42,4 +42,8 @@
 
 input.ng-invalid {
   border: 2px solid red!important;
+}
+
+.product-box a {
+  color: #fff;
 }

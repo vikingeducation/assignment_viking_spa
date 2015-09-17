@@ -5,7 +5,7 @@ store.controller('shoppingCartCtrl',
   $scope.cartItems = shoppingCart.listAll();
 
   $scope.updateCart = function(product, quantity){
-    console.log("update wit quantity "+quantity);
+    console.log("update with quantity "+quantity);
     shoppingCart.update(product, quantity);
   };
 
