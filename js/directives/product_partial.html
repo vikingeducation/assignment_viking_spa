@@ -10,8 +10,4 @@
 
   <input type='text' ng-model='productQuantity' ng-required="true" ng-pattern = "/^\d*$/">
   <button class="btn btn-success" ng-click='addItem(product, productQuantity)'>Buy</button>
-
-
-
-  <p ng-if="productQuantity > 0">You have {{productQuantity}} items in your cart.</p>
 </div>
