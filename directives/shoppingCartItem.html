@@ -1,0 +1,28 @@
+<div id="product-container">
+  <div class="row">
+    <div class="col-xs-4">
+      <img ng-src="{{ item.product.image }}" class = "img img-responsive img-small img-thumbnail">
+    </div>
+
+    <div class="col-xs-6">
+      <h2>{{ item.product.name }}</h2>
+      <p> {{ item.product.description }}</p>
+    </div>
+
+    <div class="col-xs-2">
+      <h5>Price: {{ item.product.price | currency }}</h5>
+      <form name="myForm" ng-submit="updateCart()">
+
+        <label>Quantity
+          <input type="text" name="quantity" required ng-model = "item.quantity" class = "form-control" ng-pattern="/^[0-9]{1,5}$/">
+        </label>
+
+
+        <p>Total: {{ item.product.price * item.quantity | currency }}</p>
+
+        <input class = "btn add-button" ng-if="myForm.quantity.$valid" type="submit" value = "Update Cart">
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+
+    <div ng-repeat="item in cartItems">
+
+      <div id="product-container">
+        <div class="row">
+          <div class="col-xs-4">
+            <img ng-src="{{ item.product.image }}" class = "img img-responsive img-small img-thumbnail">
+          </div>
+
+          <div class="col-xs-6">
+            <h2>{{ item.product.name }}</h2>
+            <p> {{ item.product.description }}</p>
+          </div>
+
+          <div class="col-xs-2">
+            <h5>Price: {{ item.product.price | currency }}</h5>
+
+              <label>Quantity
+                <p>{{ item.quantity }}</p>
+              </label>
+              <p>Total: {{ item.product.price * item.quantity | currency }}</p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+      <button ui-sref = "cart.checkout.payment" class = "btn btn-primary">Previous Step</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4">
+    <button class="btn btn-success btn-block btn-lg">Finish Order!</button>
+  </div>
+</div>

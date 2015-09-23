@@ -1,0 +1,6 @@
+<form id="checkout-form" name="checkoutForm" class="form-horizontal">
+  <p class = "text-success" ng-if="checkoutForm.$valid">Fields on this page are valid!</p>
+  <p class = "text-warning" ng-if="checkoutForm.$invalid">Fields on this page are not valid!</p>
+  <!-- ui-view inside a ui-view! Nested states go here -->
+  <div id="views-in-form" ui-view></div>
+</form>

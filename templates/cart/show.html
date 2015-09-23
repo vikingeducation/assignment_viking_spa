@@ -1,0 +1,13 @@
+<h1 class="text-center">My Shopping Cart</h1>
+
+<div ng-repeat="item in cartItems">
+  <shopping-cart-item item="item" update-cart="updateCart(item.product, item.quantity)"></shopping-cart-item>
+</div>
+
+<div class="row">
+  <div class="col-xs-3 pull-right">
+    <button class="btn btn-lg btn-success btn-block" ui-sref = "cart.checkout.addresses">
+      Checkout!
+    </button>
+  </div>
+</div>
