@@ -6,13 +6,13 @@ vikingStore.config( function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('products', {
-      url: '',
+      url: '/products',
       templateUrl: 'js/templates/products/layout.html',
       controller: 'ProductsCtrl'
     })
 
     .state('products.index', {
-      url: 'index',
+      url: '/index',
       templateUrl: 'js/templates/products/index.html'
     })
 
