@@ -1,4 +1,4 @@
-vikingStore.factory('productService', [function() {
+vikingStore.factory('productService', function() {
 
   var productService = {};
 
@@ -59,4 +59,4 @@ vikingStore.factory('productService', [function() {
   };
 */
   return productService;
-}])
+})

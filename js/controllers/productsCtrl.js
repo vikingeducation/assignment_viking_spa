@@ -1,6 +1,6 @@
 vikingStore.controller('ProductsCtrl',
-  ['$scope', 'productService',
-  function($scope, productService) {
+  ['$scope', 'productService', 'shoppingCart'
+  function($scope, productService, shoppingCart) {
 
     $scope.products = productService.products;
     $scope.categories = productService.categories;
