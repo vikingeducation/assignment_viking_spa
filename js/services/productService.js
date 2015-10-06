@@ -13,6 +13,13 @@ vikingStore.factory('productService', [function() {
     return response;*/
     return this.products;
   };
+
+  productService.findProduct = function(id) {
+    return this.products.filter(function(product) {
+      return (product.id === id)
+    })[0];
+  };
+
 /*
   productService.getCategory = function(id) {
     return this.categories.filter( function(category) {
