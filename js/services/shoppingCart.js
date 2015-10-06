@@ -31,7 +31,12 @@ vikingStore.factory('shoppingCart',
 
   shoppingCart.removeItem = function(product_id) {
     delete shoppingCart.items[product_id];
-  }
+  };
+
+
+  shoppingCart.getQuantity = function(product_id) {
+    return shoppingCart.items[product_id];
+  };
 
 
   return shoppingCart;
