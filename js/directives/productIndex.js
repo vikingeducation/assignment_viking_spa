@@ -3,7 +3,8 @@ vikingStore.directive('productIndex', function() {
     templateUrl: "js/directives/productIndex.html",
     restrict: "E",
     scope: {
-      product: "="
+      product: "=",
+      addItem: "&"
     }
   };
 });

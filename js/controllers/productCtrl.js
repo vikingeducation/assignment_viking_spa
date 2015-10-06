@@ -1,5 +1,5 @@
 vikingStore.controller('ProductCtrl',
-  ['$scope', '$stateParams', 'productService', 'shoppingCart'
+  ['$scope', '$stateParams', 'productService', 'shoppingCart',
   function($scope, $stateParams, productService, shoppingCart) {
 
     $scope.product = productService.findProduct(Number($stateParams.id));
