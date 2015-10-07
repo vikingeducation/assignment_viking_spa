@@ -16,6 +16,7 @@
                 <th>Price</th>
                 <th>Category</th>
                 <th>Quantity</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -23,7 +24,12 @@
                 <td>{{ item.product.name }}</td>
                 <td>{{ item.product.price }}</td>
                 <td>{{ item.product.category.name }}</td>
-                <td><input type='number' ng-model='item.quantity'></td>
+                <td><input type='number' min='1' ng-model='item.quantity'></td>
+                <td>
+                  <button class='btn btn-warning' ng-click='removeItem(item.product.id)'>
+                    Remove
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>

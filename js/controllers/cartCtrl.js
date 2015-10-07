@@ -13,4 +13,10 @@ vikingStore.controller('CartCtrl',
       shoppingCart.updateCart($scope.cartItems);
     };
 
+
+    $scope.removeItem = function(id) {
+      shoppingCart.removeItem(id);
+      $scope.cartItems = shoppingCart.listAll();
+    };
+
   }]);
