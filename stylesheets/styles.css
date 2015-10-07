@@ -1,0 +1,30 @@
+.search-row {
+  margin-bottom: 12px;
+}
+
+.product-image {
+  margin: auto;
+}
+
+.panel-body {
+  position: relative;
+}
+
+.product-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #333;
+  background-color: #fff;
+  padding: 4px 8px;
+}
+
+footer {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  background-color: #eee;
+}
+
+.cart-wrapper {
+  min-height: 320px;
+}

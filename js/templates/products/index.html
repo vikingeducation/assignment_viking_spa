@@ -1,0 +1,31 @@
+<header class="jumbotron">
+  <div class="container">
+    <h1 class='text-center'>The Viking Store</h1>
+    <h3 class='text-center'>The Best Viking Gear on the Whole Web</h3>
+    <p class='text-center'><em>Choose from among our lineup of fine items below</em></p>
+  </div>
+</header>
+
+
+<div class='container'>
+
+  <!-- search row -->
+  <div class='row search-row'>
+    <div class='col-md-3 col-md-offset-9'>
+
+      <h5 class='text-muted text-center'>Filter by category:</h5>
+      <select class='form-control' ng-model='selectedCategory' ng-change='filterOn(selectedCategory)'>
+        <option value='' selected></option>
+        <option ng-repeat='category in categories' value='{{category.id}}'>{{ category.name }}</option>
+      </select>
+
+    </div>
+  </div>
+
+
+  <!-- products -->
+  <div class='row'>
+    <product-index ng-repeat="product in products | filter: categoryFilter | limitTo:6" product='product' add-item='addItem(product)'></product-index>
+  </div>
+
+</div>
