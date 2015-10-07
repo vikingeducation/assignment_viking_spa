@@ -8,6 +8,11 @@ vikingStore.factory('shoppingCart',
   // { product_id: quantity, ... , }
 
 
+  shoppingCart.count = function() {
+    return Object.keys(shoppingCart.items).length;
+  };
+
+
   shoppingCart.listAll = function() {
     var itemDetails = [];
     for (product_id in shoppingCart.items) {
@@ -30,11 +35,13 @@ vikingStore.factory('shoppingCart',
       var currentQuantity = shoppingCart.items[product.id] || 0;
       shoppingCart.items[product.id] = currentQuantity + 1;
     }
+    shoppingCart.count();
   };
 
 
   shoppingCart.removeItem = function(product_id) {
     delete shoppingCart.items[product_id];
+    this.count();
   };
 
 
@@ -48,6 +55,7 @@ vikingStore.factory('shoppingCart',
       shoppingCart.addItem(item.product, item.quantity)
     });
   };
+
 
 
   return shoppingCart;

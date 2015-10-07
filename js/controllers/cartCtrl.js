@@ -1,6 +1,10 @@
 vikingStore.controller('CartCtrl',
-  ['$scope', 'shoppingCart',
-  function($scope, shoppingCart) {
+  ['$scope', '$rootScope', 'shoppingCart',
+  function($scope, $rootScope, shoppingCart) {
+
+    $rootScope.cartCount = function() {
+      return shoppingCart.count();
+    };
 
     $scope.cartItems = shoppingCart.listAll();
 
