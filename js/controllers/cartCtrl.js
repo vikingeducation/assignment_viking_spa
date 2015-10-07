@@ -4,4 +4,9 @@ vikingStore.controller('CartCtrl',
 
     $scope.cartItems = shoppingCart.listAll();
 
+
+    $scope.updateCart = function() {
+      shoppingCart.updateCart($scope.cartItems);
+    };
+
   }]);

@@ -1,9 +1,36 @@
 <div class='container'>
 
-  <h1>Hello, cart!</h1>
+  <div class='row'>
+    <div class='col-xs-12'>
 
-  <ul>
-    <li ng-repeat="item in cartItems">{{ item.product.name }}, {{ item.quantity }}</li>
-  </ul>
+
+      <h1>Shopping Cart</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in cartItems">
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.product.price }}</td>
+            <td>{{ item.product.category.name }}</td>
+            <td><input type='number' ng-model='item.quantity'></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class='btn btn-primary' ng-click='updateCart()'>
+        Update Cart
+      </button>
+
+
+    </div>
+  </div>
 
 </div>

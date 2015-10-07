@@ -30,7 +30,6 @@ vikingStore.factory('shoppingCart',
       var currentQuantity = shoppingCart.items[product.id] || 0;
       shoppingCart.items[product.id] = currentQuantity + 1;
     }
-    console.log(shoppingCart.items);
   };
 
 
@@ -41,6 +40,13 @@ vikingStore.factory('shoppingCart',
 
   shoppingCart.getQuantity = function(product_id) {
     return shoppingCart.items[product_id];
+  };
+
+
+  shoppingCart.updateCart = function(cartItems) {
+    cartItems.forEach( function(item) {
+      shoppingCart.addItem(item.product, item.quantity)
+    });
   };
 
 
