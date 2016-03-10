@@ -1,0 +1,28 @@
+<div class="panel panel-default" style="min-height: 384px;">
+  <header class="panel-heading">
+    <h2>
+      <a ui-sref="products.show({ id: product.id })">
+        {{ product.name }}
+      </a>
+    </h2>
+    <p>{{ product.price | currency }}</p>
+    <p>{{ product.category.name }}</p>
+  </header>
+
+  <div class="well">
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="number" class="form-control" placeholder="Quantity" ng-model="quantity">
+    </div>
+    <div class="form-group">
+      <a class="btn btn-success" ng-click="cart.add(product, quantity)">Add to Cart</a>
+    </div>
+  </div>
+
+
+  <div class="panel-body">
+    {{ product.description | limitTo: 100 }}...
+  </div>
+</div>
+
+
