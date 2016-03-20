@@ -22,7 +22,7 @@ VikingSPA.factory('cartService', function() {
       item = existing;
       item.quantity += quantity;
     } else {
-        item = {
+      item = {
         product: product,
         quantity: quantity
       };
