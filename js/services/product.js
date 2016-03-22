@@ -1,79 +1,82 @@
 vikingStore.factory('productService', ['$q', function($q){
 
-  var _categories = {};
-  var _products = {};
+  var _categories = [];
+  var _products = [];
 
   var _fakeCategories = function(){
-    return $q(function(resolve){
-      var testArr = [];
-      var catArr = [];
-      var id = 1;
+    return new Promise(
+      function(resolve){        
+        var testArr = [];
+        var id = 1;
 
-      while(testArr.length < 15){
-        var tryCat = faker.commerce.department();
-        if ( !(testArr.includes(tryCat)) ){
-          testArr.push(tryCat);
-          catArr.push({id: id, name: tryCat});
-          id++;
+        while(testArr.length < 15){
+          var tryCat = faker.commerce.department();
+          if ( !(testArr.includes(tryCat)) ){
+            testArr.push(tryCat);
+            _categories.push({id: id, name: tryCat});
+            id++;
+          }
         }
-      }
 
-      resolve(catArr);
-    });
+        resolve(_categories);
+      }     
+    );
   };
 
   var _fakeProducts = function(){
-    return $q(function(resolve){
-      var testArr = [];
-      var prodArr = [];
-      var id = 1;
+    var testArr = [];
+    var id = 1;
 
-      while(testArr.length < 75){
-        var tryProd = faker.commerce.productName();
-        if ( !(testArr.includes(tryProd)) ){
-          testArr.push(tryProd);
-          prodArr.push({
-            id: id, 
-            name: tryProd,
-            price: faker.commerce.price(),
-            category: _categories[Math.floor(Math.random()*_categories.length)],
-            desc: faker.lorem.sentence()
-          });
-          id++;
-        }
+    while(testArr.length < 75){
+      var tryProd = faker.commerce.productName();
+      if ( !(testArr.includes(tryProd)) ){
+        testArr.push(tryProd);
+        _products.push({
+          id: id, 
+          name: tryProd,
+          price: faker.commerce.price(),
+          category: _categories[Math.floor(Math.random()*_categories.length)],
+          desc: faker.lorem.sentence()
+        });
+        id++;
       }
+    }
 
-      resolve(prodArr);
-    });
-  };
-
-  var allProducts = function(){
     return _products;
   };
 
-  var allCategories = function(){
-    return _categories;
+  // allCategories either returns fake data or generate 
+  // the data and return a Promise.  Products depends on Categories
+  // already being created.  
+  var allProducts = function(){
+    if (_products.length > 0) {
+      return _products;
+    } else if ( _categories.length > 0 ){
+      return _fakeProducts();
+    } else {
+      return _fakeCategories().then(function(){
+        return _fakeProducts();
+      });
+    }
   };
 
-  var init = function(){
-    // have to use $q here because I want to wait for categories to be built
-    // before creating fake products
-    return $q(function(resolve){
-      _fakeCategories().then(function(data){
-        _categories = data;
-        _fakeProducts().then(function(data){
-          _products = data;
-        }).then(function(){
-          resolve('finished init');
-        });
-      });
-    });
+  var allCategories = function(){
+    if (_categories.length > 0){
+      return _categories;
+    } else {
+      return _fakeCategories();
+    }
+  };
 
+  var getProduct = function(id){
+    return _products.filter(function(prod){
+      return prod.id == id;
+    })[0];
   };
 
   return {
-    init: init,
     allCategories: allCategories,
-    allProducts: allProducts
+    allProducts: allProducts,
+    getProduct: getProduct
   };
 }]);

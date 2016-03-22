@@ -3,10 +3,14 @@
     <!-- category and id were hidden here -->
 
     <div class="banner-box">
-      <h3>{{ product.name }}</h3>
+      <a ui-sref="products.show( { id: {{product.id}} } )">
+        <h3>{{ product.name }}</h3>
+      </a>
     </div>
     <div class="img-container">
-      <img src="img/placeholder.png" alt="{{ product.name }}">
+      <a ui-sref="products.show( { id: {{product.id}} } )">
+        <img src="img/placeholder.png" alt="{{ product.name }}">
+      </a>
       
       <div class="price">
         {{ product.price | currency }}
