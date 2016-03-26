@@ -1,6 +1,6 @@
 var vikingStore = angular.module( 'vikingStore', ['ui.router'] );
 
-vikingStore.config( function( $stateProvider, $urlRouterProvider ){
+vikingStore.config( function( $provide, $stateProvider, $urlRouterProvider ){
   $urlRouterProvider.otherwise('products/index');
 
   $stateProvider
@@ -40,10 +40,23 @@ vikingStore.config( function( $stateProvider, $urlRouterProvider ){
       controller: function($scope, $stateParams, productService){
         $scope.product = productService.getProduct( $stateParams.id );
       }
+    })
+
+    .state('cart', {
+      url: '/cart',
+      templateUrl: "js/templates/cart.html",
+      controller: "CartCtrl"
     });
+
 });
 
-// debug
-vikingStore.run(function($rootScope){
+
+vikingStore.run(function($rootScope, $document){
+  // debug
   $rootScope.$on("$stateChangeError", console.log.bind(console));
+
+  // force ui-view to scroll to top when changing state
+  $rootScope.$on('$stateChangeSuccess', function() { 
+    $document[0].body.scrollTop = $document[0].documentElement.scrollTop = 0;
+  });
 });

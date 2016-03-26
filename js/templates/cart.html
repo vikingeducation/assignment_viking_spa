@@ -1,0 +1,41 @@
+<div ng-if="allItems.length" class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 text-center">
+      <h1>Shopping Cart Contents</h1>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+      <!-- begin cart items -->
+      <div cart-item ng-repeat="item in allItems" item="item" remove-item="removeItem(item)">
+
+      </div>
+      <!-- end cart items -->
+
+     </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-6 col-md-offset-6">
+      <div class="text-right order-total">
+        <h4>TOTAL: {{ cartValue | currency }}</h4>
+        <button class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div ng-if="!allItems.length" class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3>Nothing in Cart</h3>
+      <a ui-sref="products.index">Back to Products</a>
+    </div>
+  </div>
+</div>

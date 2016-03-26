@@ -10,7 +10,7 @@
 
       <form class="form-inline" action="">
         <label for="category">Select a Category</label>
-        <select class="form-control" name="category" ng-model="filterCategory" ng-options="category.id as category.name for category in categories">
+        <select class="form-control" name="category" ng-model="newCat" ng-options="category.id as category.name for category in categories" ng-change="updateFilter(newCat)">
           <option value="">All Products</option>
         </select>
       </form>
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4" product-panel ng-repeat="product in products | filter: { category: {id:filterCategory} }" product="product">
+    <div class="col-md-4" product-panel ng-repeat="product in products | filter: {category: {id: filterCategory } } : true" product="product" add-item='addItem(product)'>
     </div>
   </div>  
 

@@ -70,6 +70,7 @@
   margin-bottom: 5px; }
 
 .media-left img {
+  width: auto;
   height: 90px; }
 
 .merge-order {
