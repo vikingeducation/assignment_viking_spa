@@ -1,0 +1,23 @@
+<div class="product-container">
+  
+    <!-- category and id were hidden here -->
+
+    <div class="banner-box">
+      <a ui-sref="products.show( { id: {{product.id}} } )">
+        <h3>{{ product.name }}</h3>
+      </a>
+    </div>
+    <div class="img-container">
+      <a ui-sref="products.show( { id: {{product.id}} } )">
+        <img src="img/placeholder.png" alt="{{ product.name }}">
+      </a>
+      
+      <div class="price">
+        {{ product.price | currency }}
+      </div>
+    </div>
+    <div class="banner-box">
+      <button class="btn btn-primary" ng-click="addItem(product)">Add to Cart</button>
+    </div>
+ 
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <img src="img/placeholder.png" class="img-responsive" alt="{{ product.name }}">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h3>{{ product.name }} <small>{{ product.price | currency }}</small></h3>
+      <p>Category: {{product.category.name}}</p>
+      <p>{{ product.desc }}</p>
+      <button class="btn btn-primary" ng-click="addItem(product)">Add to Cart</button>
+      <div class="pull-right">
+        <a ui-sref="products.index">Back to Products Index</a>
+      </div>
+    </div>
+  </div>
+</div>
