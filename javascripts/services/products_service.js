@@ -1,5 +1,4 @@
 store.factory('ProductsService', function() {
-
     var products = {};
     // var faker = require('faker')
 

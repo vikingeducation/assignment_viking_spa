@@ -1,5 +1,4 @@
-var store = angular.module('store', ['ui.router'])
-
+var store = angular.module('store', ['ui.router']);
 
 store.config(function($stateProvider, $urlRouterProvider) {
 
@@ -12,7 +11,12 @@ store.config(function($stateProvider, $urlRouterProvider) {
     url: '/index',
     templateUrl: 'products/index.html',
     controller: 'ProductsIndexCtrl'
-  })
+  });
 
 
-})
+});
+
+store.run(function($rootScope){
+    $rootScope.$on("$stateChangeError", console.log.bind(console));
+});
+
