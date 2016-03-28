@@ -2,21 +2,14 @@ var store = angular.module('store', ['ui.router']);
 
 store.config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/products/index');
+    $urlRouterProvider.otherwise('/products/index');
 
-  $stateProvider.state('products', {
-    url: '/products',
-    templateUrl: 'products.html'
-  }).state('products.index', {
-    url: '/index',
-    templateUrl: 'products/index.html',
-    controller: 'ProductsIndexCtrl'
-  });
-
-
+    $stateProvider.state('products', {
+        url: '/products',
+        template: "<ui-view></ui-view>"
+    }).state('products.index', {
+        url: '/index',
+        templateUrl: 'templates/products/index.html',
+        controller: 'ProductsIndexCtrl'
+    });
 });
-
-store.run(function($rootScope){
-    $rootScope.$on("$stateChangeError", console.log.bind(console));
-});
-
