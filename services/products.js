@@ -9,7 +9,7 @@ store.factory('Products', function(){
 
     var cat = { name: faker.commerce.department(), id: i };
 
-    _categores.push(cat);
+    _categories.push(cat);
 
   }
 
@@ -20,7 +20,13 @@ store.factory('Products', function(){
     _products.push(product);
   }
 
+  obj.getCategories = function(){
+    return _categories;
+  };
 
+  obj.getProducts = function(){
+    return _products;
+  };
 
   return obj;
 
