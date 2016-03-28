@@ -19,7 +19,7 @@
   <div class="col-sm-4" ng-repeat="product in products | categoryFilter:categoryId">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <a ui-sref = "products.show({productId:{{product.id}}})">{{ product.name }}</a>
+        <a ui-sref = "products.show({productId: {{product.id}} })">{{ product.name }}</a>
       </div>
       <div class="panel-body content-body">
         <span class="price pull-right">{{ product.price | currency }}</span>
