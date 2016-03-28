@@ -7,23 +7,40 @@
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js" type = "text/javascript"></script>
      <script src = "javascripts/seed.js" ></script>
-    <link href="css/styles.css">
+    <link href="css/styles.css" rel="stylesheet">
   </head>
 
   <body ng-app="vikingStore">
 
-    <div class="container">
-      <nav class="navbar navbar-default">
-        <div class="nav navbar-nav navbar-left">
+    <div class="container-fluid">
+      <div class="row navbar">
+        <div class="col-sm-2 col-sm-offset-2">
           Viking Store
         </div>
-        <div class="nav navbar-nav navbar-right">
-          <a href="#">Your Cart</a>
-          <br>
-          <a href="#">Sign In</a>
+        <div class="col-sm-offset-4 col-sm-2">
+          <div class="pull-right">
+            <a href="#">Your Cart</a>
+            <br>
+            <a href="#">Sign In</a>
+          </div>
         </div>
-      </nav>
+      </div>
+      <div class="heading row text-center">
+        <div class="heading-body">
+          <h1>The Viking Store</h1>
+        </div>
+        <div class="heading-footer">
+          <h4>The Best VIking Gear on the Whole Web</h4>
+        </div>
+        <div class="bottom">
+          Choose from among our lineup of fine items below
+        </div>
+      </div>
+    </div>
 
+
+
+    <div class="container">
       <div ui-view></div>
 
       <hr><footer>
