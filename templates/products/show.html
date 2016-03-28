@@ -15,9 +15,9 @@
 
       </div>
       <div class="panel-footer">
-        <form class="form" name="buy-form">
-          <input id="" type="number" name="" ng-model="quantity">
-          <input type="submit" class="btn btn-default" value="Buy">
+        <form class="form" name="buyForm">
+          <input id="" type="number" name="" ng-model="quantity" ng-required="quantity > 0">
+          <input type="submit" class="btn btn-default" value="Buy" ng-click="addToCart(buyForm.$valid, product, quantity)">
         </form>
         <p>
         {{ product.longDescription}}

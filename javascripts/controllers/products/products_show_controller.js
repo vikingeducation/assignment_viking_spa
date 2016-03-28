@@ -1,6 +1,13 @@
-store.controller('ProductsShowCtrl', ['$scope', 'product', function($scope, product) {
+store.controller('ProductsShowCtrl', ['$scope', 'product', 'CartService', function($scope, product, CartService) {
 
-  console.log(product);
+
   $scope.product = product;
+
+  $scope.addToCart = function(formIsValid, product, quantity) {
+    if (formIsValid) {
+      console.log("you clicked it!")
+      CartService.addToCart(product, quantity)
+    }
+  }
 
 }]);

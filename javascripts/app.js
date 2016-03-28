@@ -29,5 +29,9 @@ store.config(function($stateProvider, $urlRouterProvider) {
               return ProductsService.getProduct($stateParams.id);
           }]
         }
+    }).state('cart', {
+      url: '/cart',
+      templateUrl: 'templates/cart.html',
+      controller: 'CartCtrl'
     });
 });

@@ -23,7 +23,7 @@ store.factory('ProductsService', function() {
                 categoryId: Math.floor(Math.random() * 5),
                 longDescription: faker.lorem.paragraph(),
                 image: faker.image.image(),
-                price: faker.commerce.price()
+                price: Number(faker.commerce.price())
             };
             products.push(product);
         }
