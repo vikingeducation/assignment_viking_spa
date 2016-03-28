@@ -2,7 +2,7 @@ var viking = angular.module('viking', ['ui.router']);
 
 viking.config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/index');
+  $urlRouterProvider.otherwise('/products');
 
   $stateProvider
 
@@ -12,16 +12,16 @@ viking.config(function($stateProvider, $urlRouterProvider) {
       template: '<div ui-view></div>'
     })
 
-    .state('products.show', {
-      url: '/:id',
-      controller: 'ProductsCtrl',
-      templateUrl: 'javascripts/templates/products/show.html'
-    })
-
     .state('products.index', {
       url: '/index',
       controller: 'ProductsCtrl',
       templateUrl: 'javascripts/templates/products/index.html'
+    })
+
+    .state('products.show', {
+      url: '/:id',
+      controller: 'ProductsCtrl',
+      templateUrl: 'javascripts/templates/products/show.html'
     })
 
     .state('cart', {
