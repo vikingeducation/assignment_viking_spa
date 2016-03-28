@@ -28,6 +28,10 @@ store.factory('Products', function(){
     return _products;
   };
 
+  obj.getProduct = function(id) {
+    return _products[id];
+  };
+
   return obj;
 
 });

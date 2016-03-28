@@ -1,26 +1,40 @@
 var store = angular.module('Store', ['ui.router']);
 
 store.config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise("/products");
 
   $stateProvider
 
   .state('products',
     {
-      url: "/",
-      templateUrl: "partials/products.html",
+      url: "",
+      templateUrl: "partials/wrapper.html",
       controller: "ProductsCtrl"
   })
 
   .state('products.index',
     {
-      url: "",
-      templateUrl: "partials/products.html"
+      url: "/products",
+      templateUrl: "partials/products.html",
+      controller: "ProductsCtrl"
     })
 
   .state('products.show',
     {
-      url: "/:product_id",
-      templateUrl: "partials/product.html"
-    });
+      url: "/products/:id",
+      templateUrl: "partials/product.html",
+      controller: "ProductsCtrl"
+    })
+
+  .state('products.show.description', {
+    url: "",
+    templateUrl: "partials/description.html",
+    controller: "ProductsCtrl"
+  })
+
+  .state('products.show.ratings', {
+    url: "",
+    templateUrl: "partials/ratings.html",
+    controller: "ProductsCtrl"
+  })
 });

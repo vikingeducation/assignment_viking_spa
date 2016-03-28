@@ -1,7 +1,9 @@
 <div class="col-xs-3">
   <div class="panel panel-default">
     <div class="panel-header">
-      {{prod.name}}
+      <a ui-sref="products.show({ id: {{prod.id}} })">
+        {{ prod.name }}
+      </a>
     </div>
     <div class="panel-body">
       <img class="img-responsive" ng-src="{{ prod.photo }}"/>
