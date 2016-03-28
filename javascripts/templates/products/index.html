@@ -1,5 +1,12 @@
 <div class='row'>
-  <div ng-repeat='product in products' class='col-md-4'>
+
+  <form name="selectCategoryForm">
+    <select ng-options='category.id as category.name for category in categories' ng-model='currentCategory'>
+    <input type="submit" value="Select Category" >
+  </form>
+
+
+  <div ng-repeat='product in products | categoryFilter: currentCategory' class='col-md-4'>
     <a ui-sref='products.show( { id: product.id } )'>{{ product.name }}</a>
     <p>{{ product.price }}</p>
     <button>Add to Cart</button>

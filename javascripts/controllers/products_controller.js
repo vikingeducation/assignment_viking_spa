@@ -1,9 +1,10 @@
 viking.controller('ProductsCtrl', ['$scope', '$stateParams', 'productService', function($scope, $stateParams, productService) {
 
   console.log('got to products controller');
+  debugger;
 
   $scope.product;
-  $scope.productFilter = '';
+  $scope.currentCategory = 0;
   $scope.products = [];
 
   if( !$scope.products.length ) {
@@ -16,9 +17,9 @@ viking.controller('ProductsCtrl', ['$scope', '$stateParams', 'productService', f
     $scope.products.push(product);
   };
 
-  $scope.setFilter = function(filterParam) {
-    $scope.productFilter = filterParam;
-  };
+  // $scope.setFilter = function(filterParam) {
+  //   $scope.currentCategory = filterParam;
+  // };
 
   $scope.findProduct = function( id)  {
     var retProd;

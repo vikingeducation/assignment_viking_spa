@@ -1,6 +1,6 @@
 viking.factory('productService', function() {
   var obj = {};
-  var currentCategoryID = 0;
+  var currentCategoryID = 1;
   var currentProductID = 0;
   var categories = [];
   var products = [];
@@ -35,8 +35,13 @@ viking.factory('productService', function() {
   };
 
   obj.setupProducts = function() {
-    categories = [];
     products = [];
+
+    var allCategory = {
+      id: 0,
+      name: "All"
+    };
+    categories = [ allCategory ];
 
     for(var i = 0; i < 10; i++) {
       obj.createCategory();
@@ -48,8 +53,6 @@ viking.factory('productService', function() {
       };
     });
   };
-
-
 
   return obj;
 })
