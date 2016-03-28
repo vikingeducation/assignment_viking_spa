@@ -11,10 +11,8 @@ store.config(function($stateProvider, $urlRouterProvider) {
   }).state('products.index', {
     url: '/index',
     templateUrl: 'products/index.html',
-    controller: 'productIndexCtrl'
+    controller: 'ProductsIndexCtrl'
   })
-
-
 
 
 })

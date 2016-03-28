@@ -15,8 +15,6 @@
 
   <!-- faker.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
-
-  <script type="text/javascript" src='javascripts/app.js'></script>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -51,13 +49,16 @@
 
 
 
-
-
-
-
-
+  <div class="container">
+    <ui-view></ui-view>
+  </div>
 
   <!-- footer -->
+  <script type="text/javascript" src='javascripts/app.js'></script>
+  <script type="text/javascript" src='javascripts/services/products_service.js'></script>
+  <script type="text/javascript" src='javascripts/controllers/products_controller.js'></script>
+  <script type="text/javascript" src='javascripts/controllers/products/products_index_controller.js'></script>
 
 </body>
 </html>
+
