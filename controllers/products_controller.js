@@ -4,6 +4,7 @@ store.controller( 'ProductsCtrl', [
 
     $scope.products = Products.getProducts();
     $scope.categories = Products.getCategories();
+    
 
   }
 ]);

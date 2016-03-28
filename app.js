@@ -14,7 +14,7 @@ store.config(function($stateProvider, $urlRouterProvider){
 
   .state('products.index',
     {
-      url: "/",
+      url: "",
       templateUrl: "partials/products.html"
     })
 

@@ -1,12 +1,13 @@
 
 <div class="row">
-  <select class="form-control" name="category" ng-model="category" value="{{category}}">
-    <option ng-repeat="category in categories">{{category.name}}</option>
+  <select class="form-control" name="category" ng-model="category" >
+    <option></option>
+    <option ng-repeat="category in categories" value="{{category}}">{{category.name}}</option>
   </select>
 </div>
 
 <div class="row">
-  <div product ng-repeat="product in products | filter : {category_id: category.id}" prod="product">
+  <div product ng-repeat="product in products | categoryFilter: category " prod="product">
 
   </div>
 </div>
