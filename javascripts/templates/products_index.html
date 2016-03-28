@@ -2,6 +2,7 @@
   <div class="col-sm-12">
     <div class="pull-right">
       <select class="dropdown" ng-model="categoryName">
+        <option value="All Products">All Products</option>
         <option ng-repeat="category in categories" value="{{ category.name }}">
           {{ category.name }}
         </option>
