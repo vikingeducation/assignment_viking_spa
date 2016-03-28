@@ -1,20 +1,7 @@
-store.controller('ProductsCtrl', ['$scope', 'ProductsService'], function($scope, ProductsService) {
-
+store.controller('ProductsCtrl', ['$scope', 'ProductsService', function($scope, ProductsService) {
     
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-})
-
+}]);

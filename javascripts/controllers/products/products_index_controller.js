@@ -1,3 +1,6 @@
-store.controller('ProductsIndexCtrl', ['$scope', 'ProductsService'], function($scope, ProductsService) {
-    $scope.products = ProductsService.getProducts();
-});
+store.controller('ProductsIndexCtrl', ['$scope', 'products', 'categories', function($scope, products, categories) {
+
+    $scope.products = products;
+    $scope.categories = categories;
+
+}]);
