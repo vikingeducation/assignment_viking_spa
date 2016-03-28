@@ -26,7 +26,7 @@ viking.config(function($stateProvider, $urlRouterProvider) {
 
     .state('cart', {
       url: '/cart',
-      controller: 'CartCtrl',
+      controller: 'CartsCtrl',
       templateUrl: 'javascripts/templates/carts/show.html'
     })
 

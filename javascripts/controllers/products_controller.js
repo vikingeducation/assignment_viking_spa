@@ -1,10 +1,11 @@
-viking.controller('ProductsCtrl', ['$scope', '$stateParams', 'productService', function($scope, $stateParams, productService) {
+viking.controller('ProductsCtrl', ['$scope', '$stateParams', 'productService', 'cartService', function($scope, $stateParams, productService, cartService) {
 
   console.log('got to products controller');
 
   $scope.product;
   $scope.currentCategory = 0;
   $scope.products = $scope.products || [];
+  $scope.addToCart;
 
   if( !$scope.products.length ) {
     productService.setupProducts();
@@ -37,5 +38,10 @@ viking.controller('ProductsCtrl', ['$scope', '$stateParams', 'productService', f
     $scope.product = $scope.findProduct( $stateParams.id )
   };
 
+  $scope.addToCart = function(product) {
+    console.log('adding item');
+    console.log(product);
+    cartService.addItem(product, 1);
+  };
 
 }]);

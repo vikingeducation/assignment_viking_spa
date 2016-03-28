@@ -7,8 +7,6 @@
 
 
   <div ng-repeat='product in products | categoryFilter:  currentCategory' class='col-md-4'>
-    <a ui-sref='products.show( { id: product.id } )'>{{ product.name }}</a>
-    <p>{{ product.price }}</p>
-    <button>Add to Cart</button>
+    <product></product>
   </div>
 </div>
