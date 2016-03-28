@@ -1,0 +1,9 @@
+body {
+  padding-top: 70px;
+}
+
+
+.inverted {
+  color: white;
+  background-color: black;
+}
