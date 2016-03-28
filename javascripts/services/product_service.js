@@ -13,11 +13,18 @@ vikingStore.factory('productService', function(faker) {
     return CATEGORIES;
   }
 
+  var names = [];
   for (var i=0; i < 10; i++) {
    var category = {};
    category.id = i;
    category.name = faker.commerce.department();
-   CATEGORIES.push(category);
+
+   if (names.indexOf(category.name) == -1) {
+     names.push(category.name);
+     CATEGORIES.push(category);
+   } else {
+     i --;
+   }
   }
 
   for (var i=0; i < 30; i++) {
