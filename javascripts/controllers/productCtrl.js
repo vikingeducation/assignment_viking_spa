@@ -9,6 +9,7 @@ vikingStore.controller('productCtrl',
     $scope.showProduct = $scope.products[$stateParams.productId];
 
     $scope.cartItems = cartService.listAll();
+    $scope.totalItems = cartService.getCartLength();
 
     $scope.addToCart = function(product) {
       cartService.addItem(product, 1);

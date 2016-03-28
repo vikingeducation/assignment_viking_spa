@@ -12,14 +12,14 @@
 
   <body ng-app="vikingStore">
 
-    <div class="container-fluid">
+    <div class="container-fluid" ng-controller="productCtrl">
       <div class="row navbar">
         <div class="col-sm-2 col-sm-offset-2">
-          Viking Store
+          <a ui-sref="products.index">Viking Store</a>
         </div>
         <div class="col-sm-offset-4 col-sm-2">
           <div class="pull-right">
-            <a ui-sref="cart">Your Cart</a>
+            <a ui-sref="cart">Your Cart has {{cartItems.length}} items</a>
             <br>
             <a href="#">Sign In</a>
           </div>
