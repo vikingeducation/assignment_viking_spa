@@ -19,7 +19,7 @@
         </div>
         <div class="col-sm-offset-4 col-sm-2">
           <div class="pull-right">
-            <a href="#">Your Cart</a>
+            <a ui-sref="cart">Your Cart</a>
             <br>
             <a href="#">Sign In</a>
           </div>
@@ -42,7 +42,6 @@
 
     <div class="container">
       <div ui-view></div>
-
       <hr><footer>
         Copyright Fooville Enterprises Inc
       </footer>
@@ -61,7 +60,8 @@
 
   <!-- services -->
   <script src = "javascripts/services/product_service.js" ></script>
+  <script src = "javascripts/services/cart_service.js" ></script>
 
-    <!-- filters-->
+  <!-- filters-->
   <script src = "javascripts/filters/category_filter.js" ></script>
 </html>

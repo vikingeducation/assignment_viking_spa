@@ -21,6 +21,11 @@ vikingStore.config( function( $stateProvider, $urlRouterProvider ){
       templateUrl: 'javascripts/templates/products_show.html',
       controller: 'productCtrl'
     })
+    .state('cart', {
+      url: '/cart',
+      templateUrl: 'javascripts/templates/cart.html',
+      controller: 'productCtrl'
+    })
 });
 
 //
