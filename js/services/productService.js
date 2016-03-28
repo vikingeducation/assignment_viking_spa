@@ -12,13 +12,15 @@ store.factory('productService',
       product.price = faker.finance.amount();
       product.description = faker.lorem.paragraph();
       product.categoryId = categoryService.getRandomCategoryId();
+      _list.push(product);
     };
 
     var generateProductList = function() {
       var productMax = Math.floor(Math.random() * 95) + 5;
-      for (var i = 0; i < categoryMax; i++) {
+      for (var i = 0; i < productMax; i++) {
         generateProduct();
       }
+      return _list;
     };
 
     var getProductList = function() {

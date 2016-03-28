@@ -13,6 +13,7 @@ store.factory('categoryService', function() {
     for (var i = 0; i < categoryMax; i++) {
       generateCategory();
     }
+    return _list;
   };
 
   var getRandomCategoryId = function() {
@@ -29,7 +30,7 @@ store.factory('categoryService', function() {
 
   return {
     generateCategoryList: generateCategoryList,
-    getCategoryId: getCategoryId,
+    getRandomCategoryId: getRandomCategoryId,
     getCategory: getCategory,
     getCategoryList: getCategoryList
   };
