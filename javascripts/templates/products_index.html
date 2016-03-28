@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-sm-12">
     <div class="pull-right">
-      <select class="dropdown" ng-model="categoryName">
+      <select class="dropdown" ng-model="categoryId">
         <option value="All Products">All Products</option>
-        <option ng-repeat="category in categories" value="{{ category.name }}">
+        <option ng-repeat="category in categories" value="{{ category.id }}">
           {{ category.name }}
         </option>
       </select>
@@ -16,7 +16,7 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-4" ng-repeat="product in products | categoryFilter:categoryName">
+  <div class="col-sm-4" ng-repeat="product in products | categoryFilter:categoryId">
     <div class="panel panel-default">
       <div class="panel-heading">
         {{ product.name }}

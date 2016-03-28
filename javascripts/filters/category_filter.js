@@ -3,17 +3,16 @@ vikingStore.filter('categoryFilter', function () {
     var filtered = [];
     for (var i = 0; i < items.length; i++) {
       var item = items[i];
-      // console.log("Category " + item.category  + " , " + category);
-      // console.log("Category " + item.category == category);
-
+       
       if (category == 'All Products') {
         filtered.push(item);
       }
+
       else if (item.category == category ) {
         filtered.push(item);
       }
     }
-    console.log("Filtered " + filtered);
+
     return filtered;
   };
 });

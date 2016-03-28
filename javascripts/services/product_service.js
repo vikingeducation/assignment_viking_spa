@@ -28,7 +28,7 @@ vikingStore.factory('productService', function(faker) {
    product.price = faker.commerce.price();
    var index = Math.floor(Math.random() * 10);
 
-   product.category = CATEGORIES[index].name;
+   product.category = CATEGORIES[index].id;
    PRODUCTS.push(product);
   }
 

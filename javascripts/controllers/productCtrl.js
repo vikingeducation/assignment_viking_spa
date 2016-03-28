@@ -2,7 +2,7 @@ vikingStore.controller('productCtrl',
   ['$scope', 'productService',
   function($scope, productService) {
 
-    $scope.categoryName = 'All Products';
+    $scope.categoryId = 'All Products';
 
     $scope.products = productService.getProducts();
     $scope.categories = productService.getCategories();
