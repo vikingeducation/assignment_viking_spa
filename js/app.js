@@ -14,10 +14,7 @@ store.config(function($stateProvider, $urlRouterProvider){
     .state('landing.products',{
       url: '/products',
       templateUrl: 'js/templates/products/index.html'
-    })
+    });
 
 
-})
-
-
- 
+});
