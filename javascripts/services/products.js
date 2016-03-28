@@ -11,7 +11,7 @@ viking.factory('productService', function() {
     category.id = currentCategoryID;
     categories.push(category);
     currentCategoryID++;
-    console.log('category ' + category.name + ' created');
+    // console.log('category ' + category.name + ' created');
   };
 
   obj.createProduct = function(category) {
@@ -23,7 +23,7 @@ viking.factory('productService', function() {
     product.id = currentProductID;
     products.push(product);
     currentProductID++;
-    console.log('Product ' + product.name + ' created');
+    // console.log('Product ' + product.name + ' created');
   };
 
   obj.getCategories = function() {
@@ -49,9 +49,7 @@ viking.factory('productService', function() {
     });
   };
 
-  obj.findProduct = function(id) {
 
-  }
 
   return obj;
 })
