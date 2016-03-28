@@ -12,6 +12,13 @@ store.config(function($stateProvider, $urlRouterProvider){
       controller: "ProductsCtrl"
   })
 
+  .state('products.cart',
+    {
+      url: "/cart",
+      templateUrl: "partials/shoppingCart.html",
+      controller: "CartCtrl"
+    })
+
   .state('products.index',
     {
       url: "/products",

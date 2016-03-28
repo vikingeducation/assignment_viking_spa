@@ -9,17 +9,30 @@ store.factory( 'ShoppingCart', [
     };
 
     obj.addItem = function(object, quantity) {
-      for ( var i = 0; i < quantity; i++ ) {
-        _cartItems.push(object);
-      }
+      obj.removeItem(object);
+        if(_productExists(object)){
+          _cartItems[object.id].quantity = quantity;
+        }
+        else{
+          _cartItems.push({product: object, quantity: quantity});
+        }
     };
 
     obj.removeItem = function(item) {
       for ( var i = _cartItems.length - 1; i >= 0; i-- ) {
-        if ( _cartItems[i].id === item.id ) {
+        if ( _cartItems[i].product.id === item.id ) {
           _cartItems.splice( i, 1 );
         }
       }
+    };
+
+    var _productExists = function(product){
+      _cartItems.forEach(function(prod){
+        if(prod.product.id === product.id){
+          return true;
+        }
+      });
+      return false;
     };
 
     return obj;
