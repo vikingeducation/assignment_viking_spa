@@ -6,7 +6,8 @@ store.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('products', {
         url: '/products',
-        template: "<ui-view></ui-view>",
+        controller: 'ProductsCtrl',
+        templateUrl: "templates/products.html",
         resolve: {
           products: ['ProductsService', function(ProductsService) {
             return ProductsService.getProducts();
@@ -25,7 +26,7 @@ store.config(function($stateProvider, $urlRouterProvider) {
         controller: 'ProductsShowCtrl',
         resolve: {
           product: ['$stateParams', 'ProductsService', function($stateParams, ProductsService) {
-            ProductsService.getProduct($stateParams.id)
+              return ProductsService.getProduct($stateParams.id);
           }]
         }
     });

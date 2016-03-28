@@ -1,11 +1,6 @@
-store.controller('ProductsShowCtrl', ['$scope', '$stateParams', function($scope, $stateParams) {
+store.controller('ProductsShowCtrl', ['$scope', 'product', function($scope, product) {
 
-  $scope.productId = $stateParams.id;
-
-
-
-
-
-
+  console.log(product);
+  $scope.product = product;
 
 }]);

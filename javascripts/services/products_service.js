@@ -1,7 +1,7 @@
 store.factory('ProductsService', function() {
 
     var ProductsService = {};
-    var products = [];  // private var
+    var products = []; // private var
 
     ProductsService.getCategories = function() {
         var cats = [];
@@ -21,7 +21,8 @@ store.factory('ProductsService', function() {
                 id: i,
                 name: faker.commerce.productName(),
                 categoryId: Math.floor(Math.random() * 5),
-                long_description: faker.commerce.productAdjective(),
+                longDescription: faker.lorem.paragraph(),
+                image: faker.image.image(),
                 price: faker.commerce.price()
             };
             products.push(product);
@@ -30,13 +31,12 @@ store.factory('ProductsService', function() {
     };
 
     ProductsService.getProduct = function(id) {
-      for (var i = 0; i < products.length; i++) {
-        if (products[i].id == id) {
-          return products[i];
+        for (var i = 0; i < products.length; i++) {
+            if (products[i].id == id) {
+                return products[i];
+            }
         }
-      }
-    }
+    };
 
     return ProductsService;
-
 });
