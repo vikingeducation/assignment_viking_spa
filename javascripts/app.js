@@ -6,23 +6,31 @@ viking.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
-    .state('index', {
-      url: '/index',
-      views: {
-        'products': {
-          templateUrl: 'products.html',
-          controller: 'ProductsCtrl'
-        },
-
-        'cart': {
-          templateUrl: 'cart.html',
-          controller: 'CartCtrl'
-        },
-
-        'show': {
-          templateUrl: 'showproduct.html',
-          controller: 'ShowCtrl'
-        }
-      }
+    .state('products', {
+      url: '/products',
+      controller: 'ProductsCtrl',
+      template: '<div ui-view></div>'
     })
-})
+
+    .state('products.show', {
+      url: '/:id',
+      controller: 'ProductsCtrl',
+      templateUrl: 'javascripts/templates/products/show.html'
+    })
+
+    .state('products.index', {
+      url: '/index',
+      controller: 'ProductsCtrl',
+      templateUrl: 'javascripts/templates/products/index.html'
+    })
+
+    .state('cart', {
+      url: '/cart',
+      controller: 'CartCtrl',
+      templateUrl: 'javascripts/templates/carts/show.html'
+    })
+
+
+});
+
+
