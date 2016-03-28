@@ -19,14 +19,21 @@ store.config(function($stateProvider, $urlRouterProvider){
 
    .state('landing.products.index',{
       url: '/index',
-      templateUrl: 'js/templates/products/index.html'
+      templateUrl: 'js/templates/products/index.html',
+      controller: 'productCtrl'
     })
 
    .state('landing.products.show',{
     url: '/show/:id/',
-    templateUrl: 'js/templates/products/show.html', 
-    controller: function( $scope, $stateParams ){ 
+    templateUrl: 'js/templates/products/show.html',
+    controller: function( $scope, $stateParams, cartService ){
         $scope.currentProduct = $scope.productList[$stateParams.id-1];
+        $scope.quantity = "";
+        $scope.addItem = function(product, quantity) {
+          cartService.addItem(product, quantity);
+          console.log(cartService.listAll());
+          $scope.quantity = "";
+        };
       },
    });
 

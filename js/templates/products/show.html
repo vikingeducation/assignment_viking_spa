@@ -1,6 +1,5 @@
-<!-- <h1>{{product.name}}</h1>
-<p>{{product.description}}</p>
- -->
+<a ui-sref="landing.products.index">Back to Home</a> 
+
 <div class="panel panel-default">
   <div class="panel-heading">{{categoryList[currentProduct.categoryId].name}}: {{currentProduct.name}}</div>
   <div class="panel-body">
@@ -9,7 +8,7 @@
     <div class='text-center'><strong>Price: {{currentProduct.price}}</strong></div>
   </div>
   <div class="panel-footer">
-    <input type="text" placeholder="Quantity"></input>
-    <button type="button" class="btn btn-primary">Order</button>
+    <input type="text" placeholder="Quantity" ng-model="quantity"></input>
+    <button type="button" class="btn btn-primary" ng-click="addItem(currentProduct, quantity)">Add to Cart</button>
   </div>
 </div>
