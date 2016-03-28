@@ -2,58 +2,40 @@
 <html>
   <head>
     <title>Angular </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js" ></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
 
   </head>
 
-  <body >
+  <body ng-app="vikingStore">
 
     <div class="container">
       <nav class="navbar navbar-default">
-        <div class="nav navbar-left">
+        <div class="nav navbar-nav navbar-left">
           Viking Store
-        </div><hr>
+        </div>
         <div class="nav navbar-nav navbar-right">
           <a href="#">Your Cart</a>
+          <br>
           <a href="#">Sign In</a>
-        </div>  
+        </div>
       </nav>
 
-      <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-      <!-- ABOVE HERE WOULD NORMALLY BE IN THE LAYOUT -->
-      <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-
-
-      <main ng-app = "routingDemo">
-
-        <!-- The title section -->
-        <div ui-view = "title" >Title...</div>
-
-        <!-- The SHOW wrapper -->
-        <div ui-view = "show">Show Wrapper...</div>
-        
-        <!-- The index of listings panel -->
-        <div ui-view = "index" >Index Panel...<div>
-
-
-
-      </main>
-
-
-      <!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
-      <!-- BELOW HERE WOULD NORMALLY BE IN THE LAYOUT -->
-      <!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+      <div ui-view></div>
 
       <hr><footer>
         Copyright Fooville Enterprises Inc
       </footer>
 
     </div>
-    <script src = "javascripts/app.js" ></script>
 
- 
+
   </body>
+
+  <!-- App -->
+  <script src = "javascripts/app.js" ></script>
+
+
 </html>
