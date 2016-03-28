@@ -1,7 +1,14 @@
 <div class="col-xs-3">
   <div class="panel panel-default">
     <div class="panel-header">
-      {{product.name}}
+      {{prod.name}}
+    </div>
+    <div class="panel-body">
+      <img src="{{prod.photo}}">
+      <p>{{prod.price}}</p>
+    </div>
+    <div class="panel-footer">
+      <button type="button" name="add-to-cart">Add to Cart</button>
     </div>
   </div>
 </div>
