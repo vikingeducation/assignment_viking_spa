@@ -15,9 +15,9 @@
       <td>{{ item.price }}</td>
       <form ng-model="quantity">
         <td><input type="text" value="{{ item.quantity }}" class="form-control"></td>
-        <td><button ng-click="updateQuantity(quantity)" class="btn btn-sm btn-success">Update Quantity</button></td>
+        <td><button ng-click="updateQuantity(item, quantity)" class="btn btn-sm btn-success">Update Quantity</button></td>
       </form>
-      <td><button ng-click="removeItem(item)" class="btn btn-sm btn-danger">Remove Item</button></td>
+      <td><button ng-click="removeItem(item.id)" class="btn btn-sm btn-danger">Remove Item</button></td>
     </tr>
   </tbody>
 </table>

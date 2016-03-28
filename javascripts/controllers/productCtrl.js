@@ -13,4 +13,10 @@ vikingStore.controller('productCtrl',
     $scope.addToCart = function(product) {
       cartService.addItem(product, 1);
     }
+    $scope.updateQuantity = function(item, quantity) {
+      item.quantity = quantity;
+    }
+    $scope.removeItem = function(id) {
+      cartService.removeItem(id);
+    }
   }]);

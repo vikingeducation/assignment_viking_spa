@@ -18,8 +18,8 @@ vikingStore.factory('cartService', function(productService) {
     cartItems.push(cartObj);
   };
 
-  obj.removeItem = function() {
-
+  obj.removeItem = function(id) {
+    cartItems.splice(id, 1);
   }
 
   return obj;
