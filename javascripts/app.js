@@ -17,11 +17,13 @@ vikingStore.config( function( $stateProvider, $urlRouterProvider ){
       templateUrl: 'javascripts/templates/products_index.html'
     })
     .state('products.show', {
-      url: '/show/:productId',
-      templateUrl: 'javascripts/templates/products_show.html'
+      url: '/:productId',
+      templateUrl: 'javascripts/templates/products_show.html',
+      controller: 'productCtrl'
     })
 });
 
+//
 
 // ADDING ERROR HANDLING
 vikingStore.run(function($rootScope){
