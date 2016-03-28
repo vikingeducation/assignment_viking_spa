@@ -4,5 +4,8 @@ vikingStore.controller('productCtrl',
 
     $scope.products = productService.getProducts();
     $scope.categories = productService.getCategories();
-
+    $scope.applyFilter = function(category) {
+      console.log("Category is " + category);
+      //return 
+    }
   }]);
