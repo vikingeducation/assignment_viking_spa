@@ -10,14 +10,13 @@ store.factory( 'ShoppingCart', [
 
     obj.addItem = function(object, quantity) {
 
-      obj.removeItem(object);
-        if( _productExists(object) && !quantity ){
-          _cartItems[object.id].quantity++
-        } else if ( _productExists(object) ) {
-          _cartItems[object.id].quantity = quantity;
+      // obj.removeItem(object);
+        if( _productExists(object)){
+          // console.log(_productExists(object) + " if");
+          _cartItems[object.id].quantity += parseInt(quantity);
         }
         else{
-          quantity = quantity || 1;
+          // console.log(_productExists(object) + " else");
           _cartItems.push({product: object, quantity: quantity});
         }
     };
@@ -31,12 +30,20 @@ store.factory( 'ShoppingCart', [
     };
 
     var _productExists = function(product){
+      var bool = false;
       _cartItems.forEach(function(prod){
+        console.log(prod.product.id, product.id);
         if(prod.product.id === product.id){
-          return true;
+
+          bool = true;
         }
       });
-      return false;
+      return bool;
+    };
+
+    obj.setQuantity = function(object, quantity){
+      _cartItems[object.product.id].quantity = quantity;
+      console.log(_cartItems[object.product.id].quantity);
     };
 
     return obj;

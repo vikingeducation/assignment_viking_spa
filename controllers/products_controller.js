@@ -8,11 +8,12 @@ store.controller( 'ProductsCtrl', [
     $scope.product = Products.getProduct( $stateParams.id );
 
     $scope.addProductCart = function(product, quantity){
+      quantity = quantity || 1;
       ShoppingCart.addItem(product, quantity);
-      console.log("Added" + product.name);
+      // console.log("Added" + product.name);
     };
 
-    console.log($stateParams);
+    // console.log($stateParams);
 
 
   }

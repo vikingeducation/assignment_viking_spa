@@ -4,9 +4,11 @@
       {{prod.product.name}}
     </div>
     <div class="col-xs-6">
-      <p>Quantity: {{prod.quantity}}</p>
+      <label>Quantity:</label>
+      <input type="number" value="{{prod.quantity}}" ng-model="quantity"></input>
       <p>Price: {{prod.product.price | currency }} each</p>
-      <p>Total: {{prod.product.price * prod.quantity | currency}}</p>
+      <p>Total: {{prod.product.price * quantity | currency}}</p>
+      <button ng-click="setQuantity(prod, quantity)">Update Quantity</button>
     </div>
   </div>
 
