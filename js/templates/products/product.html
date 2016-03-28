@@ -3,7 +3,7 @@
       <h5 class= 'text-center'>{{product.name}}</h5>
     </div>
     <div class="pic-thumbnail-container">
-      <img class="pic-thumbnail" src='img/250.jpeg' alt='bear'>
+      <a ui-sref='landing.products.show({id: product.id})' ><img class="pic-thumbnail" src='img/250.jpeg' alt='bear'></a>
       <div class='price'>{{product.price}}</div>
     </div>
     <div style='background:#222; padding: 10px' class='text-center'>

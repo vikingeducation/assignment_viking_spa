@@ -4,12 +4,10 @@
       <label></label>
       <select class="form-control" ng-model="categoryFilter">
         <option></option>
-        <option value="1">Toys</option>
-        <option value="2">Foods</option>
-        <option value="3">Shoes</option>
+        <option ng-repeat='category in categoryList' value='{{category.id}}' >{{category.name}}</option>
       </select>
     </form>
   </div>
 </div>
 
-<product ng-repeat='product in productList | filter: categoryFilter' product='product'></product>
+<product ng-repeat='product in productList | filter: {categoryId: categoryFilter}' product='product'></product>

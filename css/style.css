@@ -2,6 +2,11 @@
   position: relative;
 }
 
+.pic-large{
+  width: 500px;
+  height: 500px;
+}
+
 .pic-thumbnail {
   width: 100%;
 }

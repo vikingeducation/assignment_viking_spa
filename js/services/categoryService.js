@@ -1,11 +1,19 @@
 store.factory('categoryService', function() {
 
   var _list = [];
+  var _categoryNames = {};
 
   var generateCategory = function() {
     var category = {};
-    category.name = faker.hacker.noun();
+
+    category.name = faker.commerce.productAdjective();
+      while(_categoryNames[category.name]){
+      category.name = faker.commerce.productAdjective();
+    }
+    
+    category.id = _list.length + 1;
     _list.push(category);
+    _categoryNames[category.name] = true;
   };
 
   var generateCategoryList = function() {
@@ -17,7 +25,7 @@ store.factory('categoryService', function() {
   };
 
   var getRandomCategoryId = function() {
-    return Math.floor(Math.random() * _list.length);
+    return Math.floor(Math.random() * _list.length) + 1;
   };
 
   var getCategory = function(categoryId) {

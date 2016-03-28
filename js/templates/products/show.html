@@ -1,0 +1,15 @@
+<!-- <h1>{{product.name}}</h1>
+<p>{{product.description}}</p>
+ -->
+<div class="panel panel-default">
+  <div class="panel-heading">{{categoryList[currentProduct.categoryId].name}}: {{currentProduct.name}}</div>
+  <div class="panel-body">
+    <img class="pic-large center-block" src='img/250.jpeg' alt='bear'>
+    <div class='text-center'>{{currentProduct.description}}</div>
+    <div class='text-center'><strong>Price: {{currentProduct.price}}</strong></div>
+  </div>
+  <div class="panel-footer">
+    <input type="text" placeholder="Quantity"></input>
+    <button type="button" class="btn btn-primary">Order</button>
+  </div>
+</div>

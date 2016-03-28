@@ -7,8 +7,8 @@ store.factory('productService',
     var generateProduct = function() {
       var product = {};
 
-      product.id = faker.random.number();
-      product.name = faker.hacker.noun();
+      product.id = _list.length + 1;
+      product.name = faker.commerce.productName();
       product.price = faker.finance.amount();
       product.description = faker.lorem.paragraph();
       product.categoryId = categoryService.getRandomCategoryId();
