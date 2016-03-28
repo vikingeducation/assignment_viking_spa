@@ -4,7 +4,7 @@ viking.controller('ProductsCtrl', ['$scope', '$stateParams', 'productService', f
 
   $scope.product;
   $scope.currentCategory = 0;
-  $scope.products = [];
+  $scope.products = $scope.products || [];
 
   if( !$scope.products.length ) {
     productService.setupProducts();

@@ -2,8 +2,8 @@ viking.factory('productService', function() {
   var obj = {};
   var currentCategoryID = 1;
   var currentProductID = 0;
-  var categories = [];
-  var products = [];
+  var categories = categories || [];
+  var products = products || [];
 
   obj.createCategory = function() {
     var category = {};
@@ -11,7 +11,6 @@ viking.factory('productService', function() {
     category.id = currentCategoryID;
     categories.push(category);
     currentCategoryID++;
-    // console.log('category ' + category.name + ' created');
   };
 
   obj.createProduct = function(category) {
@@ -23,7 +22,6 @@ viking.factory('productService', function() {
     product.id = currentProductID;
     products.push(product);
     currentProductID++;
-    // console.log('Product ' + product.name + ' created');
   };
 
   obj.getCategories = function() {
@@ -35,23 +33,27 @@ viking.factory('productService', function() {
   };
 
   obj.setupProducts = function() {
-    products = [];
 
-    var allCategory = {
-      id: 0,
-      name: "All"
-    };
-    categories = [ allCategory ];
-
-    for(var i = 0; i < 10; i++) {
-      obj.createCategory();
-    };
-
-    categories.forEach(function(category) {
-      for(var i = 0; i < 5; i++) {
-        obj.createProduct(category);
+    if (categories.length === 0) {
+      var allCategory = {
+        id: 0,
+        name: "All"
       };
-    });
+      categories = [ allCategory ];
+
+      for(var i = 0; i < 10; i++) {
+        obj.createCategory();
+      };
+    };
+
+    if (products.length === 0) {
+
+      categories.forEach(function(category) {
+        for(var i = 0; i < 5; i++) {
+          obj.createProduct(category);
+        };
+      });
+    };
   };
 
   return obj;
