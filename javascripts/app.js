@@ -8,7 +8,7 @@ viking.config(function($stateProvider, $urlRouterProvider) {
 
     .state('products', {
       url: '/products',
-      controller: 'ProductsCtrl',
+      // controller: 'ProductsCtrl',
       template: '<div ui-view></div>'
     })
 

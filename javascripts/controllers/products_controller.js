@@ -1,7 +1,6 @@
 viking.controller('ProductsCtrl', ['$scope', '$stateParams', 'productService', function($scope, $stateParams, productService) {
 
   console.log('got to products controller');
-  debugger;
 
   $scope.product;
   $scope.currentCategory = 0;
