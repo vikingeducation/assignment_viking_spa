@@ -7,6 +7,6 @@
 
 
   <div ng-repeat='product in products | categoryFilter:  currentCategory' class='col-md-4'>
-    <product></product>
+    <product product='product' add-to-cart='addToCart(product)'></product>
   </div>
 </div>
