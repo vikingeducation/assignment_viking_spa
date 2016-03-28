@@ -1,0 +1,5 @@
+.price{
+  float:right;
+  z-index:200;
+  border:1px solid #222;
+}

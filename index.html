@@ -2,6 +2,7 @@
 <html ng-app="store">
   <head>
     <title>The Viking Store</title>
+    <script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
 
@@ -14,9 +15,10 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style='margin:0'>
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
@@ -30,8 +32,12 @@
       </div>
       </div>
     </nav>
+    <div ui-view>
 
-    <h1>hello</h1>
+    </div>
+
+
+  
     <script src="js/app.js"></script>
 
   </body>
