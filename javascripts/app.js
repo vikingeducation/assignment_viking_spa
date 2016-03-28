@@ -1,16 +1,16 @@
-var vikingStore = angular.module( 'vikingStore',['ui.router'] );
+var vikingStore = angular.module( 'vikingStore',['ui.router', 'fakerModule'] );
 
 vikingStore.config( function( $stateProvider, $urlRouterProvider ){
 
   // Set our root / default path
-  $urlRouterProvider.otherwise("");
+  $urlRouterProvider.otherwise("/products");
 
   $stateProvider
 
     .state('products', {
-      url: '',
+      url: '/products',
       templateUrl: 'javascripts/templates/products.html',
-      controller: 'javascripts/controllers/productCtrl.js'
+      controller: 'productCtrl'
     })
     .state('products.index', {
       url: '/index',

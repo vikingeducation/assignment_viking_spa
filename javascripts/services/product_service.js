@@ -1,51 +1,34 @@
-app.factory('productService', [function(){
+vikingStore.factory('productService', function(faker) {
+
+  var PRODUCTS = [];
+  var CATEGORIES = [];
 
   var obj = {};
 
-  _products = [
-         {
-          text: "Goto school",
-          dueDate: new Date(),
-          completed: false 
-         },
-         {
-          text: "Prepare lunch",
-          dueDate: new Date(),
-          completed: false 
-         },
-         {
-          text: "Dentist Appointment",
-          dueDate: new Date(),
-          completed: false 
-        },
-  ];
+  obj.getProducts = function() {
+    return PRODUCTS;
+  }
 
-  // obj.filters = [{name: 'None', value: ''},
-  //             {name: 'Completed on Top', value: "-completed"},
-  //             {name: 'Completed on Bottom', value: "completed"},
-  //             {name: 'Due Date Ascending', value: 'dueDate'},
-  //             {name: 'Due Date Descending', value: '-dueDate'}
-  //             ];
-  
-  // obj.getFilters = function(){
-  //   return obj.filters;
-  // };
+  obj.getCategories = function() {
+    return CATEGORIES;
+  }
 
-  obj.allItems = function(){
-    return _items;
-  };
+  for (var i=0; i < 10; i++) {
+   var category = {};
+   category.id = i;
+   category.name = faker.commerce.department();
+   CATEGORIES.push(category);
+  }
 
-  obj.get = function(i){
-    return _items[i];
-  };
+  for (var i=0; i < 30; i++) {
+   var product = {};
+   product.id = i;
+   product.name = faker.commerce.productName();
+   product.description = faker.lorem.paragraph();
+   product.price = faker.commerce.price();
+   product.category = CATEGORIES[Math.floor(Math.random * 10)];
+   PRODUCTS.push(product);
+  }
 
-  obj.deleteTodo = function(item){
-   _items.splice(_items.indexOf(item),1);
-  };
-
-  obj.addTodo = function(item){
-    _items.push(item);
-  };
-
-  return obj; 
-}]);
+  return obj;
+})

@@ -1,9 +1,36 @@
-<table>
-  <tr ng-repeat="product in products">
-    <td>
-       {{product.name}}
-    </td>
-  </tr>    
-</table> 
+<div class="row">
+  <div class="col-sm-12">
+    <div class="pull-right">
+      <select class="dropdown" ng-model="categoryId">
+        <option ng-repeat="category in categories" value="{{ category.id }}">
+          {{ category.name }}
+        </option>
+      </select>
+
+      <button class="btn btn-sm btn-success">
+        Apply Filter
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4" ng-repeat="product in products">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        {{ product.name }}
+      </div>
+      <div class="panel-body content-body">
+        <span class="price pull-right">{{ product.price | currency }}</span>
+        <img src="https://www.raymears.com/_rm_pictures_/Gransfors-Small-ForestAxe1.jpg" class="img img-responsive img-thumbnail">
+      </div>
+      <div class="panel-footer text-center">
+        <button class="btn btn-primary">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
  <h1> PRODUCTS INDEX </h1>

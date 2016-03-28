@@ -1,7 +1,8 @@
 vikingStore.controller('productCtrl',
-  ['$scope',
-  function($scope) {
+  ['$scope', 'productService',
+  function($scope, productService) {
 
-    $scope.products = PRODUCTS;
+    $scope.products = productService.getProducts();
+    $scope.categories = productService.getCategories();
 
   }]);
