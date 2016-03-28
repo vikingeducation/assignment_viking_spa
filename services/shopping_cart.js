@@ -9,11 +9,15 @@ store.factory( 'ShoppingCart', [
     };
 
     obj.addItem = function(object, quantity) {
+
       obj.removeItem(object);
-        if(_productExists(object)){
+        if( _productExists(object) && !quantity ){
+          _cartItems[object.id].quantity++
+        } else if ( _productExists(object) ) {
           _cartItems[object.id].quantity = quantity;
         }
         else{
+          quantity = quantity || 1;
           _cartItems.push({product: object, quantity: quantity});
         }
     };

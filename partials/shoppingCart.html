@@ -1,3 +1,13 @@
 <div ng-repeat="prod in products">
-  {{prod.name}}
+  <div class="row">
+    <div class="col-xs-6">
+      {{prod.product.name}}
+    </div>
+    <div class="col-xs-6">
+      <p>Quantity: {{prod.quantity}}</p>
+      <p>Price: {{prod.product.price | currency }} each</p>
+      <p>Total: {{prod.product.price * prod.quantity | currency}}</p>
+    </div>
+  </div>
+
 </div>

@@ -6,7 +6,7 @@
 </div>
 
 <div class="row">
-  <div product ng-repeat="product in products | categoryFilter: category " prod="product">
+  <div product ng-repeat="product in products | categoryFilter: category " prod="product" add-product="addProductCart(product, quantity)">
 
   </div>
 </div>

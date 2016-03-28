@@ -3,7 +3,8 @@ store.directive('product', function(){
     templateUrl: 'directives/templates/productDirective.html',
     restrict: 'A',
     scope: {
-      prod: "="
+      prod: "=",
+      addProduct: "&"
     }
   };
 });
