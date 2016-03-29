@@ -9,6 +9,6 @@
     <div class='price'>{{product.price | currency}}</div>
   </div>
   <div style='background:#222; padding: 10px' class='text-center'>
-    <div class='btn btn-warning' ng-click="addItem(product.id, 1)">Add to Cart</div>
+    <div class='btn btn-warning' ng-click="addItem({productId: product.id, quantity: 1})">Add to Cart</div>
   </div>
 </div>
