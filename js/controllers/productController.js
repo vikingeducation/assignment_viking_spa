@@ -7,7 +7,7 @@ store.controller('productCtrl',
 
     $scope.addItem = function(product, quantity) {
       cartService.addItem(product, quantity);
-      console.log(cartService.listAll());
+      console.log(product, quantity);
       $scope.quantity = "";
     };
 

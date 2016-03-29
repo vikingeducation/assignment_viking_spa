@@ -3,7 +3,8 @@ store.directive('product', function(){
     templateUrl: "js/templates/products/product.html",
     restrict: "E",
     scope: {
-      product: '='
+      product: '=',
+      addItem: '&'
     }
   };
 });

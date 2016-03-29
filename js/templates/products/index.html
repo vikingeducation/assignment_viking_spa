@@ -10,4 +10,4 @@
   </div>
 </div>
 
-<product ng-repeat='product in productList | filter: {categoryId: categoryFilter}' product='product'></product>
+<product ng-repeat='product in productList | filter: {categoryId: categoryFilter}' product='product' add-item='addItem(product, quantity)'></product>
