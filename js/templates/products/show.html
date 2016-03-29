@@ -1,15 +1,18 @@
 <a ui-sref="landing.products.index">Back to Home</a>
 
 <div class="panel panel-default">
-  <div class="panel-heading">{{currentProduct.name}}</div>
+  <!-- <div class="panel-heading">{{currentProduct.name}}</div> -->
+  <div class="panel-heading">{{ getProduct().name }}</div>
   <div class="panel-body">
     <img class="pic-large center-block" src='img/250.jpeg' alt='bear'>
-    <div class="text-center">{{categoryList[currentProduct.categoryId].name}}</div>
-    <div class='text-center'>{{currentProduct.description}}</div>
-    <div class='text-center'><strong>Price: {{currentProduct.price}}</strong></div>
+    <!-- <div class="text-center">{{categoryList[currentProduct.categoryId].name}}</div> -->
+    <div class="text-center">{{ getCategory(getProduct().categoryId).name }}</div>
+    <!-- <div class='text-center'>{{currentProduct.description}}</div> -->
+    <div class="text-center">{{ getProduct().description }}</div>
+    <div class='text-center'><strong>Price: {{ getProduct().price }}</strong></div>
   </div>
   <div class="panel-footer">
     <input type="text" placeholder="Quantity" ng-model="quantity"></input>
-    <button type="button" class="btn btn-primary" ng-click="addItem(currentProduct.id, quantity)">Add to Cart</button>
+    <button type="button" class="btn btn-primary" ng-click="addItem(getProduct().id, quantity)">Add to Cart</button>
   </div>
 </div>

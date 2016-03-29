@@ -32,7 +32,8 @@ store.factory('productService',
 
     return {
       generateProductList: generateProductList,
-      getProductList: getProductList
+      getProductList: getProductList,
+      getProduct: getProduct
     };
 
 }]);

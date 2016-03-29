@@ -28,7 +28,7 @@ store.factory('categoryService', function() {
   };
 
   var getCategory = function(categoryId) {
-    return _list[categoryId];
+    return _list[categoryId - 1];
   };
 
   var getCategoryList = function() {
