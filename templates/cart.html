@@ -1,0 +1,18 @@
+<div>
+
+
+  <div ng-repeat="cartItem in cartItems">
+    <div>{{ cartItem.product.name }}: {{ cartItem.product.price | currency }}</div>
+
+    <form name="editProduct" class="form-inline">
+      <div class="form-group">
+        <label>Quantity: </label>
+        <input type="number" ng-model="cartItem.quantity" ng-required='quantity > 0' class="form-control" min="0">
+      </div>
+    </form><br/>
+  </div>
+
+  <label>Total: {{ getCartTotal() | currency}}</label>
+
+
+</div>
