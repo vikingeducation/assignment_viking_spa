@@ -16,7 +16,7 @@ store.factory('productService',
     };
 
     var generateProductList = function() {
-      var productMax = Math.floor(Math.random() * 95) + 5;
+      var productMax = Math.floor(Math.random() * 15) + 5;
       for (var i = 0; i < productMax; i++) {
         generateProduct();
       }

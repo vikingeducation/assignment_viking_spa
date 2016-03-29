@@ -35,6 +35,12 @@ store.config(function($stateProvider, $urlRouterProvider){
           $scope.quantity = "";
         };
       },
-   });
+   })
+
+   .state('landing.cart', {
+    url:'/cart',
+    templateUrl: 'js/templates/cart/cart.html',
+    controller: 'productCtrl'
+   })
 
 });
