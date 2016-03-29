@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Price</td>
+      <td>Quantity</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="item in cartItems">
+      <td>{{ item.name }}</td>
+      <td>{{ item.category }}</td>
+      <td>{{ item.price }}</td>
+      <td><input type="text" name="quantity" value="{{ item.quantity }}" class="form-control" 
+                 ng-model="item.quantity"></td>
+      <td><button ng-click="updateQuantity(item, item.quantity)" class="btn btn-sm btn-success">Update Quantity</button></td>
+      <td><button ng-click="removeItem(item.id)" class="btn btn-sm btn-danger">Remove Item</button></td>
+    </tr>
+  </tbody>
+</table>
