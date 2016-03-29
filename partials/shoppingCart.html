@@ -1,0 +1,20 @@
+<div ng-repeat="(key, prod) in products">
+  <div class="row">
+    <div class="col-xs-6">
+      {{prod.product.name}}
+    </div>
+    <div class="col-xs-6">
+      <label>Quantity:</label>
+      <input type="number" ng-model="prod.quantity"></input>
+      <p>Price: {{prod.product.price | currency }} each</p>
+      <p>Total: {{prod.product.price * prod.quantity | currency}}</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Total Price: {{ total | currency }}</p>
+  </div>
+</div>

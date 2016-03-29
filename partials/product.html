@@ -1,0 +1,25 @@
+<div class="col-xs-6 col-xs-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-header">
+      {{product.name}}
+    </div>
+    <div class="panel-body">
+      <img class="img-responsive" ng-src="{{ product.photo }}"/>
+      <p>{{product.price}}</p>
+    </div>
+    <div class="panel-footer">
+
+      <a ui-sref="products.show.description">Description</a>
+
+      <a ui-sref="products.show.ratings">Ratings</a>
+
+      <div ui-view></div>
+
+      <br>
+      <label for="quantity">Quantity</label><br>
+      <input type="number" name="quantity" ng-model="quantity">
+      <br>
+      <button type="button" name="add-to-cart" ng-click="addProductCart(product, quantity)">Add to Cart</button>
+    </div>
+  </div>
+</div>
