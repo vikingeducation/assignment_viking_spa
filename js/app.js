@@ -44,3 +44,8 @@ store.config(function($stateProvider, $urlRouterProvider){
    })
 
 });
+
+// ADDING ERROR HANDLING
+myApp.run(function($rootScope){
+  $rootScope.$on("$stateChangeError", console.log.bind(console));
+});
