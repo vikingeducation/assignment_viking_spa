@@ -23,6 +23,18 @@ store.controller('productCtrl',
       $scope.quantity = "";
     };
 
+    $scope.removeItem = function(productId) {
+      cartService.removeItem(productId);
+    };
+
+    $scope.updateItem = function(productId, quantity) {
+      cartService.updateItem(productId, quantity);
+    };
+
+    $scope.totalPrice = function() {
+      return cartService.totalPrice();
+    };
+
     $scope.listAll = function(){
       $scope.cart = cartService.listAll();
     };
