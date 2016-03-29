@@ -7,6 +7,7 @@ store.controller('productCtrl',
     $scope.categoryList = categoryService.getCategoryList();
     $scope.productList = productService.getProductList();
     $scope.cart = cartService.listAll();
+    $scope.cartLength = cartService.getCartLength();
     $scope.quantity = "";
 
     $scope.getProduct = function() {
@@ -25,10 +26,12 @@ store.controller('productCtrl',
       cartService.addItem(product, quantity);
       console.log(cartService.listAll());
       $scope.quantity = "";
+      $scope.cartLength = cartService.getCartLength();
     };
 
     $scope.removeItem = function(productId) {
       cartService.removeItem(productId);
+      $scope.cartLength = cartService.getCartLength();
     };
 
     $scope.updateItem = function(productId, quantity) {

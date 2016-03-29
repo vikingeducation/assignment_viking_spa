@@ -9,6 +9,7 @@ store.config(function($stateProvider, $urlRouterProvider){
     .state('landing', {
       url: '',
       templateUrl: 'js/templates/landing.html',
+      controller: 'productCtrl'
     })
 
     .state('landing.products',{
@@ -20,6 +21,7 @@ store.config(function($stateProvider, $urlRouterProvider){
     .state('landing.products.index',{
       url: '/index',
       templateUrl: 'js/templates/products/index.html',
+      controller: 'productCtrl'
     })
 
     .state('landing.products.show',{

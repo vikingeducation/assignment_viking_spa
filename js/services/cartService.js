@@ -32,12 +32,21 @@ store.factory('cartService',
       return total;
     };
 
+    var getCartLength = function() {
+      var length = 0;
+      for (var productId in _cart) {
+        if (_cart.hasOwnProperty(productId)) length++;
+      }
+      return length;
+    };
+
     return {
       listAll: listAll,
       addItem: addItem,
       removeItem: removeItem,
       updateItem: updateItem,
-      totalPrice: totalPrice
+      totalPrice: totalPrice,
+      getCartLength: getCartLength
     };
 
 }]);
