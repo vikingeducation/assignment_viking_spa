@@ -10,7 +10,7 @@ store.factory('cartService',
     };
 
     var addItem = function(productId, quantity) {
-      if (_car[productId]) _cart[productId] += quantity;
+      if (_cart[productId]) _cart[productId] += quantity;
       else _cart[productId] = quantity;
     };
 
