@@ -8,6 +8,5 @@ store.controller( 'CartCtrl', [
     };
 
     $scope.total = ShoppingCart.totalPrice();
-
   }
 ]);
