@@ -10,16 +10,18 @@ store.factory('categoryService', function() {
       while(_categoryNames[category.name]){
       category.name = faker.commerce.productAdjective();
     }
-    
+
     category.id = _list.length + 1;
     _list.push(category);
     _categoryNames[category.name] = true;
   };
 
   var generateCategoryList = function() {
-    var categoryMax = Math.floor(Math.random() * 5) + 5;
-    for (var i = 0; i < categoryMax; i++) {
-      generateCategory();
+    if (_list.length === 0) {
+      var categoryMax = Math.floor(Math.random() * 5) + 5;
+      for (var i = 0; i < categoryMax; i++) {
+        generateCategory();
+      }
     }
     return _list;
   };

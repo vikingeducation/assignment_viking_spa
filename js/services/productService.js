@@ -16,9 +16,11 @@ store.factory('productService',
     };
 
     var generateProductList = function() {
-      var productMax = Math.floor(Math.random() * 15) + 5;
-      for (var i = 0; i < productMax; i++) {
-        generateProduct();
+      if (_list.length === 0) {
+        var productMax = Math.floor(Math.random() * 15) + 5;
+        for (var i = 0; i < productMax; i++) {
+          generateProduct();
+        }
       }
       return _list;
     };
