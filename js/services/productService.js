@@ -15,18 +15,19 @@ store.factory('productService',
       _list.push(product);
     };
 
-    var generateProductList = function() {
-      if (_list.length === 0) {
-        var productMax = Math.floor(Math.random() * 15) + 5;
-        for (var i = 0; i < productMax; i++) {
-          generateProduct();
-        }
+    var generateProductList = (function() {
+      var productMax = Math.floor(Math.random() * 15) + 5;
+      for (var i = 0; i < productMax; i++) {
+        generateProduct();
       }
-      return _list;
-    };
+    })();
 
     var getProductList = function() {
       return _list;
+    };
+
+    var getProduct = function(productId) {
+      return _list[productId - 1];
     };
 
     return {

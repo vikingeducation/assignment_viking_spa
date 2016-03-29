@@ -1,22 +1,43 @@
-store.factory('cartService', function() {
+store.factory('cartService',
+['productService',
+  function(productService) {
 
-  var _cart = {};
+    // {productId: quantity}
+    var _cart = {};
 
-  var listAll = function() {
-    return _cart;
-  };
+    var listAll = function() {
+      return _cart;
+    };
 
-  var addItem = function(object, quantity) {
-      _cart[object] = quantity;
-  };
+    var addItem = function(productId, quantity) {
+      if (_car[productId]) _cart[productId] += quantity;
+      else _cart[productId] = quantity;
+    };
 
-  var removeItem = function() {
-  };
+    var removeItem = function(productId) {
+      if (_cart[productId]) delete _cart[productId];
+    };
 
-  return {
-    listAll: listAll,
-    addItem: addItem,
-    removeItem: removeItem
-  };
+    var updateItem = function(productId, quantity) {
+      if (_cart[productId]) _cart[productId] = quantity;
+    };
 
-});
+    var totalPrice = function() {
+      var total = 0;
+      for (var productId in _cart) {
+        var price = productService.getProduct(productId).price;
+        var quantity = _cart[productId];
+        total += price * quantity;
+      }
+      return total;
+    };
+
+    return {
+      listAll: listAll,
+      addItem: addItem,
+      removeItem: removeItem,
+      updateItem: updateItem,
+      totalPrice: totalPrice
+    };
+
+}]);

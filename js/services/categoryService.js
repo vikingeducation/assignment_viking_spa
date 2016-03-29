@@ -16,15 +16,12 @@ store.factory('categoryService', function() {
     _categoryNames[category.name] = true;
   };
 
-  var generateCategoryList = function() {
-    if (_list.length === 0) {
-      var categoryMax = Math.floor(Math.random() * 5) + 5;
-      for (var i = 0; i < categoryMax; i++) {
-        generateCategory();
-      }
+  var generateCategoryList = (function() {
+    var categoryMax = Math.floor(Math.random() * 5) + 5;
+    for (var i = 0; i < categoryMax; i++) {
+      generateCategory();
     }
-    return _list;
-  };
+  })();
 
   var getRandomCategoryId = function() {
     return Math.floor(Math.random() * _list.length) + 1;

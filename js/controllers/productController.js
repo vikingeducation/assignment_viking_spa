@@ -4,9 +4,9 @@ store.controller('productCtrl',
 
     console.log("hello");
 
-    $scope.categoryList = categoryService.generateCategoryList();
-    $scope.productList = productService.generateProductList();
-    $scope.cart = {};
+    $scope.categoryList = categoryService.getCategoryList();
+    $scope.productList = productService.getProductList();
+    $scope.cart = cartService.listAll();
 
     $scope.addItem = function(product, quantity) {
       cartService.addItem(product, quantity);

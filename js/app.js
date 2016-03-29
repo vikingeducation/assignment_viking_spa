@@ -2,7 +2,7 @@ var store = angular.module('store', ['ui.router']);
 
 store.config(function($stateProvider, $urlRouterProvider){
 
-   $urlRouterProvider.otherwise("landing");
+   $urlRouterProvider.otherwise("/products");
 
    $stateProvider
 
