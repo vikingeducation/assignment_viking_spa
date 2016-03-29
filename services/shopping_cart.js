@@ -1,50 +1,70 @@
-store.factory( 'ShoppingCart', [
-  function() {
+store.factory( 'ShoppingCart', [ 'Products',
+  function(Products) {
     var obj = {};
 
-    var _cartItems = [];
+    var _cartItems = {};
 
     obj.listAll = function() {
       return _cartItems;
     };
 
-    obj.addItem = function(object, quantity) {
+    obj.totalItems = function() {
+      var total = 0;
 
-      // obj.removeItem(object);
-        if( _productExists(object)){
-          // console.log(_productExists(object) + " if");
-          _cartItems[object.id].quantity += parseInt(quantity);
+      for ( var i = 0; i < Products.getProducts().length; i++ ) {
+        if (_cartItems[i]) {
+          total += _cartItems[i].quantity;
         }
-        else{
-          // console.log(_productExists(object) + " else");
-          _cartItems.push({product: object, quantity: quantity});
+      }
+
+      return total;
+    };
+
+    obj.totalPrice = function() {
+      var total = 0;
+
+      for ( var i = 0; i < Products.getProducts().length; i++ ) {
+        if (_cartItems[i]) {
+          total += _cartItems[i].quantity * _cartItems[i].product.price;
         }
+      }
+
+      return total;
+    };
+
+    obj.addItem = function(item, quantity) {
+      // console.log(item, quantity);
+      if( _cartItems[item.id] ){
+        _cartItems[item.id].quantity += quantity;
+      }
+      else{
+        _cartItems[item.id] = { product: item, quantity: quantity };
+      }
+      // console.log(_cartItems);
     };
 
     obj.removeItem = function(item) {
-      for ( var i = _cartItems.length - 1; i >= 0; i-- ) {
-        if ( _cartItems[i].product.id === item.id ) {
-          _cartItems.splice( i, 1 );
-        }
+      if ( _cartItems[item.id] ) {
+        delete _cartItems[item.id];
       }
     };
 
-    var _productExists = function(product){
-      var bool = false;
-      _cartItems.forEach(function(prod){
-        console.log(prod.product.id, product.id);
-        if(prod.product.id === product.id){
+    // var _productExists = function(product){
+    //   var bool = false;
+    //   _cartItems.forEach(function(prod){
+    //     console.log(prod.product.id, product.id);
+    //     if(prod.product.id === product.id){
+    //
+    //       bool = true;
+    //     }
+    //   });
+    //   return bool;
+    // };
 
-          bool = true;
-        }
-      });
-      return bool;
-    };
-
-    obj.setQuantity = function(object, quantity){
-      _cartItems[object.product.id].quantity = quantity;
-      console.log(_cartItems[object.product.id].quantity);
-    };
+    // obj.setQuantity = function(object, quantity){
+    //   _cartItems[object.product.id].quantity = quantity;
+    //   console.log(_cartItems[object.product.id].quantity);
+    // };
 
     return obj;
   }

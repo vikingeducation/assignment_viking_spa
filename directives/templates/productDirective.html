@@ -10,7 +10,7 @@
       <p>{{prod.price}}</p>
     </div>
     <div class="panel-footer">
-      <button type="button" name="add-to-cart" ng-click="addProduct(prod)">Add to Cart</button>
+      <button type="button" name="add-to-cart" ng-click="addProduct({product: prod, quantity: 1})">Add to Cart</button>
     </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ store.controller( 'CartCtrl', [
       ShoppingCart.setQuantity(object, quantity);
     };
 
-    console.log($scope.products);
+    $scope.total = ShoppingCart.totalPrice();
 
   }
 ]);

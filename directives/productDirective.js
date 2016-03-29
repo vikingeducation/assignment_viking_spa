@@ -4,7 +4,8 @@ store.directive('product', function(){
     restrict: 'A',
     scope: {
       prod: "=",
-      addProduct: "&"
+      addProduct: "&",
+      increment: "="
     }
   };
 });

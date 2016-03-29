@@ -7,14 +7,13 @@ store.controller( 'ProductsCtrl', [
 
     $scope.product = Products.getProduct( $stateParams.id );
 
-    $scope.addProductCart = function(product, quantity){
-      quantity = quantity || 1;
+    $scope.increment = 1;
+
+    $scope.addProductCart = function(product, quantity) {
+      console.log(product,quantity)
       ShoppingCart.addItem(product, quantity);
-      // console.log("Added" + product.name);
     };
 
-    // console.log($stateParams);
-
-
+    $scope.cartItems = ShoppingCart.totalItems();
   }
 ]);
