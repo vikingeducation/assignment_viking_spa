@@ -1,0 +1,13 @@
+<div class="col-xs-12">
+  <div style='float: right'>
+    <form class="form-inline">
+      <label for="categories">Filter by Category</label>
+      <select class="form-control" ng-model="categoryFilter" name="categories">
+        <option></option>
+        <option ng-repeat='category in categoryList' value='{{category.id}}' >{{category.name}}</option>
+      </select>
+    </form>
+  </div>
+</div>
+
+<product ng-repeat='product in productList | filter: {categoryId: categoryFilter}' product='product' add-item='addItem(product.id, 1)'></product>

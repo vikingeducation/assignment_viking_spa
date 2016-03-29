@@ -1,0 +1,22 @@
+.pic-thumbnail-container {
+  position: relative;
+}
+
+.pic-large{
+  width: 500px;
+  height: 500px;
+}
+
+.pic-thumbnail {
+  width: 100%;
+}
+
+.price {
+  position: absolute;
+  z-index: 10;
+  padding: 5px;
+  border:1px solid #222;
+  top: 0;
+  right: 0;
+  background: white;
+}

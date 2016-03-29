@@ -1,0 +1,14 @@
+<div class='col-xs-4' style="margin: 15px 0 15px 0">
+  <div style='color:white; background:#222; padding:5px' >
+    <h5 class= 'text-center'>{{product.name}}</h5>
+  </div>
+  <div class="pic-thumbnail-container">
+    <a ui-sref='landing.products.show({id: product.id})' >
+      <img class="pic-thumbnail" src='img/250.jpeg' alt='bear'>
+    </a>
+    <div class='price'>{{product.price | currency}}</div>
+  </div>
+  <div style='background:#222; padding: 10px' class='text-center'>
+    <div class='btn btn-warning' ng-click="addItem({productId: product.id, quantity: 1})">Add to Cart</div>
+  </div>
+</div>
