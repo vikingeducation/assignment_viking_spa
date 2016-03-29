@@ -17,6 +17,8 @@ store.factory( 'ShoppingCart', [ 'Products',
         }
       }
 
+      console.log(total);
+
       return total;
     };
 

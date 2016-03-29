@@ -7,13 +7,11 @@ store.controller( 'ProductsCtrl', [
 
     $scope.product = Products.getProduct( $stateParams.id );
 
-    $scope.increment = 1;
-
     $scope.addProductCart = function(product, quantity) {
       console.log(product,quantity)
       ShoppingCart.addItem(product, quantity);
     };
 
-    $scope.cartItems = ShoppingCart.totalItems();
+    $scope.cartItems = { total: ShoppingCart.totalItems() };
   }
 ]);
