@@ -1,1 +1,35 @@
-<h1> Your Cart </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Your Cart</h1>
+      <table class="table">
+        <tr>
+          <td>Id</td>
+          <td>Product Name</td>
+          <td>Product Category</td>
+          <td>Price</td>
+          <td>Quantity</td>
+          <td>Update</td>
+          <td>Remove</td>
+        </tr>
+        <tr ng-repeat="(id, quantity) in cart">
+          <td>{{ id }}</td>
+          <td>{{ getProductById(id).name }}</td>
+          <td>{{ getCategory(getProductById(id).categoryId).name }}</td>
+          <td>{{ getProductById(id).price }}</td>
+          <td>{{ quantity }}</td>
+          <td>
+            <input type="text" ng-model="newQuantity" placeholder="Quantity">
+            <input type="submit" value="Update" ng-click="updateItem(id, newQuantity)">
+          </td>
+          <td>
+            <input type="submit" value="Remove" ng-click="removeItem(id)">
+          </td>
+        </tr>
+      </table>
+
+      <h3>Current Total: {{ totalPrice() | currency }} </h3>
+
+    </div>
+  </div>
+</div>

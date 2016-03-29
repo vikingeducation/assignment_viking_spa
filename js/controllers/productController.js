@@ -13,6 +13,10 @@ store.controller('productCtrl',
       return productService.getProduct($stateParams.id);
     };
 
+    $scope.getProductById = function(productId) {
+      return productService.getProduct(productId);
+    };
+
     $scope.getCategory = function(categoryId) {
       return categoryService.getCategory(categoryId);
     };

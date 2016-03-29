@@ -26,15 +26,6 @@ store.config(function($stateProvider, $urlRouterProvider){
     url: '/show/:id/',
       templateUrl: 'js/templates/products/show.html',
       controller: 'productCtrl'
-      // controller: function( $scope, $stateParams, cartService ){
-      //     $scope.currentProduct = $scope.productList[$stateParams.id-1];
-      //     $scope.quantity = "";
-      //     $scope.addItem = function(product, quantity) {
-      //       cartService.addItem(product, quantity);
-      //       console.log(cartService.listAll());
-      //       $scope.quantity = "";
-      //     };
-      //   },
     })
 
     .state('landing.cart', {
