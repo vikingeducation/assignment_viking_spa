@@ -1,8 +1,8 @@
 <div class="col-xs-12">
   <div style='float: right'>
     <form class="form-inline">
-      <label></label>
-      <select class="form-control" ng-model="categoryFilter">
+      <label for="categories">Filter by Category</label>
+      <select class="form-control" ng-model="categoryFilter" name="categories">
         <option></option>
         <option ng-repeat='category in categoryList' value='{{category.id}}' >{{category.name}}</option>
       </select>
