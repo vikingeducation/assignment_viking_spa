@@ -10,8 +10,8 @@ store.factory('cartService',
     };
 
     var addItem = function(productId, quantity) {
-      if (_cart[productId]) _cart[productId] += quantity;
-      else _cart[productId] = quantity;
+      if (_cart[productId]) _cart[productId] += parseInt(quantity);
+      else _cart[productId] = parseInt(quantity);
     };
 
     var removeItem = function(productId) {
