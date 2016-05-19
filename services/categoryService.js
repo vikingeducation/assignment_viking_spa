@@ -2,7 +2,7 @@
 // Category Service
 // ----------------------------------------
 
-VikingSPA.factory('categoryService', function() {
+VikingSPA.factory('categoryService', ['_', function(_) {
 
   var service = {},
       _categories = SEEDS.categories;
@@ -26,4 +26,4 @@ VikingSPA.factory('categoryService', function() {
 
   return service;
 
-});
+}]);

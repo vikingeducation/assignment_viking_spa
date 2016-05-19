@@ -2,7 +2,7 @@
 // Product Service
 // ----------------------------------------
 
-VikingSPA.factory('productService', function() {
+VikingSPA.factory('productService', ['_', function(_) {
 
   var service = {},
       _products = SEEDS.products;
@@ -26,7 +26,7 @@ VikingSPA.factory('productService', function() {
 
   return service;
 
-});
+}]);
 
 
 

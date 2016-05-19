@@ -4,8 +4,8 @@
 
 
 VikingSPA.controller('ProductsCtrl',
-  ['$scope', '$stateParams', 'productService', 'categoryService', 'cartService',
-  function($scope, $stateParams, productService, categoryService, cartService) {
+  ['_', '$scope', '$stateParams', 'productService', 'categoryService', 'cartService',
+  function(_, $scope, $stateParams, productService, categoryService, cartService) {
 
     $scope.cart = {
       add: function(product, quantity) {

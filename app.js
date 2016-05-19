@@ -4,18 +4,25 @@
 
 var VikingSPA = angular.module('VikingSPA', ['ui.router']);
 
-VikingSPA.config(function($stateProvider, $urlRouterProvider) {
+
+VikingSPA.factory('_', ['$window', function($window) {
+  return $window._;
+}]);
+
+
+VikingSPA.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/products');
 
   $stateProvider
     .state('products', {
+      abstract: true,
       url: '/products',
       controller: 'ProductsCtrl',
-      templateUrl: 'templates/products/products.html'
+      template: '<div ui-view></div>'
     })
     .state('products.index', {
-      url: '/index',
+      url: '',
       controller: 'ProductsCtrl',
       templateUrl: 'templates/products/index.html'
     })
@@ -30,7 +37,7 @@ VikingSPA.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/carts/show.html'
     });
 
-});
+}]);
 
 
 

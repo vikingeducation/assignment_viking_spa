@@ -2,7 +2,7 @@
 // Cart Service
 // ----------------------------------------
 
-VikingSPA.factory('cartService', function() {
+VikingSPA.factory('cartService', ['_', function(_) {
 
   var service = {},
       _items = [];
@@ -39,7 +39,7 @@ VikingSPA.factory('cartService', function() {
 
   return service;
 
-});
+}]);
 
 
 
