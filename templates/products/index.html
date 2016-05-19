@@ -11,7 +11,7 @@
 
 <!-- Products -->
 <div class="row">
-  <div class="product col-xs-4" ng-if="products.length" ng-repeat="product in products | filter: categoryId" product="product"></div>
+  <div class="product col-xs-4" ng-if="products.length" ng-repeat="product in products | filter: categoryId" product="product" cart="cart"></div>
 </div>
 
 <div class="text-danger" ng-if="products.length == 0">

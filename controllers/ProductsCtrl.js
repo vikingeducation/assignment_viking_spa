@@ -8,9 +8,7 @@ VikingSPA.controller('ProductsCtrl',
   function(_, $scope, $stateParams, productService, categoryService, cartService) {
 
     $scope.cart = {
-      add: function(product, quantity) {
-        cartService.add(product, quantity);
-      },
+      add: cartService.add,
       remove: cartService.remove,
       all: cartService.all
     };
