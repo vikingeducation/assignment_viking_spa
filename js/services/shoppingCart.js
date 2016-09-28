@@ -8,6 +8,11 @@ app.factory('cartService', ['_', function(_){
 		return _cart;
 	};
 
+	stub.deleteItem = function(item) {
+		_.remove(_cart, { item: item });
+	};
+
+
 	stub.addItem = function(object, quantity){
 
 
@@ -15,7 +20,7 @@ app.factory('cartService', ['_', function(_){
 		if(_.find(_cart, {item: object})){
 			// deletes the item if it reaches 0
 			if ( (_.find(_cart, {item: object})).quantity + quantity <= 0) {
-				_.remove(_cart, { item: object });
+				stub.deleteItem(object);
 			} else {
 
 			// else just incre/decrement score
@@ -30,8 +35,6 @@ app.factory('cartService', ['_', function(_){
 		}
 	};
 
-	// stub.removeItem = function(){
-
-	// }
+	
 	return stub;
 }]);

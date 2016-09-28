@@ -14,4 +14,8 @@ app.controller('CartIndexCtrl',
     cartService.addItem(item, -1);
   };
 
+  $scope.delete = function(item) {
+    cartService.deleteItem(item);
+  };
+
 }]);
