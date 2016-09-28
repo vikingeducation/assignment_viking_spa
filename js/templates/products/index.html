@@ -1,6 +1,8 @@
+<a ui-sref="products.cart">View Cart <span>{{ getLength() }}</span></a>
+
 <select ng-model="selectedCategory">
   <option value=""></option>
   <option ng-repeat="category in categories" ng-value="{{ category.id }}">{{ category.name }}</option>
 </select>
-<div>{{cart | json }}</div>
+
 <product ng-repeat="product in products | filter:{categories: selectedCategory}" product="product"></product>

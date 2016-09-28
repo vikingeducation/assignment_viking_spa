@@ -17,6 +17,9 @@ vikingStore.config(function($stateProvider, $urlRouterProvider) {
       resolve: {
         products: function(productsService) {
           return productsService.getProducts();
+        },
+        cart: function(CartService) {
+          return CartService.listAll();
         }
       }
     })
@@ -29,6 +32,11 @@ vikingStore.config(function($stateProvider, $urlRouterProvider) {
           return productsService.getCategories();
         }
       }
+    })
+    .state('products.cart', {
+      url: '/cart',
+      templateUrl: 'js/templates/products/cart.html',
+      controller: 'ProductsCartCtrl'
     })
     .state('products.show', {
       url: '/:id',

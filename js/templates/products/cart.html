@@ -1,0 +1,21 @@
+<table>
+  <tr ng-repeat="(id, quantity) in cart">
+
+    <td>Name: {{ products[id].name }}</td>
+
+    <td>Price: {{ products[id].price }}</td>
+
+    <td>Quantity:
+      <span ng-hide="editing">{{ quantity }}</span>
+      <input ng-show="editing" type="number" ng-value="quantity" ng-model="newQuantity">
+    </td>
+
+    <td>
+      <button ng-click="editing = !editing; newQuantity = quantity;">{{ editing ? "Cancel" : "Update Quantity" }}</button>
+    </td>
+
+    <td ng-show="editing">
+      <button ng-click="addItem(id, newQuantity); editing = !editing;">Save Quantity</button>
+    </td>
+  </tr>
+</table>
