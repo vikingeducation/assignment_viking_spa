@@ -3,7 +3,8 @@ app.controller('ProductsCtrl',
 'products',
 'categories',
 '_',
-function($scope, products, categories, _) {
+'CartsService',
+function($scope, products, categories, _, CartsService) {
   $scope.sortegory = "";
   $scope.products = products;
   $scope.categories = categories;
@@ -20,4 +21,20 @@ function($scope, products, categories, _) {
       return $scope.products;
     }
   };
+
+  $scope.getCart = function() {
+    CartsService.getCart();
+  };
+
+  // $scope.cart = CartsService.getCart;
+  //
+  // $scope.testingCartService = function() {
+  //   console.log($scope.products);
+  //   for (var i = 0; i < Object.keys($scope.products).length; i++) {
+  //     CartsService.addItem($scope.products[i]);
+  //     console.log($scope.products[i]);
+  //   }
+  //   return $scope.cart();
+  // };
+
 }]);

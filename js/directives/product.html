@@ -5,6 +5,7 @@
     <p class="card-text text-muted">
       {{ categories[product.category_id].name }}
     </p>
-    <a ui-sref="products.show({ id: product.id })" class="btn btn-primary">Add to cart</a>
+    <a ui-sref="products.show({ id: product.id })" class="btn btn-primary">Show item</a>
+    <a ng-click='addItem()' class="btn btn-primary">Add to cart</a>
   </div>
 </div>
