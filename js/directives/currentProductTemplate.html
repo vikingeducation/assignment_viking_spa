@@ -13,8 +13,8 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <input type="number" ng-model="currentProductQuantity" min="0">
-      <a ui-sref="#" class="btn btn-primary">Buy</a>
+      <input type="number" ng-model="currentProductQuantity" min="1">
+      <a ng-click="addItem(currentProduct.id, currentProductQuantity)" class="btn btn-primary">Buy</a>
     </div>
   </div>
 

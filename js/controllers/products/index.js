@@ -1,8 +1,10 @@
-vikingStore.controller('ProductsIndexCtrl', ['$scope', 'productsService', 'products', 'categories', function($scope, productsService, products, categories){
+vikingStore.controller('ProductsIndexCtrl', ['$scope', 'products', 'categories', 'CartService', function($scope, products, categories, CartService){
 
   $scope.products = products;
 
   $scope.categories = categories;
+
+  $scope.cart = CartService.listAll();
 
 
 }])

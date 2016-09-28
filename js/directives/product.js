@@ -1,4 +1,4 @@
-vikingStore.directive('product', [function(){
+vikingStore.directive('product', ['CartService', function(CartService){
 
   return {
 
@@ -6,6 +6,16 @@ vikingStore.directive('product', [function(){
     restrict: "E",
     scope: {
       product: "="
+    },
+    link: function(scope) {
+      
+      scope.addItem = function(id, quantity) {
+        if (quantity === undefined) {
+          quantity = 1;
+        }
+        CartService.addItem(id, quantity);
+      }
+
     }
   }
 
