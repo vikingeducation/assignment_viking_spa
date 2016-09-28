@@ -1,11 +1,12 @@
 <select ng-model="selectedCategory">
+  <option ng-value = ""></option>
   <option ng-repeat="category in categories" ng-value="category.id"> 
     {{category.name}}
   </option>
 </select>
 
 <div class="container-fluid">
-  <div class="card card-outline-info col-xs-4" ng-repeat="product in products">
+  <div style="padding:0px" class="card card-outline-info col-xs-4" ng-repeat="product in products | catFilter: selectedCategory">
 
     <div class="card-header">
       {{product.id}}: {{product.name}}

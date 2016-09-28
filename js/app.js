@@ -15,10 +15,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     //   templateUrl: 'index.html',
     //   controller: 'StoreCtrl'
     // })
-    .state('state1', {
+    .state('products', {
       url: '/products',
       templateUrl: 'products.html',
       controller: 'StoreCtrl'
-
-    });
+    })
+    .state('products.show', {
+      url:
+    })
 }]);
