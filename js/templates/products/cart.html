@@ -1,3 +1,4 @@
+<a ui-sref="products.checkoutPersonalInfo">Checkout</a>
 <table>
   <tr ng-repeat="(id, quantity) in cart">
 
@@ -16,6 +17,10 @@
 
     <td ng-show="editing">
       <button ng-click="addItem(id, newQuantity); editing = !editing;">Save Quantity</button>
+    </td>
+
+    <td ng-hide="editing">
+      <button ng-click="removeItem(id)">Remove Item</button>
     </td>
   </tr>
 </table>

@@ -6,4 +6,8 @@ vikingStore.controller('ProductsCartCtrl', ['$scope', 'cart', 'products', 'CartS
   $scope.addItem = function(id, quantity) {
     CartService.addItem(id, quantity);
   }
+
+  $scope.removeItem = function(id) {
+    CartService.removeItem(id);
+  }
 }]);

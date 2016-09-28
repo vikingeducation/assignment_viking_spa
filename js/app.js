@@ -38,6 +38,31 @@ vikingStore.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'js/templates/products/cart.html',
       controller: 'ProductsCartCtrl'
     })
+    .state('products.checkoutPersonalInfo', {
+      url: '/checkoutPersonalInfo',
+      templateUrl: 'js/templates/products/checkoutPersonalInfo.html',
+      controller: 'ProductsCheckoutCtrl'
+    })
+    .state('products.checkoutAddressInfo', {
+      url: '/checkoutAddressInfo',
+      templateUrl: 'js/templates/products/checkoutAddressInfo.html',
+      controller: 'ProductsCheckoutCtrl'
+    })
+    .state('products.checkoutPaymentInfo', {
+      url: '/checkoutPaymentInfo',
+      templateUrl: 'js/templates/products/checkoutPaymentInfo.html',
+      controller: 'ProductsCheckoutCtrl'
+    })
+    .state('products.checkoutConfirm', {
+      url: '/checkoutAddressInfo',
+      templateUrl: 'js/templates/products/checkoutConfirm.html',
+      controller: 'ProductsCheckoutCtrl'
+    })
+    .state('products.checkoutOrderPlaced', {
+      url: '/checkoutAddressInfo',
+      templateUrl: 'js/templates/products/checkoutOrderPlaced.html',
+      controller: 'ProductsCheckoutCtrl'
+    })
     .state('products.show', {
       url: '/:id',
       templateUrl: 'js/templates/products/show.html',
