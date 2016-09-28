@@ -11,7 +11,7 @@ app.factory('faker', ['$window', function($window) {
 app.config(function($stateProvider, $urlRouterProvider){
 
   $urlRouterProvider.otherwise("/products");
-
+  
   $stateProvider
     .state('products', {
       url: '/products',
@@ -23,5 +23,4 @@ app.config(function($stateProvider, $urlRouterProvider){
       templateUrl: 'js/templates/products/index.html',
       controller: 'ProductsCtrl'
     });
-
 });
