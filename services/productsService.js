@@ -22,7 +22,8 @@ app.factory("productsService", ["_", function(_) {
         name: faker.commerce.productName(),
         price: faker.commerce.price(),
         image: "http://www.jamesbondlifestyle.com/sites/default/files/styles/fancybox_popup/public/images/product/cl014-sunspel-grey-shirt.jpg?itok=9JsNP14R",
-        description: faker.commerce.color(),
+        description: faker.lorem.sentence(),
+        long_description: faker.lorem.sentences(),
         categories: categories
       }
 
