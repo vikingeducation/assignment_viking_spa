@@ -6,8 +6,15 @@ app.directive('product', ['CartsService', function(CartsService) {
     link: function(scope) {
       scope.addItem = function() {
         CartsService.addItem(scope.product);
-        console.log('this is being added on line 9, product.js');
       };
+
+      scope.getItemQuantity = function() {
+        return CartsService.getItemQuantity(scope.product);
+      };
+
+      scope.removeItem = function() {
+        CartsService.removeItem(scope.product);
+      }
     }
   };
 }]);

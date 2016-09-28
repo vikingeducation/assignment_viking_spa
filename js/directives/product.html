@@ -7,5 +7,6 @@
     </p>
     <a ui-sref="products.show({ id: product.id })" class="btn btn-primary">Show item</a>
     <a ng-click='addItem()' class="btn btn-primary">Add to cart</a>
+    <a ng-show="getItemQuantity()" ng-click='removeItem()' class="btn btn-danger">Remove Item</a>
   </div>
 </div>

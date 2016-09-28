@@ -22,6 +22,8 @@ app.factory('CategoriesService', ['faker', function(faker) {
   }
 
   CategoriesService.seed = function() {
+    _category_id = 0;
+    _categories = {};
     return _seedCategories(5);
   };
 
@@ -30,8 +32,6 @@ app.factory('CategoriesService', ['faker', function(faker) {
   };
 
   CategoriesService.updateCategoryProducts = function(catId, prodId){
-    console.log(catId);
-    console.log(prodId);
     _categories[catId].product_ids.push(prodId);
   };
 

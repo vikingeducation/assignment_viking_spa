@@ -50,10 +50,6 @@ app.config(function($stateProvider, $urlRouterProvider){
           });
         }],
         product: ['ProductsService', '$stateParams', function (ProductsService, $stateParams) {
-          console.log("Products Service is here: ");
-          console.log(ProductsService);
-          console.log("State params is here: ");
-          console.log($stateParams.id);
           return ProductsService
                       .findProduct($stateParams.id)
                       .then(function(data){
