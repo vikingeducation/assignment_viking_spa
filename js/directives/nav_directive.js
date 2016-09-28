@@ -6,6 +6,10 @@ app.directive("navBar", ["CartsService", function(CartsService){
       scope.cartTotal = function(){
         return CartsService.cartTotal();
       };
+      scope.getItems = function() {
+        console.log(CartsService.getCart());
+        return CartsService.getCart();
+      };
     }
   };
 }]);

@@ -12,10 +12,17 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ cartTotal() | currency }} <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div
+        class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item"
+          href="#">
+            TOTAL | {{ cartTotal() | currency }}
+          </a>
+          <a
+          ng-repeat='item in getItems()'
+          class="dropdown-item"
+          href="#"><span>{{ item.name }}</span> | <span class='text-info'>{{ item.quantity }}</span></a>
         </div>
       </div>
     </ul>

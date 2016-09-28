@@ -6,7 +6,10 @@ app.factory('CartsService', ['faker', function(faker) {
     if (_cart[item.id]){
       _cart[item.id].quantity += 1;
     } else {
-      _cart[item.id] = { id: item.id, price: item.price, quantity: 1 };
+      _cart[item.id] = { id: item.id,
+                         name: item.name,
+                         price: item.price,
+                         quantity: 1 };
     }
   };
 
