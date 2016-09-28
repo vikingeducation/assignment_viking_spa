@@ -27,7 +27,7 @@ spa.config(function($stateProvider, $urlRouterProvider){
     .state('cart', {
       url: '/cart',
       templateUrl: '/templates/cart.html',
-      controller: 'StoreShowCtrl'
+      controller: 'CartCtrl'
     })
 
 });
