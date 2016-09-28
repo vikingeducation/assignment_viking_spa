@@ -8,7 +8,9 @@ app.directive('buyBtn', ['cartService', function(cartService){
 		},
 		link: function(scope){
 			scope.addItem = function(){
+				if (scope.quantity) {
 				cartService.addItem(scope.item, scope.quantity);
+				}
 				scope.quantity = undefined;
 			};
 		}

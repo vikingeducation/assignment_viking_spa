@@ -9,9 +9,21 @@ app.factory('cartService', ['_', function(_){
 	};
 
 	stub.addItem = function(object, quantity){
+
+
+
 		if(_.find(_cart, {item: object})){
-			_.find(_cart, {item: object}).quantity += quantity;
+			// deletes the item if it reaches 0
+			if ( (_.find(_cart, {item: object})).quantity + quantity <= 0) {
+				_.remove(_cart, { item: object });
+			} else {
+
+			// else just incre/decrement score
+				_.find(_cart, {item: object}).quantity += quantity;
+			}
+
 		}
+
 		else{
 			_cart.push({item: object, 
 					quantity: quantity});	

@@ -9,7 +9,10 @@ app.controller('ProductCtrl',
   $scope.product = productsService.getProduct($stateParams.productId);
   
   $scope.addItem = function(){
+    if ($scope.quantity) {
   	cartService.addItem($scope.product, $scope.quantity);
+    }
+    $scope.quantity = undefined;
   };
 
 }]);

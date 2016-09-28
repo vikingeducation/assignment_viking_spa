@@ -1,15 +1,35 @@
-<h2>Your Cart</h2>
-<table>
-	<tr>
-		<th>Item</th>
-		<th>Quantity</th>
-		<th>Price</th>
-		<th>Total</th>
-	</tr>
-	<tr ng-repeat="item in cart">
-		<td>{{item.item.name}}</td>
-		<td>{{item.quantity}}</td>
-		<td>{{item.item.price}}</td>
-		<td>{{item.quantity*item.item.price}}</td>
-	</tr>
+
+<h2 class="container-fluid">Your Cart</h2>
+
+<table class="table table-inverse">
+	<thead>
+		<tr>
+			<th>Item</th>
+			<th>Quantity</th>
+			<th></th>
+			<th></th>
+			<th>Price</th>
+			<th>Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in cart">
+			<td>{{item.item.name}}</td>
+
+			
+			<td>
+				{{item.quantity}}
+			</td>
+			<td>
+				<button ng-click="minus(item.item)" class="fa fa-minus" aria-hidden="true"></button>
+			</td>
+
+			<td>
+				<button ng-click="add(item.item)" class="fa fa-plus" aria-hidden="true"></button>
+			</td>
+
+			<td>{{item.item.price}}</td>
+			<td>{{item.quantity*item.item.price}}</td>
+		</tr>
+	</tbody>
 </table>
