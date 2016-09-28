@@ -1,1 +1,30 @@
-<input type="text" name="address" >
+<div class = "form-group">
+  <label>
+    First Name<br>
+    <input type="text" name="fname" ng-model="formData.fname"
+      class = "form-control" required ng-maxlength="50">
+  </label>
+  <br>
+  <label>
+    Last Name<br>
+    <input type="text" name="lname" ng-model="formData.lname"
+      class = "form-control" required ng-maxlength="50">
+  </label>
+  <br>
+  <label for="email">Email Address<br>
+  <input type="email" name="email" ng-model="formData.email"
+    class = "form-control" required ng-minlength="6">
+  </label>
+  <br>
+  <label for="shipping">Shipping Address<br>
+  <input type="text" name="shipping" ng-model="formData.shipping"
+    class = "form-control" required ng-minlength="6">
+  </label>
+  <br>
+  <label for="billing">Billing Address<br>
+  <input type="text" name="billing" ng-model="formData.billing"
+    class = "form-control" required ng-minlength="6">
+  </label>
+  <br>
+  <a class="btn btn-primary" ui-sref="checkout.payment">Payment</a>
+</div>
