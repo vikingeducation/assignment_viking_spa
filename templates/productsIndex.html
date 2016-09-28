@@ -1,6 +1,10 @@
-{{ products }}
-asdfa
-
-<div ng-repeat="product in products">
-
+<div class="container">
+  <select ng-model="categoryId">
+    <option value = "{{category.id}}" ng-repeat="category in categories">{{category.category_name}}</option>
+  </select>
+  <div class="row">
+    <div ng-repeat="product in products | filterByCategory:categoryId">
+      <product product="product"></product>
+    </div>
+  </div>
 </div>

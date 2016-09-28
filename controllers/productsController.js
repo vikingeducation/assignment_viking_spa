@@ -3,6 +3,7 @@ app.controller("ProductsCtrl", ["$scope", "productsService", function($scope, pr
   productsService.createProducts();
 
   $scope.products = productsService.getProducts();
+  $scope.categories = productsService.getCategories();
 
 
 

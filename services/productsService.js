@@ -32,8 +32,6 @@ app.factory("productsService", function() {
     }
   }
 
-
-
   var getProducts = function() {
     return _products;
   }
@@ -41,15 +39,20 @@ app.factory("productsService", function() {
   var createCategories = function() {
     for(var i = 0; i < 5; i++) {
       _categories[i] = {
-        category_name: faker.commerce.department,
+        category_name: faker.commerce.department(),
         products: []
       }
     }
   }
 
+  var getCategories = function() {
+    return _categories;
+  }
+
   return {
     createProducts: createProducts,
-    getProducts: getProducts
+    getProducts: getProducts,
+    getCategories: getCategories
   }
 })
 

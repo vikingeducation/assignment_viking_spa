@@ -6,11 +6,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state("products", {
       url: "/products",
       templateUrl: "/templates/products.html",
-      controller: "ProductsCtrl"
+      abstract: true
     }
 
   ).state("products.index", {
-    url:"/index",
+    url:"",
     templateUrl: "/templates/productsIndex.html",
     controller: "ProductsCtrl"
   })
