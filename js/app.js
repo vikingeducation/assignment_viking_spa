@@ -10,6 +10,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 
   $urlRouterProvider.otherwise('/products');
   $stateProvider
+    .state('cart',{
+      url:'/cart',
+      templateUrl: 'cartIndex.html',
+      controller: 'CartIndexCtrl'
+    })
     .state('products', {
       url: '/products',
       abstract: true,
