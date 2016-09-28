@@ -3,9 +3,19 @@
   <img src="assets/images/axe_silent_night_small.jpg" alt="The Silent Night">
   <span class="price-box">{{product.price | currency}}</span>
 </div>
-<div>
-  {{product.description}}
-</div>
+
 <form class="black-row">
-  <input type="submit" value="Add to Cart" class="cart-btn"></input>
+  <input type="submit" value="Add to Cart" class="cart-btn" ng-click="addItem()"></input>
+  <label>Quantity: </label>
+  <select ng-model="addQuantity">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
 </form>
+
+<p>
+  Description: {{product.description}}
+</p>

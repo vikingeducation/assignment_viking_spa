@@ -6,7 +6,7 @@ spa.config(function($stateProvider, $urlRouterProvider){
 
   $stateProvider
     .state('products', {
-      url: '/',
+      url: '',
       abstract: true,
       template: '<div ui-view></div>',
       controller: 'StoreCtrl'
@@ -18,9 +18,15 @@ spa.config(function($stateProvider, $urlRouterProvider){
       controller: 'StoreCtrl'
     })
 
-    .state('product.show', {
-      url: ':product_id',
+    .state('products.show', {
+      url: '/:product_id',
       templateUrl: '/templates/product.html',
+      controller: 'StoreShowCtrl'
+    })
+
+    .state('cart', {
+      url: '/cart',
+      templateUrl: '/templates/cart.html',
       controller: 'StoreShowCtrl'
     })
 
