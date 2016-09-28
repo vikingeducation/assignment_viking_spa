@@ -49,10 +49,16 @@ app.config(function($stateProvider, $urlRouterProvider){
             return data;
           });
         }],
-        product: ['ProductsService', function ($stateParams, ProductsService) {
-          return ProductsService.findProduct($stateParams.id).then(function(data){
-            return data;
-          });
+        product: ['ProductsService', '$stateParams', function (ProductsService, $stateParams) {
+          console.log("Products Service is here: ");
+          console.log(ProductsService);
+          console.log("State params is here: ");
+          console.log($stateParams.id);
+          return ProductsService
+                      .findProduct($stateParams.id)
+                      .then(function(data){
+                        return data;
+                      });
         }]
       }
     });

@@ -37,7 +37,7 @@ app.factory('ProductsService', ['faker', 'CategoriesService', function(faker, Ca
 
   ProductsService.findProduct = function(id){
     console.log(id);
-    return _products[id];
+    return Promise.resolve(_products[id]);
   };
 
   return ProductsService;
