@@ -9,6 +9,7 @@ VikingStore.factory('productsService', ['_', 'faker', function(_, faker) {
     product.description = faker.lorem.sentence();
     product.price = faker.commerce.price();
     product.categoryId = Math.ceil(Math.random() * 3);
+    product.image = faker.image.abstract();
     _products[i] = product;
   }
 
@@ -33,11 +34,16 @@ VikingStore.factory('productsService', ['_', 'faker', function(_, faker) {
 
   var allCategories = function() {
     return _categories
+  };
+
+  var getProduct = function(productId) {
+    return _products[String(productId)]
   }
 
   return {
     allProducts: allProducts,
-    allCategories: allCategories
+    allCategories: allCategories,
+    getProduct: getProduct
   }
 
 }]);
