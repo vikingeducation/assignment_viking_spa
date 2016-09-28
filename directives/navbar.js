@@ -3,10 +3,10 @@ VikingStore.directive("navbar", ["shoppingCartsService", function(shoppingCartsS
     templateUrl: "directives/navbar.html",
     restrict: "E",
     scope: {
-      numItemsInCart: "="
+      
+    },
+    link: function(scope) {
+      scope.numItemsInCart = shoppingCartsService.numItems;
     }
-    // link: function(scope) {
-    //   scope.numItemsInCart = shoppingCartsService.numItems();
-    // }
   }
 }])

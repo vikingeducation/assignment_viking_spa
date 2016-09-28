@@ -32,3 +32,7 @@ VikingStore.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 VikingStore.factory('_', ['$window', function($window) {return $window._;}]);
 
 VikingStore.factory('faker', ['$window', function($window) {return $window.faker}]);
+
+VikingStore.run(function($rootScope){
+  $rootScope.$on("$stateChangeError", console.log.bind(console));
+});

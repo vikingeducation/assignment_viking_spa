@@ -11,6 +11,7 @@ VikingStore.controller("ProductsIndexCtrl", ["$scope", "productsService", "shopp
 
   $scope.addItemToCart = function(item, amnt) {
     shoppingCartService.addItemToCart(item, amnt);
+    $scope.quantity = "";
   };
 
   $scope.cart = function() {
