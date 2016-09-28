@@ -9,8 +9,8 @@
       <p ng-repeat="id in product.categories" class="category-name">
         {{ categories[id].category_name }} |
       </p>
-
-      <a ui-sref="products.show({id:{{product.id}}})" class="btn btn-primary">Buy: {{product.price | currency}}</a>
+       <button class="btn btn-primary">Add to Cart: {{product.price | currency}}</button>
+      <a ui-sref="products.show({id:{{product.id}}})" class="btn btn-primary">Show Product</a>
     </div>
   </div>
 </div>

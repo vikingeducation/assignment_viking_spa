@@ -1,5 +1,6 @@
-app.controller("productShowCtrl",["$scope", "productsService", "$stateParams", function($scope, productService, $stateParams) {
+app.controller("productShowCtrl",["$scope", "productsService", "shoppingCartService", "$stateParams", function($scope, productService, shoppingCartService, $stateParams) {
 
+  $scope.cartItems = shoppingCartService.listAll();
 
   $scope.product = productService.getProduct($stateParams.id);
   $scope.categories = productService.getCategories();
@@ -13,6 +14,10 @@ app.controller("productShowCtrl",["$scope", "productsService", "$stateParams", f
     if($scope.quantity > 0) {
       $scope.quantity--;
     }
+  }
+
+  $scope.addToCart = function() {
+    $shoppingCartService.addItem($scope.product.id, $scope.quantity);
   }
 
 }])

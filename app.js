@@ -23,6 +23,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url:"/:id",
     templateUrl: "templates/productShow.html",
     controller: "productShowCtrl"
-
   })
 })
