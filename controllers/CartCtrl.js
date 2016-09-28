@@ -2,4 +2,6 @@ VikingStore.controller("CartCtrl", ["$scope", "productsService", "shoppingCartsS
 
   $scope.cart = shoppingCartsService.getCart();
 
+  $scope.numItemsInCart = shoppingCartsService.numItems();
+
 }]);
