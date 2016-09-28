@@ -24,4 +24,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: "templates/productShow.html",
     controller: "productShowCtrl"
   })
+
+  .state("cart", {
+    url:"/cart",
+    templateUrl: "templates/cart.html",
+    controller: "cartCtrl"
+  })
 })

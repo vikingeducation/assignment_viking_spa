@@ -8,17 +8,17 @@ var listAll = function() {
 
 var addItem = function(item, quantity) {
   if(_cart[item]) {
-    _cart[item] += quantity; 
+    _cart[item] += quantity;
   }
   else {
     _cart[item] = quantity;
   }
-  
+
 }
 
 var removeItem = function(item, quantity) {
-  if(quantity) { 
-    _cart[item] -= quantity;
+  if(quantity) {
+    _cart[item] = quantity;
   }
   else {
     delete _cart[item];

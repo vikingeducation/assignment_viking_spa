@@ -17,7 +17,7 @@ app.controller("productShowCtrl",["$scope", "productsService", "shoppingCartServ
   }
 
   $scope.addToCart = function() {
-    $shoppingCartService.addItem($scope.product.id, $scope.quantity);
+    shoppingCartService.addItem($scope.product.id, $scope.quantity);
   }
 
 }])

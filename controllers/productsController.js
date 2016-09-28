@@ -8,8 +8,9 @@ app.controller("ProductsCtrl", ["$scope", "productsService", "shoppingCartServic
   $scope.categoryId = -1;
 
 
-  $scope.addToCart = function() {
-    $shoppingCartService.addItem($scope.product.id, 1);
+  $scope.addToCart = function(id) {
+    console.log(id)
+    shoppingCartService.addItem(id, 1);
   }
 
 }])

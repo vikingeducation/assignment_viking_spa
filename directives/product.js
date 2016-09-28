@@ -5,7 +5,8 @@ app.directive("product", function() {
     templateUrl: "directives/product.html",
     scope: {
       product: "=",
-      categories: "="
+      categories: "=",
+      addToCart: "&"
     }
   }
 });

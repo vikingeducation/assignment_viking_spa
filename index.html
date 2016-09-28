@@ -18,14 +18,18 @@
   <!-- Controllers -->
   <script src= "controllers/productsController.js"></script>
   <script src= "controllers/productShowController.js"></script>
+  <script src= "controllers/cartController.js"></script>
+
   <!-- Filters -->
   <script src= "filters/filterByCategory.js"></script>
 </head>
 <body>
 
-  <nav>
-      <a ui-sref="products.index">All Products</a>
-
+  <nav class="navbar nav navbar-default">
+      <ul>
+        <li><a ui-sref="products.index">All Products</a></li>
+        <li><a ui-sref="cart">View Cart</a></li>
+      </ul>
   </nav>
 
   <div ui-view></div>
