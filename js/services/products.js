@@ -1,18 +1,18 @@
 vikingStore.factory('productsService', ["_", function(_) {
 
-  var _products = {};
+  var _products = [];
   var _categories = {};
 
   var _populateProducts = function() {
-    var products = {};
+    var products = [];
     for (var i = 0; i < 11; i++) {
-      products[i] = {
+      products.push({
         id: i,
         name: faker.commerce.productName(),
         price: faker.commerce.price(),
         description: faker.company.catchPhrase(),
         categories: _addCategoriesToProducts()
-      }
+      });
     }
     return angular.copy(products, _products)
   };
@@ -40,7 +40,7 @@ vikingStore.factory('productsService', ["_", function(_) {
     }
   };
 
-  var getCategories = function(){
+  var getCategories = function() {
     if (_.isEmpty(_categories)) {
       return _populateCategories();
     } else {
@@ -48,9 +48,14 @@ vikingStore.factory('productsService', ["_", function(_) {
     }
   };
 
+  var find = function(id) {
+     return _products[id];
+  }
+
   return {
     getProducts: getProducts,
-    getCategories: getCategories
+    getCategories: getCategories,
+    find: find
   }
 
 }]);

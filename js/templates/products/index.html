@@ -1,1 +1,6 @@
-<product ng-repeat="product in products" product="product"></product>
+<select ng-model="selectedCategory">
+  <option value=""></option>
+  <option ng-repeat="category in categories" ng-value="{{ category.id }}">{{ category.name }}</option>
+</select>
+
+<product ng-repeat="product in products | filter:{categories: selectedCategory}" product="product"></product>

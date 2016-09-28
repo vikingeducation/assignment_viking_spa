@@ -13,12 +13,27 @@ vikingStore.config(function($stateProvider, $urlRouterProvider) {
     .state('products', {
       url: '/products',
       abstract: true,
-      template: '<div ui-view></div>'
+      template: '<div ui-view></div>',
+      resolve: {
+        products: function(productsService) {
+          return productsService.getProducts();
+        }
+      }
     })
     .state('products.index', {
       url: '',
       templateUrl: 'js/templates/products/index.html',
-      controller: 'ProductsIndexCtrl'
+      controller: 'ProductsIndexCtrl',
+      resolve: {
+        categories: function(productsService) {
+          return productsService.getCategories();
+        }
+      }
+    })
+    .state('products.show', {
+      url: '/:id',
+      templateUrl: 'js/templates/products/show.html',
+      controller: 'ProductsShowCtrl'
     })
 
 });

@@ -1,8 +1,8 @@
-vikingStore.controller('ProductsIndexCtrl', ['$scope', 'productsService', function($scope, productsService){
+vikingStore.controller('ProductsIndexCtrl', ['$scope', 'productsService', 'products', 'categories', function($scope, productsService, products, categories){
 
-  $scope.products = productsService.getProducts();
+  $scope.products = products;
 
-  $scope.categories = productsService.getCategories();
+  $scope.categories = categories;
 
 
 }])
