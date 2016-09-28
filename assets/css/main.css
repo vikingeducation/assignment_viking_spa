@@ -1,0 +1,317 @@
+/*****************************
+
+Body
+
+*****************************/
+/*
+nav,
+footer,
+header,
+section,
+div {
+  border: 1px solid #ccc;
+}*/
+
+body {
+  font: 16px/1.5em Montserrat, Helvetica, sans-serif;
+}
+
+a { 
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #666;
+}
+
+/*****************************
+
+Navbar
+
+*****************************/
+
+nav {
+  height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: 50px;
+  position: fixed;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  z-index: 999;
+  opacity: .97;
+}
+
+.title-container {
+  display: inline-block;
+  vertical-align: middle;
+  float: left;
+  margin-left: 12%;
+}
+
+.nav-title {
+  font-size: 24px;
+  line-height: 50px;
+}
+
+.shopping-cart {
+  float: right;
+  display: inline-block;
+  margin-right: 12%;
+  font-size: 14px;
+}
+
+.cart-img {
+  background: url("../images/icon_empty_cart.png") 50% 50% no-repeat;
+  background-size: 30px 30px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 20px;
+}
+
+.cart-img:hover {
+  opacity: .6;
+}
+
+.nav-spacer {
+  height: 50px;
+  background: #fff;
+}
+
+/*****************************
+
+Banner
+
+*****************************/
+
+.banner {
+  height: 300px;
+  line-height: 300px;
+  position: relative;
+}
+
+.banner:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../images/viking_ship_background_medium.jpg") 50% 50%;
+  background-size: auto 100%;
+  opacity: .05;
+}
+
+.banner h1 {
+  display: block;
+  font-size: 56px;
+  font-weight: 700px;
+  color: #000;
+  opacity: 1;
+  /*margin: 50% auto;*/
+  margin: 0 auto;
+  text-align: center;
+  widows: 80%;
+}
+
+/*****************************
+
+Headers
+
+*****************************/
+
+.sub-header h2,
+.sub-header h3 {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.black-row {
+  background: #333;
+  color: #fff;
+  display: block;
+}
+
+.sub-header h2 {
+  font-size: 36px;
+  padding: 1.5em 0;
+  font-weight: 700;
+}
+
+.sub-header h3 {
+  font-size: 24px;
+  padding: 1em 0;
+  font-style: italic;
+  color: #666;
+}
+
+header {
+    clear: both;
+    border-bottom: 2px solid #333;
+}
+
+/*****************************
+
+Store Inventory
+
+*****************************/
+
+main {
+  text-align: center;
+  width: 76%;
+  margin: 0 auto;
+}
+
+.column {
+  width: 33.33%;
+  vertical-align: top;
+  margin-top: 40px;
+  display: inline-block;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.item-container {
+  width: 100%;
+}
+
+.item-container h4 {
+  font-size: 24px;
+  padding: .7em 0;
+  font-weight: 700;
+  border-radius: 5px 5px 0 0;
+}
+
+.item-container img {
+  height: 150px;
+  max-width: 100%;
+  margin-right: 20px;
+  padding: 5px 0;
+}
+
+.image-container {
+  position: relative;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+.price-box {
+  position: absolute;
+  background: #fff;
+  top: -8px;
+  right: 15px;
+  padding: .1em .3em;
+  text-align: center;
+  border: 2px solid #333;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #666;
+}
+
+.cart-btn {
+  background: #f6b26b;
+  background: linear-gradient(#f6b26b, #fd9700);
+  color: #333;
+  border: none;
+  padding: .5em 20px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 12px auto;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+.cart-btn:hover {
+  background: #fd9700;
+  cursor: pointer;
+  color: #eee;
+}
+
+.item-container form {
+  border-radius: 0 0 5px 5px;
+}
+
+.page-index {
+  width: 76%;
+  margin: 30px auto;
+}
+
+.page-index a,
+.page-index p,
+.page-index span {
+  font-size: 16px;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.page-index span {
+  color: #fd9700;
+}
+
+.page-index a:hover {
+  color: #fd9700;
+}
+
+/*****************************
+
+Footer
+
+*****************************/
+
+footer {
+  background: #333;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+.footer-container {
+  width: 400px;
+  margin: auto auto;
+  display: block;
+}
+
+.contact-container {
+  margin-left: 120px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.footer-container h5 {
+  color: #fd9700;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.footer-image {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+.footer-txt {
+  color: #fff;
+  display: inline-block;
+}
+
+.email-img {
+  background: url("../images/email_white.png") 50% 50% no-repeat;
+  background-size: 30px auto;
+}
+
+.phone-img {
+  background: url("../images/icon_phone_white.png") 50% 50% no-repeat;
+  background-size: 30px auto;
+}
+
+
+
