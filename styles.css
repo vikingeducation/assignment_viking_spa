@@ -21,3 +21,36 @@
   height: 600px;
   width: 600px;
 }
+
+input:focus {
+ outline:none;
+ box-shadow: none;
+}
+
+input.ng-invalid {
+  border: 1px solid red;
+}
+
+input.ng-valid {
+  border: 1px solid green;
+}
+
+input.ng-untouched {
+  border: 1px solid grey;
+}
+
+input.ng-invalid:focus {
+  border: 1px solid red;
+}
+
+input.ng-valid:focus {
+  border: 1px solid green;
+}
+
+input.ng-untouched:focus {
+  border: 1px solid grey;
+}
+
+.invalid {
+  pointer-events: none;
+}

@@ -1,19 +1,23 @@
+<div>{{userFormData | json}}</div>
+
 <form name="addressInfo">
 
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <h3>Shipping Info</h3>
+      <label>Billing and Shipping the Same?</label>
+      <input ng-click="updateBilling()" type="checkbox" ng-model="billingAndShipping">
       <div class="form-group">
         <label for="streetAddress">Street Address: </label>
-        <input required ng-pattern="/\w+(\s\w+){2,}/" class="form-control" type="text" ng-model="userFormData.shippingStreet">
+        <input required ng-pattern="/\w+(\s\w+){2,}/" class="form-control" type="text" ng-model="userFormData.shippingStreet" ng-change="updateBilling()">
       </div>
       <div class="form-group">
         <label for="city">City: </label>
-        <input required ng-minlength="1" ng-maxlength="30"  class="form-control" type="text" ng-model="userFormData.shippingCity">
+        <input required ng-minlength="1" ng-maxlength="30"  class="form-control" type="text" ng-model="userFormData.shippingCity" ng-change="updateBilling()">
       </div>
       <div class="form-group" >
         <label for="state">State: </label>
-        <select ng-model="userFormData.shippingState" required>
+        <select ng-model="userFormData.shippingState" required ng-change="updateBilling()">
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>
@@ -65,82 +69,85 @@
           <option value="WV">West Virginia</option>
           <option value="WI">Wisconsin</option>
           <option value="WY">Wyoming</option>
-        </select>     
+        </select>
       </div>
       <div class="form-group">
         <label for="zip">Zip: </label>
-        <input required ng-pattern="/[0-9]{5}/" class="form-control" type="text" ng-model="userFormData.shippingZip">
+        <input required ng-pattern="/[0-9]{5}/" class="form-control" type="text" ng-model="userFormData.shippingZip" ng-change="updateBilling()">
       </div>
-      <h3>Billing Info</h3>
-      <div class="form-group">
-        <label for="streetAddress">Street Address: </label>
-        <input required ng-pattern="/\w+(\s\w+){2,}/" class="form-control" type="text" ng-model="userFormData.billingStreet">
+      <div ng-hide="billingAndShipping">
+        <h3>Billing Info</h3>
+        <div class="form-group">
+          <label for="streetAddress">Street Address: </label>
+          <input required ng-pattern="/\w+(\s\w+){2,}/" class="form-control" type="text" ng-model="userFormData.billingStreet">
+        </div>
+        <div class="form-group">
+          <label for="city">City: </label>
+          <input required ng-minlength="1" ng-maxlength="30"  class="form-control" type="text" ng-model="userFormData.billingCity">
+        </div>
+        <div class="form-group">
+          <label for="state">State: </label>
+          <select ng-model="userFormData.billingState" required>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip: </label>
+          <input required ng-pattern="/[0-9]{5}/" class="form-control" type="text" ng-model="userFormData.billingZip">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="city">City: </label>
-        <input required ng-minlength="1" ng-maxlength="30"  class="form-control" type="text" ng-model="userFormData.billingCity">
-      </div>
-      <div class="form-group">
-        <label for="state">State: </label>
-        <select ng-model="userFormData.billingState" required>
-          <option value="AL">Alabama</option>
-          <option value="AK">Alaska</option>
-          <option value="AZ">Arizona</option>
-          <option value="AR">Arkansas</option>
-          <option value="CA">California</option>
-          <option value="CO">Colorado</option>
-          <option value="CT">Connecticut</option>
-          <option value="DE">Delaware</option>
-          <option value="DC">District Of Columbia</option>
-          <option value="FL">Florida</option>
-          <option value="GA">Georgia</option>
-          <option value="HI">Hawaii</option>
-          <option value="ID">Idaho</option>
-          <option value="IL">Illinois</option>
-          <option value="IN">Indiana</option>
-          <option value="IA">Iowa</option>
-          <option value="KS">Kansas</option>
-          <option value="KY">Kentucky</option>
-          <option value="LA">Louisiana</option>
-          <option value="ME">Maine</option>
-          <option value="MD">Maryland</option>
-          <option value="MA">Massachusetts</option>
-          <option value="MI">Michigan</option>
-          <option value="MN">Minnesota</option>
-          <option value="MS">Mississippi</option>
-          <option value="MO">Missouri</option>
-          <option value="MT">Montana</option>
-          <option value="NE">Nebraska</option>
-          <option value="NV">Nevada</option>
-          <option value="NH">New Hampshire</option>
-          <option value="NJ">New Jersey</option>
-          <option value="NM">New Mexico</option>
-          <option value="NY">New York</option>
-          <option value="NC">North Carolina</option>
-          <option value="ND">North Dakota</option>
-          <option value="OH">Ohio</option>
-          <option value="OK">Oklahoma</option>
-          <option value="OR">Oregon</option>
-          <option value="PA">Pennsylvania</option>
-          <option value="RI">Rhode Island</option>
-          <option value="SC">South Carolina</option>
-          <option value="SD">South Dakota</option>
-          <option value="TN">Tennessee</option>
-          <option value="TX">Texas</option>
-          <option value="UT">Utah</option>
-          <option value="VT">Vermont</option>
-          <option value="VA">Virginia</option>
-          <option value="WA">Washington</option>
-          <option value="WV">West Virginia</option>
-          <option value="WI">Wisconsin</option>
-          <option value="WY">Wyoming</option>
-        </select>     
-      </div>
-      <div class="form-group">
-        <label for="zip">Zip: </label>
-        <input required ng-pattern="/[0-9]{5}/" class="form-control" type="text" ng-model="userFormData.billingZip">
-      </div>
-      <a ng-show="addressInfo.$valid" class="btn btn-primary" ui-sref="products.checkout.paymentInfo">Fill Out Payment Info</a>
+      <a ng-show="addressInfo.$valid" class="btn btn-primary" ui-sref="products.checkout.paymentInfo">Move on to Payment Info</a>
+      <a ng-hide="addressInfo.$valid" class="btn btn-primary" ng-disabled="addressInfo.$invalid">Move on to Payment Info</a>
     </div>
   </div>
 

@@ -14,7 +14,8 @@
         <label for="email">Email: </label>
         <input class="form-control" type="email" ng-model="userFormData.email" required ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/">
       </div>
-      <a ng-show="personalInfo.$valid"class="btn btn-primary" ui-sref="products.checkout.addressInfo">Fill Out Address Info</a>
+      <a ng-show="personalInfo.$valid" class="btn btn-primary" ui-sref="products.checkout.addressInfo">Move on to Address Info</a>
+      <a ng-hide="personalInfo.$valid" ng-disabled="personalInfo.$invalid" class="btn btn-primary">Move on to Address Info</a>
     </div>
   </div>
 

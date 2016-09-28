@@ -1,4 +1,4 @@
-vikingStore.factory('FormService', [function(){
+vikingStore.factory('FormService', ['_', function(_){
 
     var _form = {};
 
@@ -10,9 +10,14 @@ vikingStore.factory('FormService', [function(){
       return angular.copy({}, _form);
     }
 
+    var validForm = function() {
+      return !_.isEmpty(_form)
+    }
+
     return {
       getForm: getForm,
-      clearForm: clearForm
+      clearForm: clearForm,
+      validForm: validForm
     }
 
 }])
