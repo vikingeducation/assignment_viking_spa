@@ -1,7 +1,7 @@
 var VikingStore = angular.module('VikingStore', ['ui.router']);
 
-VikingStore.config = function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise("/");
+VikingStore.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/products");
 
   $stateProvider.state('products', {
     url: '/products',
@@ -14,7 +14,7 @@ VikingStore.config = function($stateProvider, $urlRouterProvider) {
     templateUrl: "templates/products/index.html", 
     controller: "ProductsIndexCtrl"
   });
-}
+}]);
 
 VikingStore.factory('_', ['$window', function($window) {return $window._;}]);
 
