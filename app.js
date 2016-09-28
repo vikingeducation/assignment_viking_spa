@@ -8,7 +8,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "/templates/products.html",
       controller: "ProductsCtrl"
     }
-
   )
-
 })
