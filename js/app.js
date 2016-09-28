@@ -13,12 +13,24 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     .state('products', {
       url: '/products',
       abstract: true,
-      template: '<div ui-view></div>'
+      template: '<div ui-view></div>',
+      
     })
     .state('products.index', {
       url: '',
       templateUrl: 'products.html',
-      controller: 'StoreCtrl'
+      controller: 'StoreCtrl',
+      resolve: {
+        categorical: ['categoriesService', function(categoriesService) {
+            categoriesService.createCategories();
+            var chris = categoriesService.all();
+
+            return new Promise(function(resolve) {
+              resolve(chris);
+            });
+        }]
+      }
+      
     })
     .state('products.show', {
       url: "/:productId",

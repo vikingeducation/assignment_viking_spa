@@ -1,16 +1,18 @@
-"use strict";
-
 app.controller('StoreCtrl', 
-  ['$scope', '_', 'productsService','categoriesService', '$stateParams', 
-  function($scope, _, productsService, categoriesService, $stateParams) {
+  ['$scope', '_', 'productsService','categoriesService', "cartService", '$stateParams', 'categorical',
+  function($scope, _, productsService, categoriesService, cartService, $stateParams, categorical ) {
 
   //init
+  alert('sldfjosdfmd');
+
+  console.log('sdlkfjsdlf');
+  console.log(categorical);
+  debugger;
   categoriesService.createCategories();
 
   productsService.createProducts();
 
-  $scope.categories = categoriesService.all();
-  $scope.products = productsService.all();
+  $scope.categories = categoriesService.getCategories();
+  $scope.products = productsService.getProducts();
   
 }]);
-
