@@ -1,0 +1,35 @@
+<form>
+  <label>Name:</label>
+  <input type="text" ng-model="order.name"></br>
+  <h3>Shipping Address</h3>
+  <label>Number</label>
+  <input type="number" ng-model="order.shippingAddress.number">
+  <label>Street</label>
+  <input type="text" ng-model="order.shippingAddress.street">
+  <label>Apartment</label>
+  <input type="text" ng-model="order.shippingAddress.apartment">
+  <label>City</label>
+  <input type="text" ng-model="order.shippingAddress.city">
+  <label>State</label>
+  <input type="text" ng-model="order.shippingAddress.state">
+  <h3>Billing Address</h3>
+  <label>Number</label>
+  <input type="number" ng-model="order.billingAddress.number">
+  <label>Street</label>
+  <input type="text" ng-model="order.billingAddress.street">
+  <label>Apartment</label>
+  <input type="text" ng-model="order.billingAddress.apartment">
+  <label>City</label>
+  <input type="text" ng-model="order.billingAddress.city">
+  <label>State</label>
+  <input type="text" ng-model="order.billingAddress.state">
+  <h3>Payment Method</h3>
+  <label>Credit Card Company</label>
+  <select ng-model="order.creditCard.company">
+    <option value="mastercard">Mastercard</option>
+    <option value="americanExpress">American Express</option>
+    <option value="visa">Visa</option>
+  </select>
+  <label>Credit Card Number</label>
+  <input type="text" ng-model="order.creditCart.number">
+</form>

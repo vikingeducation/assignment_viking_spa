@@ -20,4 +20,5 @@ CART!
   </tr>
 </table>
 
-<button class="btn btn-info" ng-if="totalItems">Check Out!</button>
+<a ui-sref="cart.neworder"><button class="btn btn-info" ng-if="totalItems">Check Out!</button></a>
+<div ui-view></div>
