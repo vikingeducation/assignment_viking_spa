@@ -4,13 +4,14 @@ app.controller("ProductsCtrl", ["$scope", "productsService", "shoppingCartServic
 
   $scope.products = productsService.getProducts();
   $scope.categories = productsService.getCategories();
-  console.log($scope.categories);
   $scope.categoryId = -1;
+  $scope.totalItems = shoppingCartService.totalItems();
 
 
   $scope.addToCart = function(id) {
-    console.log(id)
     shoppingCartService.addItem(id, 1);
+    $scope.totalItems = shoppingCartService.totalItems();
+
   }
 
 }])

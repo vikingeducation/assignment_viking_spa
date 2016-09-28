@@ -39,9 +39,12 @@ var removeItem = function(item, quantity) {
 
 var totalItems = function(){
   var values = _.values(_cart);
-  _.reduce(values, function(sum, n) {
-    return sum + n;
-  })
+  var sum = 0;
+
+  for(var i in values) {
+    sum += values[i]
+  }
+  return sum
 }
 
 
