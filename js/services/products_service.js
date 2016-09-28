@@ -35,6 +35,11 @@ app.factory('ProductsService', ['faker', 'CategoriesService', function(faker, Ca
     return Promise.resolve(_products);
   };
 
+  ProductsService.findProduct = function(id){
+    console.log(id);
+    return _products[id];
+  };
+
   return ProductsService;
 
 }]);
