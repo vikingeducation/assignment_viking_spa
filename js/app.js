@@ -19,18 +19,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     .state('products.index', {
       url: '',
       templateUrl: 'products.html',
-      controller: 'StoreCtrl',
-      resolve: {
-        categorical: ['categoriesService', function(categoriesService) {
-            categoriesService.createCategories();
-            var chris = categoriesService.all();
-
-            return new Promise(function(resolve) {
-              resolve(chris);
-            });
-        }]
-      }
-      
+      controller: 'StoreCtrl'
     })
     .state('products.show', {
       url: "/:productId",

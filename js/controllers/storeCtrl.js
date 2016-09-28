@@ -1,13 +1,8 @@
 app.controller('StoreCtrl', 
-  ['$scope', '_', 'productsService','categoriesService', "cartService", '$stateParams', 'categorical',
-  function($scope, _, productsService, categoriesService, cartService, $stateParams, categorical ) {
+  ['$scope', '_', 'productsService','categoriesService', "cartService", '$stateParams',
+  function($scope, _, productsService, categoriesService, cartService, $stateParams ) {
 
   //init
-  alert('sldfjosdfmd');
-
-  console.log('sdlkfjsdlf');
-  console.log(categorical);
-  debugger;
   categoriesService.createCategories();
 
   productsService.createProducts();
