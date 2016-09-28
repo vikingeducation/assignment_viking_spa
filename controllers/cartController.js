@@ -6,14 +6,17 @@ app.controller("cartCtrl", ["$scope", "shoppingCartService", "productsService", 
 
 
   $scope.increaseQuantity = function(id) {
-    //shoppingCartService.removeItem(id.quantity++;
+    shoppingCartService.increaseQuantity(id);
   }
 
-  $scope.decreaseQuantity = function() {
-    if($scope.quantity > 0) {
-      $scope.quantity--;
-    }
+  $scope.decreaseQuantity = function(id) {
+    shoppingCartService.decreaseQuantity(id);
   }
 
+  $scope.removeItems = function(id) {
+    shoppingCartService.removeItem(id);
+  }
+
+  $scope.totalItems = shoppingCartService.totalItems();
 
 }]);

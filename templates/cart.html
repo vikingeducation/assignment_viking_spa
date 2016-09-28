@@ -1,5 +1,5 @@
 CART!
-
+{{totalItems}}
 <table>
   <tr>
     <th>Item Name</th>
@@ -13,10 +13,9 @@ CART!
 
   <td>{{ products[id].name }}</td>
   <td>{{ quantity }}</td>
-  <td><button ng-click="increaseQuantity()">+</button>
-      <button ng-click="decreaseQuantity()">-</button>
-      <button ng-click="updateCart()" class="btn btn-primary">UpdateCart</button>
+  <td><button ng-click="increaseQuantity(id)">+</button>
+      <button ng-click="decreaseQuantity(id)">-</button>
   </td>
-  <td><button ng-click="updateCart(id)" class="btn btn-danger">Remove Items</button></td>
+  <td><button ng-click="removeItems(id)" class="btn btn-danger">Remove Items</button></td>
   </tr>
 </table>

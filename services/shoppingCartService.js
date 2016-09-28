@@ -13,7 +13,19 @@ var addItem = function(item, quantity) {
   else {
     _cart[item] = quantity;
   }
+}
 
+var increaseQuantity = function(id) {
+  return _cart[id] ++;
+}
+
+var decreaseQuantity = function(id) {
+  if(_cart[id] === 1 ) {
+    removeItem(id);
+  }
+  if(_cart[id] > 0) {
+    _cart[id]--;
+  }
 }
 
 var removeItem = function(item, quantity) {
@@ -25,11 +37,21 @@ var removeItem = function(item, quantity) {
   }
 }
 
+var totalItems = function(){
+  var values = _.values(_cart);
+  _.reduce(values, function(sum, n) {
+    return sum + n;
+  })
+}
+
 
 return {
   listAll: listAll,
   addItem: addItem,
-  removeItem: removeItem
+  removeItem: removeItem,
+  increaseQuantity: increaseQuantity,
+  decreaseQuantity: decreaseQuantity,
+  totalItems: totalItems
 }
 
 
