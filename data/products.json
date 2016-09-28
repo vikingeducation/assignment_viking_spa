@@ -1,0 +1,7 @@
+{
+	id: 1,
+	name: "thingie",
+	price: "$12",
+	description: "this is a thing",
+	category: [1,2]
+}
