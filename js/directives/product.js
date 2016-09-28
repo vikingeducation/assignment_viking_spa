@@ -14,7 +14,7 @@ app.directive('product', ['CartsService', function(CartsService) {
 
       scope.removeItem = function() {
         CartsService.removeItem(scope.product);
-      }
+      };
     }
   };
 }]);

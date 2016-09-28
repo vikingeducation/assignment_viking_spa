@@ -28,7 +28,7 @@ app.factory('ProductsService', ['faker', 'CategoriesService', function(faker, Ca
   }
 
   ProductsService.seed = function() {
-    return _seedProducts(5);
+    return _seedProducts(40);
   };
 
   ProductsService.getAll = function(){
