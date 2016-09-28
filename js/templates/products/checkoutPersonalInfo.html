@@ -4,17 +4,17 @@
     <div class="col-sm-6 col-sm-offset-3">
       <div class="form-group">
         <label for="fname">First Name: </label>
-        <input class="form-control" type="text" ng-model="userFormData.fname">
+        <input class="form-control" type="text" ng-model="userFormData.fname" required ng-minlength="1" ng-maxlength="30">
       </div>
       <div class="form-group">
         <label for="lname">Last Name: </label>
-        <input class="form-control" type="text" ng-model="userFormData.lname">
+        <input class="form-control" type="text" ng-model="userFormData.lname" required ng-minlength="1" ng-maxlength="30">
       </div>
       <div class="form-group">
         <label for="email">Email: </label>
-        <input class="form-control" type="text" ng-model="userFormData.email">
+        <input class="form-control" type="email" ng-model="userFormData.email" required ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/">
       </div>
-      <a class="btn btn-primary" ui-sref="products.checkout.addressInfo">Next</a>
+      <a ng-show="personalInfo.$valid"class="btn btn-primary" ui-sref="products.checkout.addressInfo">Fill Out Address Info</a>
     </div>
   </div>
 

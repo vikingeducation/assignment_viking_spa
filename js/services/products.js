@@ -29,7 +29,7 @@ vikingStore.factory('productsService', ["_", function(_) {
   };
 
   var _addCategoriesToProducts = function() {
-    return _.sample([1,2,3,4,5], 2);
+    return _.sample([1,2,3,4,5,6], 2);
   };
 
   var getProducts = function(){
