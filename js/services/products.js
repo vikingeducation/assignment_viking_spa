@@ -14,7 +14,7 @@ app.factory('productsService', ['categoriesService', function(categoriesService)
   		var prod = {id: _id,
   					name: faker.fake("{{commerce.productName}}"),
   					price: faker.fake("{{commerce.price}}"),
-  					description: faker.fake("{{commerce.productAdjective}} {{commerce.productMaterial}}")};
+  					description: faker.fake("{{commerce.productAdjective}}, {{commerce.productMaterial}}")};
   		var prodCategories = [];
   		for(var j = 0; j < Math.floor(Math.random()*20 + 1); j ++){
   			prodCategories.push(_.sample(categories).id);
@@ -22,8 +22,13 @@ app.factory('productsService', ['categoriesService', function(categoriesService)
   		prodCategories = _.sortedUniq(prodCategories);
   		prod.categories = prodCategories;
   		_products.push(prod);
-  }
-
+      _id++;
+    }
+    
+  };
+  stub.getProducts = function() {
+    return _products;
+  };
  
 
   // stub.david = function() {

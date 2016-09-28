@@ -1,0 +1,21 @@
+<select ng-model="selectedCategory">
+  <option ng-repeat="category in categories" ng-value="category.id"> 
+    {{category.name}}
+  </option>
+</select>
+
+<div class="container-fluid">
+  <div class="card card-outline-info col-xs-4" ng-repeat="product in products">
+
+    <div class="card-header">
+      {{product.id}}: {{product.name}}
+    </div>
+
+    <div class="card-block">
+      <p>{{product.price}}</p>
+
+      <p> {{product.description}}</p>
+      <p> {{product.categories}}</p>
+    </div>  
+  </div>
+</div>
