@@ -16,7 +16,7 @@ spa.config(function($stateProvider, $urlRouterProvider){
       url: '',
       templateUrl: '/templates/products.html',
       controller: 'StoreCtrl'
-    })
+    });
 
 });
 

@@ -24,7 +24,7 @@ spa.factory("productService", [function(){
   var _initFakeCategories = function(num) {
     for (var i = 0; i < num; i++) {
       var category = {}
-      category.id = i;
+      category.id = "" + i;
       category.name = faker.commerce.productAdjective();
       categories.push(category)
     }
@@ -45,9 +45,14 @@ spa.factory("productService", [function(){
     return products;
   }
 
+  var getCategories = function() {
+    return categories;
+  }
+
 
   return {
-    getProducts: getProducts
+    getProducts: getProducts,
+    getCategories: getCategories
   }
 
 

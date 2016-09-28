@@ -2,5 +2,6 @@ spa.controller('StoreCtrl', ["$scope", "productService", function($scope, produc
 
 
   $scope.products = productService.getProducts();
+  $scope.categories = productService.getCategories();
 
 }]);
