@@ -7,8 +7,10 @@ app.directive("navBar", ["CartsService", function(CartsService){
         return CartsService.cartTotal();
       };
       scope.getItems = function() {
-        console.log(CartsService.getCart());
         return CartsService.getCart();
+      };
+      scope.getItemCount = function() {
+        return CartsService.getItemCount();
       };
     }
   };
