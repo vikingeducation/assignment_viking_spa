@@ -4,7 +4,7 @@
 
 <p>{{categorySelection}}</p>
 
-<product ng-repeat="selectedProduct in products | limitTo: 49 | categoryFilter: categorySelection" product="selectedProduct"></product>
+<product ng-repeat="selectedProduct in products | categoryFilter: categorySelection | limitTo: 9" product="selectedProduct"></product>
 
   <div class="page-index">
     <a href="#">&lt;&lt; Prev</a>

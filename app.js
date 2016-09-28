@@ -16,7 +16,13 @@ spa.config(function($stateProvider, $urlRouterProvider){
       url: '',
       templateUrl: '/templates/products.html',
       controller: 'StoreCtrl'
-    });
+    })
+
+    .state('product.show', {
+      url: ':product_id',
+      templateUrl: '/templates/product.html',
+      controller: 'StoreShowCtrl'
+    })
 
 });
 

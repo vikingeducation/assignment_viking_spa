@@ -1,7 +1,7 @@
 spa.factory("productService", [function(){
 
 
-  var products = [];
+  var products = {};
   var categories = [];
   var _id = 0;
 
@@ -13,11 +13,11 @@ spa.factory("productService", [function(){
       var productCategories = [];
       for (var j = 0; j < categories.length; j++) {
         if (Math.floor(Math.random()*2)) {
-          productCategories.push(j);
+          productCategories.push(j.toString());
         }
       }
       var newProduct = new Product(i, name, price, description, productCategories)
-      products.push(newProduct)
+      products[newProduct.id.toString()] = newProduct
     }
   }
 
@@ -49,9 +49,13 @@ spa.factory("productService", [function(){
     return categories;
   }
 
+  var findProduct = function(productId) {
+    return products[productId];
+  }
 
   return {
     getProducts: getProducts,
+    findProduct: findProduct,
     getCategories: getCategories
   }
 
