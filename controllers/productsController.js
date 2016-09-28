@@ -5,6 +5,6 @@ app.controller("ProductsCtrl", ["$scope", "productsService", function($scope, pr
   $scope.products = productsService.getProducts();
   $scope.categories = productsService.getCategories();
 
-
+  $scope.categoryId = -1;
 
 }])

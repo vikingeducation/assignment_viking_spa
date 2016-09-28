@@ -38,7 +38,8 @@ app.factory("productsService", function() {
 
   var createCategories = function() {
     for(var i = 0; i < 5; i++) {
-      _categories[i] = {
+      _categories[String(i)] = {
+        id: i,
         category_name: faker.commerce.department(),
         products: []
       }

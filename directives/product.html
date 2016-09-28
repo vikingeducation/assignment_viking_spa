@@ -5,6 +5,12 @@
     <div class="card-block">
       <h4 class="card-title">{{product.name}}</h4>
       <p class="card-text">{{product.description}}</p>
+
+
+      <p ng-repeat="id in product.categories" class="category-name">
+        {{ categories[id].category_name }} |
+      </p>
+
       <a href="#" class="btn btn-primary">Buy: {{product.price | currency}}</a>
     </div>
   </div>

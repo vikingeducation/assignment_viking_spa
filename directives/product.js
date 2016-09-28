@@ -4,7 +4,8 @@ app.directive("product", function() {
     restrict: "E",
     templateUrl: "directives/product.html",
     scope: {
-      product: "="
+      product: "=",
+      categories: "="
     }
   }
 });
