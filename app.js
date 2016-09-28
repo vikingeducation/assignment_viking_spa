@@ -1,5 +1,9 @@
 var app = angular.module("storeFront", ["ui.router"])
 
+app.factory("_", [ "$window", function($window) {
+  return $window._;
+}])
+
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/products')
 
@@ -13,5 +17,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url:"",
     templateUrl: "/templates/productsIndex.html",
     controller: "ProductsCtrl"
+  })
+
+  .state("products.show", {
+    url:"/:id",
+    templateUrl: "templates/productShow.html",
+    controller: "productShowCtrl"
+
   })
 })

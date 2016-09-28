@@ -1,4 +1,4 @@
-app.factory("productsService", function() {
+app.factory("productsService", ["_", function(_) {
 
   var _products = {}
   var _categories = {}
@@ -9,7 +9,7 @@ app.factory("productsService", function() {
     for(var i = 0; i < numberOfCategories; i ++) {
       array.push(Math.floor(Math.random() * 5));
     }
-    return array;
+    return _.uniq(array);
   }
 
 
@@ -30,6 +30,10 @@ app.factory("productsService", function() {
         _categories[String(id)].products.push(i);
       }
     }
+  }
+
+  var getProduct = function(id) {
+    return _products[id];
   }
 
   var getProducts = function() {
@@ -53,9 +57,10 @@ app.factory("productsService", function() {
   return {
     createProducts: createProducts,
     getProducts: getProducts,
-    getCategories: getCategories
+    getCategories: getCategories,
+    getProduct: getProduct
   }
-})
+}])
 
 // {
 // id : {

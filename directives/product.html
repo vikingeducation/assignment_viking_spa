@@ -1,4 +1,3 @@
-
 <div class="col-md-4">
   <div class="card">
     <img class="card-img-top product-image" ng-src="{{product.image}}" alt="Card image cap">
@@ -11,7 +10,7 @@
         {{ categories[id].category_name }} |
       </p>
 
-      <a href="#" class="btn btn-primary">Buy: {{product.price | currency}}</a>
+      <a ui-sref="products.show({id:{{product.id}}})" class="btn btn-primary">Buy: {{product.price | currency}}</a>
     </div>
   </div>
 </div>
