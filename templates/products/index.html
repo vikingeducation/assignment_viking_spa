@@ -1,11 +1,13 @@
 <div class="container">
-  <select ng-model="selectedCategory">
-    <option value=""></option>
-    <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
-  </select>
-  <br><br>
-  <div class="col-xs-4" ng-repeat="product in productsArray | filter: {categoryId:selectedCategory}">
-    <product product="product"></product>
+  <div class="row">
+    <select ng-model= "selectedCategory">
+      <option value=""></option>
+      <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
+    </select>
+    <br><br>
+    <div class="col-xs-4" ng-repeat="product in productsArray | filter: {categoryId:selectedCategory}">
+      <product product="product"></product>
+    </div>
   </div>
 </div>
 

@@ -1,12 +1,14 @@
-<div class='product-box'>
+<div class='product-box' style="position: relative" >
 
+
+  <p ng-show="success" style="position: absolute" class="alert alert-success custom-success">{{success}}</p>
   <p><a ui-sref="products.show({id: product.id})">{{product.name}}</a></p>
   <img width="200px" height="260px" src="napkins.jpg">
   <p>{{product.price}}</p>
-  <form ng-submit="addItemToCart(product.name, quantity)">
-    <input type="text" placeholder="Quantity" ng-model="quantity">
+  <form  ng-submit="addItemToCart(product.name, quantity)">
+    <input type="number" placeholder="Quantity" min="1" required ng-model="quantity">
     <input type="submit" value="Buy Now!">
   </form>
-  <p ng-show="success" class="alert alert-success">{{success}}</p>
+
 
 </div>

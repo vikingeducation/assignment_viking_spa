@@ -5,8 +5,11 @@
   <p>{{product.price}}</p>
   <p class="small">{{categories[product.categoryId].name}}</p>
   <form ng-submit="addItemToCart(product.name, quantity)">
-    <input type="text" placeholder="Quantity" ng-model="quantity">
-    <input type="submit" value="Buy Now!"><span ng-show="success" class="alert alert-success">{{success}}</span>
+    <input type="number" placeholder="Quantity" required min="1" ng-model="quantity">
+    <input type="submit" value="Buy Now!">
+    <br> <br>
+    <p><span ng-show="success" class="alert alert-success">{{success}}</span></p>
+    <br>
   </form>
   <p><a ui-sref="products.index">Back</a></p>
 </div>
