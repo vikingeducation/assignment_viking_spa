@@ -1,4 +1,4 @@
-VikingStore.controller("ProductsIndexCtrl", ["$scope", "productsService", "shoppingCartService", function($scope, productsService, shoppingCartService) {
+VikingStore.controller("ProductsIndexCtrl", ["$scope", "productsService", "shoppingCartsService", function($scope, productsService, shoppingCartsService) {
 
   $scope.products = productsService.allProducts();
 

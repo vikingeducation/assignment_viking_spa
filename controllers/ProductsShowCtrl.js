@@ -1,14 +1,12 @@
-VikingStore.controller("ProductsShowCtrl", ["$scope", "productsService", "$stateParams", "shoppingCartService", function($scope, productsService, $stateParams, shoppingCartService) {
+VikingStore.controller("ProductsShowCtrl", ["$scope", "productsService", "$stateParams", "shoppingCartsService", function($scope, productsService, $stateParams, shoppingCartsService) {
 
   $scope.product = productsService.getProduct($stateParams.id);
 
   $scope.addItemToCart = function(item, amnt) {
-    shoppingCartService.addItemToCart(item, amnt);
+    shoppingCartsService.addItemToCart(item, amnt);
   }
 
-  $scope.cart = function() {
-    return shoppingCartService.getCart();
-  }
+  $scope.cart = shoppingCartsService.getCart();
 
   $scope.categories = productsService.allCategories();
 

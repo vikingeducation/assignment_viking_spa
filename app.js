@@ -3,10 +3,9 @@ var VikingStore = angular.module('VikingStore', ['ui.router']);
 VikingStore.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/products");
 
-
   $stateProvider.state('cart', {
     url: '/cart',
-    templateUrl: "templates/cart.html"
+    templateUrl: "templates/cart.html",
     controller: "CartCtrl"
   });
 
@@ -27,12 +26,7 @@ VikingStore.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
     templateUrl: "templates/products/show.html", 
     controller: "ProductsShowCtrl"
   });
-
-  $stateProvider.state('products.index', {
-    url: "",
-    templateUrl: "templates/products/index.html", 
-    controller: "ProductsIndexCtrl"
-  });
+  
 }]);
 
 VikingStore.factory('_', ['$window', function($window) {return $window._;}]);
