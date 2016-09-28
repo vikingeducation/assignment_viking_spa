@@ -1,0 +1,44 @@
+<form name="addressInfo">
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h3>Shipping Info</h3>
+      <div class="form-group">
+        <label for="streetAddress">Street Address: </label>
+        <input class="form-control" type="text" ng-model="userFormData.shippingStreet">
+      </div>
+      <div class="form-group">
+        <label for="city">City: </label>
+        <input class="form-control" type="text" ng-model="userFormData.shippingCity">
+      </div>
+      <div class="form-group">
+        <label for="state">State: </label>
+        <input class="form-control" type="text" ng-model="userFormData.shippingState">
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip: </label>
+        <input class="form-control" type="text" ng-model="userFormData.shippingZip">
+      </div>
+      <h3>Billing Info</h3>
+      <div class="form-group">
+        <label for="streetAddress">Street Address: </label>
+        <input class="form-control" type="text" ng-model="userFormData.billingStreet">
+      </div>
+      <div class="form-group">
+        <label for="city">City: </label>
+        <input class="form-control" type="text" ng-model="userFormData.billingCity">
+      </div>
+      <div class="form-group">
+        <label for="state">State: </label>
+        <input class="form-control" type="text" ng-model="userFormData.billingState">
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip: </label>
+        <input class="form-control" type="text" ng-model="userFormData.billingZip">
+      </div>
+      <a class="btn btn-primary" ui-sref="products.checkout.paymentInfo">Next</a>
+    </div>
+  </div>
+
+
+</form>

@@ -14,10 +14,15 @@ vikingStore.factory('CartService', [function(){
       delete _cart[id];
     };
 
+    var clearCart = function() {
+      return angular.copy({}, _cart);
+    }
+
     return {
       listAll: listAll,
       addItem: addItem,
-      removeItem: removeItem
+      removeItem: removeItem,
+      clearCart: clearCart
     }
 
 }])

@@ -1,0 +1,22 @@
+<form name="addressInfo">
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="form-group">
+        <label for="creditCardNumber">Credit Card Number: </label>
+        <input class="form-control" type="text" ng-model="userFormData.creditCard">
+      </div>
+      <div class="form-group">
+        <label for="expiration">Expiration Date: </label>
+        <input class="form-control" type="text" ng-model="userFormData.expiration">
+      </div>
+      <div class="form-group">
+        <label for="securityCode">Security Code: </label>
+        <input class="form-control" type="text" ng-model="userFormData.securityCode">
+      </div>
+      <a class="btn btn-primary" ui-sref="products.checkout.confirm">Next</a>
+    </div>
+  </div>
+
+
+</form>

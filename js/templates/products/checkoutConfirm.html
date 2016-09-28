@@ -1,0 +1,20 @@
+<h3>Cart</h3>
+<table>
+  <tr ng-repeat="(id, quantity) in cart">
+
+    <td>Name: {{ products[id].name }}</td>
+
+    <td>Price: {{ products[id].price }}</td>
+
+    <td>Quantity:
+      <span>{{ quantity }}</span>
+    </td>
+  </tr>
+</table>
+
+<h3>Info</h3>
+<div ng-repeat="(field, value) in userFormData">
+  <p><span>{{ field }}: </span><span>{{ value }}</span></p>
+</div>
+
+<button class="btn btn-primary" ng-click="placeOrder()">Place Order</button>
