@@ -9,12 +9,12 @@ vikingStore.factory('productsService', ["_", function(_) {
       products[i] = {
         id: i,
         name: faker.commerce.productName(),
-        price: faker.commeerce.price(),
-        description: faker.company.catchPhrase()
-        categories: _addCategoriesToProducts();
+        price: faker.commerce.price(),
+        description: faker.company.catchPhrase(),
+        categories: _addCategoriesToProducts()
       }
     }
-    angular.copy(products, _products)
+    return angular.copy(products, _products)
   };
 
   var _populateCategories = function() {
@@ -25,11 +25,32 @@ vikingStore.factory('productsService', ["_", function(_) {
         name: faker.commerce.department(),
       }
     }
-    angular.copy(categories, _categories)
+    return angular.copy(categories, _categories)
   };
 
   var _addCategoriesToProducts = function() {
     return _.sample([1,2,3,4,5], 2);
   };
+
+  var getProducts = function(){
+    if (_.isEmpty(_products)) {
+      return _populateProducts();
+    } else {
+      return _products;
+    }
+  };
+
+  var getCategories = function(){
+    if (_.isEmpty(_categories)) {
+      return _populateCategories();
+    } else {
+      return _categories;
+    }
+  };
+
+  return {
+    getProducts: getProducts,
+    getCategories: getCategories
+  }
 
 }]);
