@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory('productsService', ['categoriesService', function(categoriesService){
+app.factory('productsService', ['categoriesService', '_',function(categoriesService, _){
 
   var stub = {};
 
@@ -9,7 +9,7 @@ app.factory('productsService', ['categoriesService', function(categoriesService)
   var _id = 1;
 
   stub.createProducts = function(){
-  	var categories = categoriesService.getCategories();
+  	var categories = categoriesService.all();
   	for(var i = 0; i < 50; i++){
   		var prod = {id: _id,
   					name: faker.fake("{{commerce.productName}}"),
@@ -26,14 +26,13 @@ app.factory('productsService', ['categoriesService', function(categoriesService)
     }
     
   };
-  stub.getProducts = function() {
+  stub.all = function() {
     return _products;
   };
  
-
-  // stub.david = function() {
-  //   console.log(faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
-  // };
+  stub.getProduct = function(productId) {
+    return _.find(_products, {id: productId});
+  }
 
   return stub;
 

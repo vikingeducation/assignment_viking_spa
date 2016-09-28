@@ -9,7 +9,9 @@
   <div style="padding:0px" class="card card-outline-info col-xs-4" ng-repeat="product in products | catFilter: selectedCategory">
 
     <div class="card-header">
-      {{product.id}}: {{product.name}}
+      {{product.id}}:  
+
+      <a ui-sref="products.show({productId: {{product.id}} })"> {{product.name}} </a>
     </div>
 
     <div class="card-block">

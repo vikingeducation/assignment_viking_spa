@@ -10,17 +10,23 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 
   $urlRouterProvider.otherwise('/products');
   $stateProvider
-    // .state('products', {
-    //   url: '/',
-    //   templateUrl: 'index.html',
-    //   controller: 'StoreCtrl'
-    // })
     .state('products', {
       url: '/products',
+      abstract: true,
+      template: '<div ui-view></div>'
+    })
+    .state('products.index', {
+      url: '',
       templateUrl: 'products.html',
       controller: 'StoreCtrl'
     })
     .state('products.show', {
-      url:
+      url: "/:productId",
+      templateUrl:'product.html',
+      controller: 'ProductCtrl'
     })
 }]);
+
+app.run(function($rootScope){
+  $rootScope.$on("$stateChangeError", console.log.bind(console));
+});

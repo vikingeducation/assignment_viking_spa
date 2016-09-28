@@ -9,11 +9,8 @@ app.controller('StoreCtrl',
 
   productsService.createProducts();
 
-  $scope.categories = categoriesService.getCategories();
-  $scope.products = productsService.getProducts();
+  $scope.categories = categoriesService.all();
+  $scope.products = productsService.all();
   
 }]);
 
-app.run(function($rootScope){
-  $rootScope.$on("$stateChangeError", console.log.bind(console));
-});

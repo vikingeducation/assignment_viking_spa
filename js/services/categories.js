@@ -21,7 +21,7 @@ app.factory('categoriesService', ['_', function(_){
   	}
   };
 
-  stub.getCategories = function(){
+  stub.all = function(){
   	return _categories;
   };
 
