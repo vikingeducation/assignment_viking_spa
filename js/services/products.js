@@ -31,7 +31,7 @@ app.factory('productsService', ['categoriesService', '_',function(categoriesServ
   };
  
   stub.getProduct = function(productId) {
-    return _.find(_products, {id: productId});
+    return _.find(_products, {id: parseInt(productId)});
   }
 
   return stub;

@@ -21,6 +21,7 @@
   <!--Services-->
   <script src="js/services/categories.js"></script>
   <script src="js/services/products.js"></script>
+  <script src="js/services/shoppingCart.js"></script>
 
   <!--Controllers-->
   <script src="js/controllers/storeCtrl.js"></script>
@@ -40,8 +41,9 @@
 </head>
 <body>
   <nav>
-	 <a>Your Cart</a>
+	 <a ng-controller="ProductCtrl">Your Cart </a>
 	 <a>Sign In</a>
+   <a ui-sref="products.index">Home</a>
   </nav>
   <div ng-controller="StoreCtrl">
 
