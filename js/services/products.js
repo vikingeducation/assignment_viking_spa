@@ -1,5 +1,15 @@
 "use strict";
-app.factory('products', [function(){
+
+app.factory('productsService', [function(){
+
+  var stub = {};
 
 	var _products = [];
+
+  // stub.david = function() {
+  //   console.log(faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
+  // };
+
+  return stub;
+
 }]);
