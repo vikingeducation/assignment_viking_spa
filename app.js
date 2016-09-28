@@ -5,11 +5,18 @@ spa.config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('index', {
+    .state('products', {
       url: '/',
-      templateUrl: '/templates/inventory.html',
+      abstract: true,
+      template: '<div ui-view></div>',
       controller: 'StoreCtrl'
-    });
+    })
+
+    .state('products.index', {
+      url: '',
+      templateUrl: '/templates/products.html',
+      controller: 'StoreCtrl'
+    })
 
 });
 
