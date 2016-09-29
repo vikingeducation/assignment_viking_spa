@@ -15,6 +15,7 @@
 .product-box {
   border: 1px solid black;
   margin-top: 5px;
+  padding-bottom: 5px;
 }
 
 body {
@@ -28,6 +29,7 @@ h1{
 .product-image {
   height: 200px;
   width: 200px;
+  margin-bottom: 5px;
 }
 
 .current-product-image {

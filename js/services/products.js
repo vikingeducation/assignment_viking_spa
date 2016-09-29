@@ -11,7 +11,8 @@ vikingStore.factory('productsService', ["_", function(_) {
         name: faker.commerce.productName(),
         price: faker.commerce.price(),
         description: faker.company.catchPhrase(),
-        categories: _addCategoriesToProducts()
+        categories: _addCategoriesToProducts(),
+        imageUrl: faker.image.image()
       });
     }
     return angular.copy(products, _products)

@@ -1,26 +1,43 @@
-<a ui-sref="products.checkoutPersonalInfo">Checkout</a>
-<table>
-  <tr ng-repeat="(id, quantity) in cart">
+<div ng-hide="getLength() != 0">
+  <h1>Your Cart Is Empty</h1>
+</div>
+<div ng-show="getLength() != 0"> 
+  <h1>Your Cart:</h1>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <table class="table">
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr ng-repeat="(id, quantity) in cart">
 
-    <td>Name: {{ products[id].name }}</td>
+          <td>{{ products[id].name }}</td>
 
-    <td>Price: {{ products[id].price }}</td>
+          <td>{{ products[id].price }}</td>
 
-    <td>Quantity:
-      <span ng-hide="editing">{{ quantity }}</span>
-      <input ng-show="editing" type="number" ng-value="quantity" ng-model="newQuantity">
-    </td>
+          <td>
+            <span ng-hide="editing">{{ quantity }}</span>
+            <input ng-show="editing" type="number" ng-value="quantity" ng-model="newQuantity">
+          </td>
 
-    <td>
-      <button ng-click="editing = !editing; newQuantity = quantity;">{{ editing ? "Cancel" : "Update Quantity" }}</button>
-    </td>
+          <td>
+            <button class="btn btn-primary" ng-click="editing = !editing; newQuantity = quantity;">{{ editing ? "Cancel" : "Update Quantity" }}</button>
+          </td>
 
-    <td ng-show="editing">
-      <button ng-click="addItem(id, newQuantity); editing = !editing;">Save Quantity</button>
-    </td>
+          <td ng-show="editing">
+            <button class="btn btn-success" ng-click="addItem(id, newQuantity); editing = !editing;">Save Quantity</button>
+          </td>
 
-    <td ng-hide="editing">
-      <button ng-click="removeItem(id)">Remove Item</button>
-    </td>
-  </tr>
-</table>
+          <td ng-hide="editing">
+            <button class="btn btn-danger" ng-click="removeItem(id)">Remove Item</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <a ui-sref="products.checkout.personalInfo" class='btn lg-btn btn-primary'><h3>Checkout</h3></a>
+</div>
