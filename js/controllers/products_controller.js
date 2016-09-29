@@ -8,19 +8,19 @@ function($scope, products, categories, _, CartsService) {
   $scope.sortegory = "";
   $scope.products = products;
   $scope.categories = categories;
-
-  $scope.getProducts = function(){
+  $scope.filteredProducts = $scope.products;
+  $scope.$watch("sortegory", function(sortegory){
     if ($scope.sortegory){
       var product_ids = $scope.categories[$scope.sortegory].product_ids;
       var filtered = [];
       product_ids.forEach(function(el){
         filtered.push($scope.products[el]);
       });
-      return filtered;
+      $scope.filteredProducts = filtered;
     } else {
-      return $scope.products;
+      $scope.filteredProducts = $scope.products;
     }
-  };
+  });
 
   $scope.getCart = function() {
     CartsService.getCart();
