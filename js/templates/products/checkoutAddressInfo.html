@@ -1,5 +1,4 @@
-<div>{{userFormData | json}}</div>
-
+<h1>Enter Shipping and Billing Information</h1>
 <form name="addressInfo">
 
   <div class="row">
@@ -146,6 +145,7 @@
           <input required ng-pattern="/[0-9]{5}/" class="form-control" type="text" ng-model="userFormData.billingZip">
         </div>
       </div>
+      <a class="btn btn-success" ui-sref="products.checkout.personalInfo">Edit Personal Info</a>
       <a ng-show="addressInfo.$valid" class="btn btn-primary" ui-sref="products.checkout.paymentInfo">Move on to Payment Info</a>
       <a ng-hide="addressInfo.$valid" class="btn btn-primary" ng-disabled="addressInfo.$invalid">Move on to Payment Info</a>
     </div>

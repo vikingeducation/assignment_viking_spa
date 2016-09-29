@@ -6,9 +6,5 @@ vikingStore.controller('ProductsIndexCtrl', ['$scope', 'products', 'categories',
 
   $scope.cart = cart;
 
-  $scope.getLength = function() {
-    return Object.keys($scope.cart).length;
-  };
-
 
 }])

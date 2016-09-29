@@ -1,3 +1,4 @@
+<h1>Enter Payment Information</h1>
 <form name="paymentInfo">
 
   <div class="row">
@@ -18,6 +19,7 @@
         <label for="securityCode">Security Code: </label>
         <input class="form-control" type="text" ng-model="userFormData.securityCode" required ng-pattern="/[0-9]{3}/" ng-minlength="3" ng-maxlength="3">
       </div>
+      <a class="btn btn-success" ui-sref="products.checkout.addressInfo">Edit Address Info</a>
       <a ng-show="paymentInfo.$valid" class="btn btn-primary" ui-sref="products.checkout.confirm">Move on to Confirm Order</a>
       <a ng-hide="paymentInfo.$valid" class="btn btn-primary" ng-disabled="paymentInfo.$invalid">Move on to Confirm Order</a>
     </div>
