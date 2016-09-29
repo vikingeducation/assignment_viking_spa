@@ -4,43 +4,19 @@ VikingStore.factory('ProductsService', [function(){
 	// Private
 	// --------------
 
-	var _products = {
-		"0": {
-			id: 0,
-			name: "Silent Night",
-			price: 200,
-			picture_url: "https://s-media-cache-ak0.pinimg.com/originals/2a/6d/22/2a6d22d257d9cdb3869e979d1ce8ffe2.jpg"
-		},
-		"1": {
-			id: 1,
-			name: "Dainty Daisy",
-			price: 200,
-			picture_url: "https://s-media-cache-ak0.pinimg.com/originals/2a/6d/22/2a6d22d257d9cdb3869e979d1ce8ffe2.jpg"
-		},
-		"2": {
-			id: 2,
-			name: "Double Trouble",
-			price: 200,
-			picture_url: "https://s-media-cache-ak0.pinimg.com/originals/2a/6d/22/2a6d22d257d9cdb3869e979d1ce8ffe2.jpg"
-		},
-		"3": {
-			id: 3,
-			name: "Whispering Wind",
-			price: 200,
-			picture_url: "https://s-media-cache-ak0.pinimg.com/originals/2a/6d/22/2a6d22d257d9cdb3869e979d1ce8ffe2.jpg"
-		},
-		"4": {
-			id: 4,
-			name: "Cunning Cutter",
-			price: 200,
-			picture_url: "https://s-media-cache-ak0.pinimg.com/originals/2a/6d/22/2a6d22d257d9cdb3869e979d1ce8ffe2.jpg"
-		},
-		"5": {
-			id: 5,
-			name: "Kingmaker",
-			price: 200,
-			picture_url: "https://s-media-cache-ak0.pinimg.com/originals/2a/6d/22/2a6d22d257d9cdb3869e979d1ce8ffe2.jpg"
-		}
+	var _products = {};
+
+	var _generateProducts = function(){
+		for(var i = 0; i < 10; i++){
+			_products[i + ""] = {};
+			var product = _products[i + ""];
+			product.id = i;
+			product.imageUrl = faker.image.sports();
+			product.price = 200;
+			product.name = faker.commerce.productName();
+			product.description = faker.lorem.paragraph();
+			product.categories = [0];
+		};
 	};
 
 	// --------------
@@ -50,6 +26,9 @@ VikingStore.factory('ProductsService', [function(){
 	var ProductsService = {};
 
 	ProductsService.all = function(){
+		if ( Object.keys(_products).length === 0 ){
+			_generateProducts();
+		};
 		return _products;
 	};
 
