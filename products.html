@@ -1,0 +1,27 @@
+<select ng-model="selectedCategory">
+  <option ng-value = ""></option>
+  <option ng-repeat="category in categories" ng-value="category.id"> 
+    {{category.name}}
+  </option>
+</select>
+
+<div class="container-fluid">
+  <div style="padding:0px" class="card card-outline-info col-xs-4" ng-repeat="product in products | catFilter: selectedCategory">
+
+    <div class="card-header">
+      {{product.id}}:  
+
+      <a ui-sref="products.show({productId: {{product.id}} })"> {{product.name}} </a>
+    </div>
+
+    <div class="card-block">
+      <p>{{product.price}}</p>
+
+      <p> {{product.description}}</p>
+      <p> {{product.categories}}</p>
+
+      <buy-btn item="product"></buy-btn>
+
+    </div>  
+  </div>
+</div>

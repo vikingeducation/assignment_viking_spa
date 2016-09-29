@@ -1,0 +1,15 @@
+<div ng-controller="ProductCtrl" class="card card-outline-primary col-xs-8 col-xs-offset-2">
+  <div class="card-header">
+    {{product.id}}: {{product.name}}
+  </div>
+
+  <div class="card-block">
+    <p>{{product.price}}</p>
+
+    <p> {{product.description}}</p>
+    <p> {{product.categories}}</p>
+
+    <input type="number" ng-model="quantity">
+    <button class="btn btn-outline-info btn-lg" ng-click="addItem()">Buy</button>
+  </div>  
+</div>

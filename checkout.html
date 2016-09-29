@@ -1,0 +1,12 @@
+<p>Your total is: {{total()}}</p>
+<form>
+	<label>Address
+	<input type="text" ng-model="myForm.address">
+	</label>
+	<label>Credit Card
+	<input type="text" ng-model="mForm.creditCard">
+	</label>
+	<a ui-sref="cart.confirm"><input type="submit" value="Place Order"></a>
+</form>
+
+<ui-view></ui-view>
