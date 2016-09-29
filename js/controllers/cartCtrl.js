@@ -5,6 +5,10 @@ app.controller('CartIndexCtrl',
 
 	$scope.cart = cartService.listAll();
 
+  $scope.total = function(){
+    return cartService.getTotal();
+  };
+
 
   $scope.add = function(item) {
     cartService.addItem(item, 1);

@@ -15,6 +15,14 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
       templateUrl: 'cartIndex.html',
       controller: 'CartIndexCtrl'
     })
+    .state('cart.checkout', {
+      url:'/checkout',
+      templateUrl: 'checkout.html'
+    })
+    .state('cart.confirm', {
+      url: '/confirm',
+      template: "<button class='btn btn-warning btn-lg active'>Order Confirmed!</button>"
+    })
     .state('products', {
       url: '/products',
       abstract: true,

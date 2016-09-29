@@ -33,6 +33,7 @@
   <script src="js/controllers/storeCtrl.js"></script>
   <script src="js/controllers/productCtrl.js"></script>
   <script src="js/controllers/cartCtrl.js"></script>
+  <script src="js/controllers/checkoutCtrl.js"></script>
 
   <!--Filters-->
   <script src="js/filters/catFilter.js"></script>
@@ -52,7 +53,7 @@
         <a class="navbar-brand" href="#">David</a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" ui-sref="cart" ng-controller="StoreCtrl">Your Cart ({{cartNum()}})</a>
+        <a class="nav-link" ui-sref="cart" ng-controller="StoreCtrl">Your Cart ({{cartNum()}} items)</a>
 
       </li>
       <li class="nav-item">
