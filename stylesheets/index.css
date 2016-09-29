@@ -1,3 +1,18 @@
+html {
+  height: 100%;
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%; }
+
 #top-banner {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
@@ -21,5 +36,20 @@
   font-style: italic;
   padding: 8px;
   text-align: center; }
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  background-color: black;
+  text-align: center; }
+  footer #contact-header {
+    color: yellow; }
+  footer #telephone-container {
+    color: white; }
+  footer #email-container {
+    color: white; }
 
 /*# sourceMappingURL=index.css.map */
