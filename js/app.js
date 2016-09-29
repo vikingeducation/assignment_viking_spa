@@ -1,1 +1,1 @@
-var VikingStore = angualar.module('VikingStore', ['ui-router']);
+var VikingStore = angular.module('VikingStore', ['ui.router']);
