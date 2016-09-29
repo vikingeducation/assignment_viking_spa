@@ -1,0 +1,20 @@
+<div class="col-sm-4 product-box">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <a ui-sref="products.show({id: product.id})"><h4>{{product.name}}</h4></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <img src="{{product.imageUrl}}" class="product-image">
+      <p>Price: {{product.price}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <a ng-click="addItem(product.id)" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+
+</div>

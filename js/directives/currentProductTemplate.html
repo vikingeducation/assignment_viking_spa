@@ -1,0 +1,23 @@
+<div class="col-sm-12">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>{{currentProduct.name}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <img src="{{currentProduct.imageUrl}}" class="current-product-image">
+      <p>Price: {{currentProduct.price}}</p>
+      <p>Description: {{currentProduct.description}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <label for="currentProductQuantity">Quanity: </label>
+      <input type="number" ng-model="currentProductQuantity" min="1">
+      <a ng-click="addItem(currentProduct.id, currentProductQuantity)" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+
+</div>
