@@ -1,0 +1,1 @@
+var VikingStore = angualar.module('VikingStore', ['ui-router']);
