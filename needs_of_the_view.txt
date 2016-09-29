@@ -1,14 +1,15 @@
 What does the view need?
 USER
 user.first_name
-user.cart = [itemOneId, itemTwoId]
+user.cart = [productOneId, productTwoId]
 
 CATEGORY
 category.name
 category.id
+category.product_ids
 
-ITEM
-item.name
-item.price
-item.id
-item.picture_url
+PRODUCTS
+product.name
+product.price
+product.id
+product.picture_url
