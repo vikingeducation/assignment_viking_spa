@@ -15,9 +15,9 @@ vikingStore.config(function($stateProvider, $urlRouterProvider) {
       abstract: true,
       templateUrl: 'js/templates/products/main.html',
       controller: function($scope, cart) {
-        $scope.getLength = function(){
+        $scope.getLength = function() {
           return Object.keys(cart).length;
-        }
+        } 
       },
       resolve: {
         products: function(productsService) {
@@ -43,28 +43,38 @@ vikingStore.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'js/templates/products/cart.html',
       controller: 'ProductsCartCtrl'
     })
-    .state('products.checkoutPersonalInfo', {
-      url: '/checkoutPersonalInfo',
+    .state('products.checkout', {
+      url: '/checkout',
+      template: '<div ui-view></div>',
+      abstract: true,
+      resolve : {
+        form: function(FormService) {
+          return FormService.getForm();
+        }
+      }
+    })
+    .state('products.checkout.personalInfo', {
+      url: '/personalInfo',
       templateUrl: 'js/templates/products/checkoutPersonalInfo.html',
       controller: 'ProductsCheckoutCtrl'
     })
-    .state('products.checkoutAddressInfo', {
-      url: '/checkoutAddressInfo',
+    .state('products.checkout.addressInfo', {
+      url: '/addressInfo',
       templateUrl: 'js/templates/products/checkoutAddressInfo.html',
       controller: 'ProductsCheckoutCtrl'
     })
-    .state('products.checkoutPaymentInfo', {
-      url: '/checkoutPaymentInfo',
+    .state('products.checkout.paymentInfo', {
+      url: '/paymentInfo',
       templateUrl: 'js/templates/products/checkoutPaymentInfo.html',
       controller: 'ProductsCheckoutCtrl'
     })
-    .state('products.checkoutConfirm', {
-      url: '/checkoutAddressInfo',
+    .state('products.checkout.confirm', {
+      url: '/confirm',
       templateUrl: 'js/templates/products/checkoutConfirm.html',
       controller: 'ProductsCheckoutCtrl'
     })
-    .state('products.checkoutOrderPlaced', {
-      url: '/checkoutAddressInfo',
+    .state('products.checkout.orderPlaced', {
+      url: '/orderPlaced',
       templateUrl: 'js/templates/products/checkoutOrderPlaced.html',
       controller: 'ProductsCheckoutCtrl'
     })

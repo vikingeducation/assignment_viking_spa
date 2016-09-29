@@ -12,6 +12,15 @@
   margin-bottom: 60px;
 }*/
 
+.product-box {
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+body {
+  text-align: center;
+}
+
 h1{
   text-align: center;
 }
