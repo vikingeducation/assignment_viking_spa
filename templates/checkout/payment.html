@@ -1,0 +1,19 @@
+<div class = "form-group">
+  <label for="ccnumber">Credit Card Number<br>
+  <input type="number" name="ccnumber" ng-model="formData.ccnumber"
+    class = "form-control" required ng-minlength="14">
+  </label>
+  <br>
+  <label for="cvc">CVC<br>
+  <input type="number" name="cvc" ng-model="formData.cvc"
+    class = "form-control" required ng-minlength="3">
+  </label>
+  <br>
+  <label for="expdate">Expiration Date<br>
+  <input type="date" name="expdate" ng-model="formData.expdate"
+    class = "form-control" required>
+  </label>
+  <br>
+  <a class="btn btn-primary" ui-sref="checkout.shipping">Back</a>
+  <a class="btn btn-primary" ui-sref="checkout.confirm">Confirm</a>
+</div>

@@ -1,0 +1,14 @@
+<div class="content-center">
+  <h1>Shopping Cart</h1>
+  <div ng-repeat="(item, amount) in cart">
+    <p>{{item}} | 
+      <input type="number" min="1" ng-model="amount">
+      <input type="submit" value="Update" ng-click="addItemToCart(item, amount, $index)">
+      <span ng-show='success[$index]' class='alert alert-success'>{{success[$index]}}</span>
+    </p>
+  </div>
+
+  <p><a ui-sref="products.index">Back to Products</a></p>
+  <p><a ui-sref="checkout.shipping">Checkout</a></p>
+
+</div>

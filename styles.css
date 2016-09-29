@@ -1,0 +1,19 @@
+.content-center {
+  text-align: center;
+}
+
+.num-items {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.product-box {
+  margin: 10px;
+}
+
+.custom-success {
+  left: 50px;
+  top: 125px;
+}

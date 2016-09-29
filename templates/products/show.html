@@ -1,0 +1,15 @@
+<div class="container content-center">
+  <h3>{{product.name}}</h3>
+  <p><img width="430px" height="500px" src="napkins.jpg"></p>
+  <p>{{product.description}}</p>
+  <p>{{product.price}}</p>
+  <p class="small">{{categories[product.categoryId].name}}</p>
+  <form ng-submit="addItemToCart(product.name, quantity)">
+    <input type="number" placeholder="Quantity" required min="1" ng-model="quantity">
+    <input type="submit" value="Buy Now!">
+    <br> <br>
+    <p><span ng-show="success" class="alert alert-success">{{success}}</span></p>
+    <br>
+  </form>
+  <p><a ui-sref="products.index">Back</a></p>
+</div>
