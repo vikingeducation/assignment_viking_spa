@@ -1,0 +1,10 @@
+<select ng-model="sortegory">
+  <option></option>
+  <option ng-repeat="category in categories" value="{{category.id}}">
+    {{ category.name }}
+  </option>
+</select>
+
+<ul ng-repeat='product in getProducts()'>
+  <product product='product'></product>
+</ul>
