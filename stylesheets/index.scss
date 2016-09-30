@@ -14,53 +14,68 @@ body {
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
-}
 
-#top-banner {
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-  font-size: 30px;
-  font-weight: bold;
-  margin-top: -20px;
-  padding: 40px;
-  text-align: center;
-}
-
-#middle-banner {
-  background-color: black;
-  color: white;
-  font-size: 25px;
-  padding: 10px;
-  text-align: center;
-}
-
-#bottom-banner {
-  border: 1px solid gray;
-  color: gray;
-  font-size: 18px;
-  font-style: italic;
-  padding: 8px;
-  text-align: center;
-}
-
-footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 2rem;
-  background-color: black;
-  text-align: center;
-
-  #contact-header {
-    color: yellow;
+  #top-banner {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -20px;
+    padding: 40px;
+    text-align: center;
   }
 
-  #telephone-container {
+  #middle-banner {
+    background-color: black;
     color: white;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
   }
 
-  #email-container {
-    color: white;
+  #bottom-banner {
+    border: 1px solid gray;
+    color: gray;
+    font-size: 18px;
+    font-style: italic;
+    padding: 8px;
+    text-align: center;
   }
+
+  #category-filter {
+    float: right;
+    padding-top: 10px;
+
+    #category-select-container {
+      display: inline-block;
+    }
+
+    #category-button-container {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    background-color: black;
+    text-align: center;
+
+    #contact-header {
+      color: yellow;
+    }
+
+    #telephone-container {
+      color: white;
+    }
+
+    #email-container {
+      color: white;
+    }
+  }
+
 }

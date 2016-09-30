@@ -1,10 +1,13 @@
 <div class="row">
-  <div class="col-xs-4 col-xs-offset-8">
+  <div class="col-xs-12">
     <div id="category-filter">
-      <div class="category-dropdown">
-        {{ categories }}
+      <div id="category-select-container">
+        <select class='form-control'>
+          <option ng-repeat="(key, value) in categories" value="{{value.id}}">{{ value.name }}</option>
+        </select>
       </div>
-      <div class="filter-button">
+      <div id="category-button-container">
+        <button class='btn btn-success'>Filter</button>
       </div>
     </div>
   </div>
