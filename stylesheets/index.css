@@ -33,6 +33,9 @@ body {
     font-style: italic;
     padding: 8px;
     text-align: center; }
+  body main {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray; }
   body #category-filter {
     float: right;
     padding-top: 10px; }
