@@ -35,15 +35,38 @@ body {
     text-align: center; }
   body main {
     border-left: 1px solid lightgray;
-    border-right: 1px solid lightgray; }
-  body #category-filter {
-    float: right;
-    padding-top: 10px; }
-    body #category-filter #category-select-container {
-      display: inline-block; }
-    body #category-filter #category-button-container {
-      display: inline-block;
-      margin-left: 10px; }
+    border-right: 1px solid lightgray;
+    padding-bottom: 75px; }
+    body main #category-filter {
+      float: right;
+      padding: 10px 0; }
+      body main #category-filter #category-select-container {
+        display: inline-block; }
+      body main #category-filter #category-button-container {
+        display: inline-block;
+        margin-left: 10px; }
+    body main .product {
+      border: 1px solid #ccc;
+      margin-bottom: 15px; }
+      body main .product .product-title {
+        background-color: #262626;
+        color: white;
+        padding: 10px 0;
+        text-align: center; }
+      body main .product .product-image {
+        position: relative; }
+        body main .product .product-image img {
+          width: 100%; }
+        body main .product .product-image .price {
+          border: 1px solid black;
+          position: absolute;
+          top: 10px;
+          right: 10px; }
+          body main .product .product-image .price p {
+            margin: 2px 5px; }
+      body main .product .product-bottom {
+        background-color: #262626;
+        padding: 10px 0; }
   body footer {
     position: absolute;
     right: 0;

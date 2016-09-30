@@ -11,7 +11,7 @@ VikingStore.factory('ProductsService', [function(){
 			_products[i + ""] = {};
 			var product = _products[i + ""];
 			product.id = i;
-			product.imageUrl = faker.image.sports();
+			product.imageUrl = "https://images-na.ssl-images-amazon.com/images/I/31dZ6TQwmxL._SX300_.jpg"
 			product.price = 200;
 			product.name = faker.commerce.productName();
 			product.description = faker.lorem.paragraph();
