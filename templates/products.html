@@ -1,0 +1,18 @@
+<select ng-model="categorySelection" multiple>
+    <option ng-repeat="category in categories" value="{{ category.id }}">{{ category.name }}</option>
+</select>
+
+<p>{{cart}}</p>
+
+<product ng-repeat="selectedProduct in products | categoryFilter: categorySelection | limitTo: 9" product="selectedProduct"></product>
+
+  <div class="page-index">
+    <a href="#">&lt;&lt; Prev</a>
+    <a href="#">1</a>
+    <span>2</span>
+    <a href="#">3</a>
+    <p>...<p>
+    <a href="#">8</a>
+    <a href="#">9</a>
+    <a href="#">Next &gt;&gt;</a>
+  </div>

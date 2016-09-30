@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="spa">
+
+<head>
+  <title>Viking Store</title>
+  <!-- underscore -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+  <script type="text/javascript" src="/assets/js/angular-ui-router.js"></script>
+  <script type="text/javascript" src="/assets/js/faker.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="container">
+
+  <nav>
+    <div class="title-container">
+      <a href="index.html" class="nav-title">Viking Store</a>
+    </div>
+    <div class="shopping-cart" href="#">
+      <div class="cart-img"></div>
+      <a href="#">Your Cart</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="nav-spacer"></div>
+    <div class="banner">
+      <h1>The Viking Store</h1>
+    </div>
+
+    <div class="sub-header">
+      <h2 class="black-row">The Best Viking Gear on the Whole Web</h2>
+      <h3>Choose from among our lineup of fine axes below</h3>
+    </div>
+  </header>
+
+  <main ui-view></main>
+
+  <footer>
+    <div class="footer-container">
+      <h5>Contact</h5>
+
+      <div class="contact-container">
+        <div class="footer-image phone-img"></div>
+        <p class="footer-txt">1-000-000-0000</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="footer-image email-img"></div>
+        <a class="footer-txt" href="mailto:contact@vikingstore.com">contact@vikingstore.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+<script type="text/javascript" src="app.js"></script>
+
+<!--  Controllers  -->
+<script type="text/javascript" src="/controllers/store_ctrl.js"></script>
+<script type="text/javascript" src="/controllers/store_show_ctrl.js"></script>
+<script type="text/javascript" src="/controllers/cart_ctrl.js"></script>
+<!--  Directives  -->
+<script type="text/javascript" src="/directives/productDirective.js"></script>
+
+<!--  Services  -->
+<script type="text/javascript" src="/services/product_service.js"></script>
+<script type="text/javascript" src="/services/cart_service.js"></script>
+
+<!--  Filters  -->
+<script type="text/javascript" src="/filters/category_filter.js"></script>
+
+
+</html>
