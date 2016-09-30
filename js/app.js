@@ -16,5 +16,9 @@ VikingStore.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 			url: "/index",
 			templateUrl: "js/templates/products/index.html"
 		})
+		.state('products.show', {
+			url: "/:id",
+			templateUrl: "js/templates/products/show.html"
+		})
 
 }]);
