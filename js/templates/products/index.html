@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="row" ng-repeat="products in chunk(productsInArray, 3)">
+<div class="row" ng-repeat="products in productsInChunks">
   <div class="col-xs-4" ng-repeat="product in products">
     <div class="product">
 
@@ -23,7 +23,7 @@
       </div>
 
       <div class="product-image">
-        <img src="{{ product.imageUrl }}">
+        <img ng-src="{{ product.imageUrl }}">
         <div class="price">
           <p>${{ product.price }}</p>
         </div>
