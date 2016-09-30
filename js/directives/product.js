@@ -1,7 +1,9 @@
-VikingStore.directive("product", function(){
+VikingStore.directive('product', function(){
+
 	return {
 		restrict: "E",
-		scope: true,
-		templateUrl: "/js/templates/products/product.html"
+		templateUrl: "/js/templates/products/product.html",
+		scope: {product: '='}
 	}
+
 });
