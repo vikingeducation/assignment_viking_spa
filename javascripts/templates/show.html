@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4">
+    <div class="product">
+      <h4>{{product.name}}</h4>
+
+      <img src="generic.jpg" size="300x300">
+
+      <p>{{product.price | currency}}</p>
+
+      <p>{{product.description}}</p>
+
+      <input type="text" ng-model="quantity"></div>
+      <button ng-click="addToCart(product, quantity)">Add to Cart</button>
+
+    </div>
+
+  </div>
+</div>
