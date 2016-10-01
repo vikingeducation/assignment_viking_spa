@@ -8,5 +8,5 @@ app.controller("ProductShowCtrl", ['$scope', 'productService', '$stateParams', '
     cartService.addItem(product, quantity);
   };
 
-  $scope.cart = cartService.listAll();
+  //$scope.cartLength = Object.keys(cartService.listAll()).length;
 }]);

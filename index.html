@@ -26,9 +26,10 @@
         </div>
 
         <div class="col-xs-4">
-          <div id="nav-links">
+          <div id="nav-links" ng-controller="CartCtrl">
             <a ui-sref="cart">Your Cart</a>
             <a>Sign In</a>
+            <p>{{cartLength}} items in cart</p>
           </div>
         </div>
       </div>

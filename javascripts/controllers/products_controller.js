@@ -10,5 +10,5 @@ app.controller("ProductsCtrl", ['$scope', 'productService', 'cartService', funct
   };
 
 
-  $scope.cart = cartService.listAll();
+  //$scope.cartLength = Object.keys(cartService.listAll()).length;
 }]);

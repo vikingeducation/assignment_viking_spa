@@ -2,4 +2,6 @@ app.controller("CartCtrl", ['$scope', 'cartService', function($scope, cartServic
 
   $scope.cart = cartService.listAll();
 
+  $scope.cartLength = Object.keys($scope.cart).length;
+
 }])
