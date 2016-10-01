@@ -1,0 +1,10 @@
+<div layout="row" layout-align="end center">
+  <md-select ng-model="category" placeholder="Category" class="md-no-underline">
+    <md-option value="">All</md-option>
+    <md-option ng-repeat="(id, category) in categories" value="{{ id }}">{{ category.name }}</md-option>
+  </md-select>
+</div>
+
+<div ng-repeat="product in products | filterByCategory: category">
+  <product-directive product="product"></product-directive>
+</div>
