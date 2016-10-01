@@ -1,4 +1,4 @@
-VikingStore.controller("ProductsController", ["$scope", 'CategoriesService', 'ProductsService', function($scope, CategoriesService, ProductsService){
+VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'CategoriesService', 'ProductsService', function($scope, $stateParams, CategoriesService, ProductsService){
 
 	// ------------
 	// Private
@@ -53,6 +53,8 @@ VikingStore.controller("ProductsController", ["$scope", 'CategoriesService', 'Pr
 	};
 
 	// Converting products into  groups.
-	$scope.productsInChunks = _chunk(_moveProductsToArray(_productsInObject), 3)
+	$scope.productsInChunks = _chunk(_moveProductsToArray(_productsInObject), 3);
+
+	$scope.x = $stateParams.id;
 
 }])
