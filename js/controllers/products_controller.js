@@ -39,7 +39,6 @@ VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'Categor
 
 	$scope.addItem = function(object, quantity){
 		ShoppingCartService.addItem(object, quantity);
-		console.log(ShoppingCartService.listAll());
 	};
 
 	$scope.cartItems = ShoppingCartService.listAll();
@@ -57,6 +56,15 @@ VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'Categor
 		};
 
 		$scope.productsInChunks = _chunk(array, 3)
+	};
+
+	$scope.numberOfItemsInCart = function(){
+		var n = 0;
+		var keys = Object.keys($scope.cartItems);
+		for (var i = 0; i < keys.length; i++){
+			n += parseInt($scope.cartItems[keys[i]].quantity);
+		};
+		return n;
 	};
 
 	// Converting products into  groups.
