@@ -1,0 +1,19 @@
+<md-card>
+  <img ng-src="{{ product.image }}" class="md-card-image" alt="product image">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">{{ product.name }}</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+    <p>
+      {{ product.description }}
+    </p>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <label>Amount</label>
+    <input ng-model="quantity">
+    <md-button ng-click="addToCart(product, quantity)">Add to Cart</md-button>
+    <md-button><a ui-sref="products.index">Go Back</a></md-button>
+  </md-card-actions>
+</md-card>
