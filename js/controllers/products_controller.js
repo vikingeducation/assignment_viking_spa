@@ -55,6 +55,6 @@ VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'Categor
 	// Converting products into  groups.
 	$scope.productsInChunks = _chunk(_moveProductsToArray(_productsInObject), 3);
 
-	$scope.x = $stateParams.id;
+	$scope.product = _productsInObject[$stateParams.id];
 
 }])
