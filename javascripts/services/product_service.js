@@ -54,6 +54,10 @@ app.factory('productService', function(){
     return _categories;
   };
 
+  service.find = function(id){
+    return _products[id];
+  };
+
 
 
   return service;

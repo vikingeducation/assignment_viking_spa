@@ -20,6 +20,13 @@ app.config(function($stateProvider, $urlRouterProvider){
       //should inherit it's parent controller
     })
 
+
+    .state("products.show", {
+      url: "/:id",
+      templateUrl: "/javascripts/templates/show.html",
+      controller: "ProductShowCtrl"
+    })
+
 });
 
 
