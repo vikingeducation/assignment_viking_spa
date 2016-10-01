@@ -42,6 +42,8 @@ VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'Categor
 		console.log(ShoppingCartService.listAll());
 	};
 
+	$scope.cartItems = ShoppingCartService.listAll();
+
 	$scope.category = {id: "all"};
 
 	$scope.categories = CategoriesService.all();
@@ -61,5 +63,7 @@ VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'Categor
 	$scope.productsInChunks = _chunk(_moveProductsToArray(_productsInObject), 3);
 
 	$scope.product = _productsInObject[$stateParams.id];
+
+	$scope.quantityToOrder = undefined;
 
 }])

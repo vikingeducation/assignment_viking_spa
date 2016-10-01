@@ -9,8 +9,8 @@
     <form>
       <div class="form-group">
         <label for="quantity-input" style="margin-right: 10px;">Quantiy:</label>
-        <input type="text" class='form-control' id="quantity-input" style="margin: 0 10px 10px 0; width: 100px">
-        <input type="submit" value="Add to Cart" class="btn btn-success" ng-click="addItem(product)">
+        <input type="text" class='form-control' id="quantity-input" ng-model="quantityToOrder" style="margin: 0 10px 10px 0; width: 100px" ng-model="quantityToOrder">
+        <input type="submit" value="Add to Cart" class="btn btn-success" ng-click="addItem(product, quantityToOrder)">
       </div>
     </form>
   </div>
