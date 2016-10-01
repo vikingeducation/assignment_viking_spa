@@ -16,6 +16,7 @@
 
 <div class="row" ng-repeat="products in productsInChunks">
   <div class="col-xs-4" ng-repeat="product in products">
-    <product product="product"></product>
+    <product product="product"
+             add-item="addItem(product)"></product>
   </div>
 </div>

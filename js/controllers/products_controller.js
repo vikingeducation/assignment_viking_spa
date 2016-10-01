@@ -1,4 +1,4 @@
-VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'CategoriesService', 'ProductsService', function($scope, $stateParams, CategoriesService, ProductsService){
+VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'CategoriesService', 'ProductsService', 'ShoppingCartService', function($scope, $stateParams, CategoriesService, ProductsService, ShoppingCartService){
 
 	// ------------
 	// Private
@@ -36,6 +36,11 @@ VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'Categor
 	// ------------
 	// Public
 	// ------------
+
+	$scope.addItem = function(object){
+		ShoppingCartService.addItem(object, 1);
+		console.log(ShoppingCartService.listAll());
+	};
 
 	$scope.category = {id: "all"};
 
