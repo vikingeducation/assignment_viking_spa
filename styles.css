@@ -1,0 +1,17 @@
+nav {
+  border-bottom: solid 2px black;
+}
+
+nav a {
+  display: block;
+
+
+#nav-links {
+  display: block;
+  margin-top: 15px;
+}
+
+
+.product {
+  background-color: gray;
+}
