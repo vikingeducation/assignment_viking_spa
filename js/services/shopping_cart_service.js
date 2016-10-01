@@ -17,11 +17,18 @@ VikingStore.factory('ShoppingCartService', [function(){
 	};
 
 	ShoppingCartService.addItem = function(object, quantity){
+		// If not in the shopping cart
 		if( !_shoppingCart[object.id] ){
 			_shoppingCart[object.id] = object;
 		};
 
-		_shoppingCart[object.id].quantity = quantity;
+		// If quantity is specified
+		if(quantity){
+			_shoppingCart[object.id].quantity = quantity;
+		// Quantity is not specified and no quantity specifiec on object
+		} else if( !_shoppingCart[object.id].quantity ) {
+			_shoppingCart[object.id].quantity = 1;
+		};
 	};
 
 	ShoppingCartService.removeItem = function(productId){

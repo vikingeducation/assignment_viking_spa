@@ -37,8 +37,8 @@ VikingStore.controller("ProductsController", ["$scope", "$stateParams", 'Categor
 	// Public
 	// ------------
 
-	$scope.addItem = function(object){
-		ShoppingCartService.addItem(object, 1);
+	$scope.addItem = function(object, quantity){
+		ShoppingCartService.addItem(object, quantity);
 		console.log(ShoppingCartService.listAll());
 	};
 
