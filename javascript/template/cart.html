@@ -1,0 +1,12 @@
+<div ng-if="cartItems" layout-align="center center" layout="column">
+  <md-list>
+    <md-list-item ng-repeat="item in cartItems">
+      <div class="md-list-item-text" layout="column">
+        <h2>{{ item.product.name }}</h2>
+        <p>{{ item.quantity }} <a href="" ng-click="addOne(item)">add one</a></p>
+        <md-button ng-click="deleteItem(item)">Delete Item</md-button>
+      </div>
+    </md-list-item>
+  </md-list>
+  <h3>There are total: {{ itemsCount() }} items</h3>
+</div>

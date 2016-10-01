@@ -27,9 +27,9 @@
   <body ng-app="VikingStore">
     <!-- navbar -->
     <div layout="row" layout-align="space-around center" class="navbar">
-      <h1>Viking Store</h1>
+      <h1><a ui-sref="products.index">Viking Store</a></h1>
       <div layout="column">
-        <a href="">Your Cart</a>
+        <a ui-sref="cart">Your Cart</a>
         <a href="">Sign In</a>
       </div>
     </div>
@@ -47,12 +47,15 @@
 
     <!-- controller -->
     <script src="javascript/controller/ProductsIndexCtrl.js" charset="utf-8"></script>
+    <script src="javascript/controller/ProductShowCtrl.js" charset="utf-8"></script>
+    <script src="javascript/controller/CartCtrl.js" charset="utf-8"></script>
 
     <!-- directive -->
     <script src="javascript/directive/products/ProductDirective.js" charset="utf-8"></script>
 
     <!-- service -->
     <script src="javascript/service/ProductService.js" charset="utf-8"></script>
+    <script src="javascript/service/CartService.js" charset="utf-8"></script>
 
     <!-- filter -->
     <script src="javascript/filter/filterByCategory.js" charset="utf-8"></script>

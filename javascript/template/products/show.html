@@ -1,8 +1,8 @@
 <md-card>
+  <img ng-src="{{ product.image }}" class="md-card-image" alt="product image">
   <md-card-title>
     <md-card-title-text>
-      <span class="md-headline"><a ui-sref="products.show({id: product.id})">{{ product.name }}</a></span>
-      <span class="md-subhead">{{ product.category.name }}</span>
+      <span class="md-headline">{{ product.name }}</span>
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
@@ -14,5 +14,6 @@
     <label>Amount</label>
     <input ng-model="quantity">
     <md-button ng-click="addToCart(product, quantity)">Add to Cart</md-button>
+    <md-button><a ui-sref="products.index">Go Back</a></md-button>
   </md-card-actions>
 </md-card>

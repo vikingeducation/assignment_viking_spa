@@ -2,7 +2,9 @@ VikingStore.directive('productDirective', function () {
 	return {
 		strict: "E",
 		scope: {
-			product: "="
+			product: "=",
+			quantity: "=",
+			addToCart: "&"
 		},
 		templateUrl: "javascript/directive/products/ProductDirective.html"
 	}

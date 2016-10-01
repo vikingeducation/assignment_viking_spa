@@ -1,10 +1,14 @@
-<div layout="row" layout-align="end center">
+<div layout="row" layout-align="end center" ng-if="categories">
   <md-select ng-model="category" placeholder="Category" class="md-no-underline">
     <md-option value="">All</md-option>
     <md-option ng-repeat="(id, category) in categories" value="{{ id }}">{{ category.name }}</md-option>
   </md-select>
 </div>
 
-<div ng-repeat="product in products | filterByCategory: category">
-  <product-directive product="product"></product-directive>
+<div ng-if="products">
+  <div ng-repeat="product in products | filterByCategory: category">
+    <product-directive product="product" quantity="quantity" add-to-cart="addToCart(product, quantity)"></product-directive>
+  </div>
 </div>
+
+<div ui-view></div>

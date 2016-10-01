@@ -25,10 +25,15 @@ VikingStore.factory('ProductService', ['$http', function () {
 			product.price = faker.commerce.price();
 			product.description = faker.lorem.paragraph();
 			product.category = _categories[Math.floor(Math.random() * 5 + 1)];
+			product.image = faker.image.technics();
 			_products[i] = product;
 		};
 		console.log(_products);
 		return _products;
+	};
+
+	ProductService.findProduct = function (id) {
+		return _products[id];
 	};
 
 	return ProductService;
