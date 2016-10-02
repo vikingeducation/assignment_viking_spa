@@ -1,0 +1,15 @@
+What does the view need?
+USER
+user.first_name
+user.cart = [productOneId, productTwoId]
+
+CATEGORY
+category.name
+category.id
+category.product_ids
+
+PRODUCTS
+product.name
+product.price
+product.id
+product.picture_url

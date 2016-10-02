@@ -1,0 +1,120 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+
+  #top-banner {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -20px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  #middle-banner {
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #bottom-banner {
+    border: 1px solid gray;
+    color: gray;
+    font-size: 18px;
+    font-style: italic;
+    padding: 8px;
+    text-align: center;
+  }
+
+  main {
+    border-left: 1px solid lightgray; 
+    border-right: 1px solid lightgray;
+    padding-bottom: 75px;
+
+    #category-filter {
+      float: right;
+      padding: 10px 0;
+
+      #category-select-container {
+        display: inline-block;
+      }
+
+      #category-button-container {
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+
+    .product{
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+
+      .product-title{
+        background-color: #262626;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+      }
+      .product-image{
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+
+        .price{
+          border: 1px solid black;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          p {
+            margin: 2px 5px;
+          }
+        }
+      }
+      .product-bottom{
+        background-color: #262626;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    background-color: black;
+    text-align: center;
+
+    #contact-header {
+      color: yellow;
+    }
+
+    #telephone-container {
+      color: white;
+    }
+
+    #email-container {
+      color: white;
+    }
+  }
+
+}

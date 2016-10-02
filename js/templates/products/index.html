@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div id="category-filter">
+      <div id="category-select-container">
+        <select class='form-control' ng-model='category.id'>
+          <option value="all">All</option>
+          <option ng-repeat="(key, value) in categories" value="{{value.id}}">{{ value.name }}</option>
+        </select>
+      </div>
+      <div id="category-button-container">
+        <button class='btn btn-success' ng-click="filterByCategory()">Filter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" ng-repeat="products in productsInChunks">
+  <div class="col-xs-4" ng-repeat="product in products">
+    <product product="product"
+             add-item="addItem(product)"></product>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="VikingStore" ng-controller="ProductsController">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Viking Store</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Faker -->
+    <script src = "/node_modules/faker/build/build/faker.js" type = "text/javascript"></script>
+
+    <!-- UI-router -->
+    <script src="/plugins/angular-ui-router.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Regular css -->
+    <link rel="stylesheet" href="/stylesheets/index.css">
+  </head>
+  <body>
+    <!-- Nav -->
+    <main-nav number-of-items-in-cart="numberOfItemsInCart()"></main-nav>
+
+    <!-- Banners Underneath the nav -->
+    <div id="top-banner">
+      The Viking Store
+    </div>
+    <div id="middle-banner">
+      The Best Viking Gear on the Whole Web
+    </div>
+    <div id="bottom-banner">
+      Choose from among our lineup of fine items below
+    </div>
+
+    <main class="container">
+      <div ui-view>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <main-footer></main-footer>
+
+    <!-- App -->
+    <script src="/js/app.js"></script>
+
+    <!-- Services -->
+    <script src="/js/services/categories_service.js"></script>
+    <script src="/js/services/products_service.js"></script>
+    <script src="/js/services/shopping_cart_service.js"></script>
+
+    <!-- Controllers -->
+    <script src="/js/controllers/products_controller.js"></script>
+
+    <!-- Directives -->
+    <script src="/js/directives/main_footer.js"></script>
+    <script src="/js/directives/main_nav.js"></script>
+    <script src="/js/directives/product.js"></script>
+
+  </body>
+</html>
