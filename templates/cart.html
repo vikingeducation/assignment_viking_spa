@@ -1,0 +1,24 @@
+CART!
+{{totalItems}}
+<table>
+  <tr>
+    <th>Item Name</th>
+    <th>Quantity</th>
+    <th>Edit Quantity</th>
+    <th>Remove All</th>
+
+  </tr>
+
+  <tr ng-repeat="(id, quantity) in cart">
+
+  <td>{{ products[id].name }}</td>
+  <td>{{ quantity }}</td>
+  <td><button ng-click="increaseQuantity(id)">+</button>
+      <button ng-click="decreaseQuantity(id)">-</button>
+  </td>
+  <td><button ng-click="removeItems(id)" class="btn btn-danger">Remove Items</button></td>
+  </tr>
+</table>
+
+<a ui-sref="cart.neworder"><button class="btn btn-info" ng-if="totalItems">Check Out!</button></a>
+<div ui-view></div>

@@ -1,0 +1,18 @@
+<div class="col-md-4">
+  <div class="card">
+    <img class="card-img-top product-image" ng-src="{{product.image}}" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">{{product.name}}</h4>
+      <p class="card-text">{{product.description}}</p>
+
+      Categories:
+      <p ng-repeat="id in product.categories" class="category-name">
+        {{ categories[id].category_name }} |
+      </p>
+      <br>
+       <button class="btn btn-success" ng-click="addToCart({id: product.id})">Add to Cart: {{product.price | currency}}</button>
+
+        <a ui-sref="products.show({id:{{product.id}}})" class="btn btn-primary">Show Product</a>
+    </div>
+  </div>
+</div>

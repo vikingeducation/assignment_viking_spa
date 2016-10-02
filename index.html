@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="storeFront">
+<head>
+  <title>Single Page Store</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src= "angular-ui-router.js"></script>
+  <script src= "faker.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!--Lo-Dash -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.js"></script>
+  <script src= "app.js"></script>
+  <!-- Directives -->
+  <script src= "directives/product.js"></script>
+  <!-- Services -->
+  <script src= "services/productsService.js"></script>
+  <script src= "services/shoppingCartService.js"></script>
+  <script src= "services/orderService.js"></script>
+  <!-- Controllers -->
+  <script src= "controllers/productsController.js"></script>
+  <script src= "controllers/productShowController.js"></script>
+  <script src= "controllers/cartController.js"></script>
+  <script src= "controllers/orderNewController.js"></script>
+  <!-- Filters -->
+  <script src= "filters/filterByCategory.js"></script>
+</head>
+<body>
+
+  <nav class="navbar nav navbar-default">
+      <ul>
+        <li><a ui-sref="products.index">All Products</a></li>
+        <li><a ui-sref="cart">View Cart</a></li>
+      </ul>
+  </nav>
+
+  <div ui-view></div>
+
+</body>
+</html>
