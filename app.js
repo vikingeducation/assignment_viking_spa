@@ -1,5 +1,5 @@
 var storeApp = angular.module("StoreApp", ['ui.router']);
-
+var a;
 storeApp.config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise("/products");
 
