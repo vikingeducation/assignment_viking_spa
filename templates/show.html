@@ -1,0 +1,6 @@
+<h2>{{prods[prodId].name}}</h2>
+<p>Price: {{prods[prodId].price}}</p>
+<p>Category: {{cats[prods[prodId].cat].name}}
+<p>{{prods[prodId].desc}}</p>
+<input type='number' ng-model="orderQuant"><button ng-click="toCart()">Add to Cart</button>
+<p><a ui-sref="products.index">Back to Products</a></p>

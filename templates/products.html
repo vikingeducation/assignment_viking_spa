@@ -1,0 +1,9 @@
+<h2>products index {{selectCat.id}}
+  <select ng-model="selectCat" ng-options="cat as cat.name for cat in cats">
+    <option value=""></option>
+  </select></h2>
+
+
+<div class="col-xs-4" style="border: black 2px solid"  ng-repeat="prod in prods | filter:{cat:selectCat.id}">
+  <prod-square prod='prod' cats="cats"></prod-square>
+</div>
