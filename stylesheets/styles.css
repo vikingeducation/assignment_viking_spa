@@ -238,7 +238,10 @@ img.productsShow {
   margin: 10px;
   padding-right: 10px;
 }
-
+.totalAmount {
+  font-weight: bold;
+  color: orange;
+}
 
 
 

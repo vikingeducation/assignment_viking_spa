@@ -32,6 +32,14 @@ VikingStore.factory('ShoppingCartService', function() {
     }
   };
 
+  ShoppingCartService.getTotal = function(){
+    var total = 0;
+    for(var i = 0; i < _items.length; i++){
+      total += _items[i].product.price * _items[i].quantity;
+    }
+    return total;
+}
+
   var _extendItem = function(item) {
     item.incrQty = function() {
       item.quantity += 1;

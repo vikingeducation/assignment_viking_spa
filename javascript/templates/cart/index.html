@@ -16,5 +16,9 @@
       <td><span class="text-danger" ng-click="item.decrQty()"> - </span>{{ item.quantity }} <span class="text-success" ng-click="item.incrQty()"> + </span></td>
       <td>{{ item.product.price  *  item.quantity | currency }}</td>
     </tr>
+    <tr>
+      <td colspan="4"></td>
+      <td class="totalAmount">  {{ getTotal() | currency }}</td>
+    <tr>
   </tbody>
 </table>
