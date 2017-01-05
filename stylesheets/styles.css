@@ -212,10 +212,32 @@ main {
 .categoryFilter {
   margin-bottom: 20px;
 }
-
-
-
-
+.productShowImageContainer {
+}
+.productShowDescContainer {
+}
+img.productsShow {
+  width: 100%;
+}
+.showPrice {
+  display: inline-block;
+  color: green;
+}
+.showName {
+  display: inline-block;
+  font-weight: bold;
+}
+.showDesc {
+  padding: 10px;
+}
+.showAddToCart {
+  padding: 10px;
+  margin: 0 auto;
+}
+.showQty {
+  margin: 10px;
+  padding-right: 10px;
+}
 
 
 

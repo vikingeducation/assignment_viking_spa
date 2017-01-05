@@ -1,2 +1,21 @@
-<h2>Show<h2>
-{{  product.id }}
+<div clas="row">
+    <div class="col-md-4">
+      <div class="productShowImageContainer">
+        <img class="productsShow" src={{product.imageUrl}} />
+      </div>
+    </div>
+    <div class="col-md-8 well">
+      <div class="productShowDescContainer">
+        <div class="showName">{{product.name}}</div>
+        <div class="showPrice pull-right">{{product.price | currency }}</div>
+        <div class="showDesc">{{product.desc}}</div>
+        <div><a class="btn btn-sm btn-warning showAddToCart pull-right" href="#">Add To Cart</a></div>
+        <div class="showQty pull-right">
+          <label>Quantity :</label>
+          <select ng-init="quantity = options[0]" ng-model="quantity" ng-options="o as o for o in options">
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

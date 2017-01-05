@@ -7,13 +7,12 @@
 <div clas="row">
   <div ng-repeat="product in products | filter:{category: selectedCat || undefined}">
     <div class="col-md-4 productContainer">
-      <div class="item">
-        <div class="productName">{{product.name}}</div>
-        <div class="productPrice pull-right">{{product.price | currency }}</div>
-        <img class="productsIndex" src={{product.imageUrl}} />
-
-        <div class="addToCart"><a class="btn btn-sm btn-warning" href="#">Add To Cart</a></div>
-      </div>
+        <div class="item">
+          <div class="productName" ui-sref="products.show({ id: product.id })">{{product.name}}</div>
+          <div class="productPrice pull-right">{{product.price | currency }}</div>
+          <img class="productsIndex" ui-sref="products.show({ id: product.id })" src={{product.imageUrl}} />
+          <div class="addToCart"><a class="btn btn-sm btn-warning" href="#">Add To Cart</a></div>
+        </div>
     </div>
   </div>
 </div>

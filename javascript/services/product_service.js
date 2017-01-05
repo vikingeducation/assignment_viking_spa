@@ -12,6 +12,7 @@ VikingStore.factory('ProductService', function() {
     _products.push( { id: i, name: faker.commerce.productName(),
                       price: faker.commerce.price(),
                       imageUrl: 'images/'+i+'.jpg',
+                      desc: faker.lorem.paragraph(),
                       category: _categories[_.random(0,4)],
                     });
   }
