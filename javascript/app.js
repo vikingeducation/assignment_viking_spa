@@ -23,6 +23,11 @@ VikingStore.config(
         url: '/:id',
         templateUrl: 'javascript/templates/products/show.html',
         controller: 'ProductsShowCtrl'
+      })
+      .state('cart', {
+        url: '/cart',
+        templateUrl: 'javascript/templates/cart/index.html',
+        controller: 'CartIndexCtrl'
       });
 
   }]);

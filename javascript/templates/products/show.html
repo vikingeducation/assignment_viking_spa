@@ -9,7 +9,9 @@
         <div class="showName">{{product.name}}</div>
         <div class="showPrice pull-right">{{product.price | currency }}</div>
         <div class="showDesc">{{product.desc}}</div>
-        <div><a class="btn btn-sm btn-warning showAddToCart pull-right" href="#">Add To Cart</a></div>
+        <div>
+          <a class="btn btn-sm btn-warning showAddToCart pull-right" href="#" ng-click="addToCart(product, quantity)">Add To Cart</a>
+        </div>
         <div class="showQty pull-right">
           <label>Quantity :</label>
           <select ng-init="quantity = options[0]" ng-model="quantity" ng-options="o as o for o in options">

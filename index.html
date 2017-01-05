@@ -20,14 +20,16 @@
 </head>
 <body>
   <div class="container">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" ng-controller="NavBarCtrl">
   <div class="container-fluid">
       <h1 class="navbar-brand">Viking Store</h1>
       <div class="navbar-brand pull-right">
-        <a href="#">
+        <a href="#" ui-sref="cart">
+        <span> {{ items.length }} items in the cart</span>
         <img class="cart-logo" src="images/icon_empty_cart.png" />
         </a>
-        <a href="#">Sign In</a>
+        <a href="#" ng-show="signed_out" ng-init="signed_out=true" ng-click="signed_out=false">Sign In</a>
+        <a href="#" ng-hide="signed_out" ng-click="signed_out=true">Sign Out</a>
       </a>
       </div>
     </div>
@@ -60,9 +62,12 @@
     <script src="javascript/app.js"></script>
     <!-- services -->
     <script src="javascript/services/product_service.js"></script>
+    <script src="javascript/services/shopping_cart_service.js"></script>
     <!-- controllers -->
     <script src="javascript/controllers/products_index_ctrl.js"></script>
     <script src="javascript/controllers/products_show_ctrl.js"></script>
+    <script src="javascript/controllers/cart_index_ctrl.js"></script>
+    <script src="javascript/controllers/navbar_ctrl.js"></script>
 
   </body>
 </html>

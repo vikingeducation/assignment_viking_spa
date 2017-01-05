@@ -11,7 +11,7 @@
           <div class="productName" ui-sref="products.show({ id: product.id })">{{product.name}}</div>
           <div class="productPrice pull-right">{{product.price | currency }}</div>
           <img class="productsIndex" ui-sref="products.show({ id: product.id })" src={{product.imageUrl}} />
-          <div class="addToCart"><a class="btn btn-sm btn-warning" href="#">Add To Cart</a></div>
+          <div class="addToCart"><a class="btn btn-sm btn-warning" href="#" ng-click="addToCart(product)">Add To Cart</a></div>
         </div>
     </div>
   </div>
