@@ -1,0 +1,25 @@
+<table class="table table-striped shoppingCart">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Sub-Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in items">
+      <td>{{ $index+1 }}</td>
+      <td>{{ item.product.name }}</td>
+      <td>{{ item.product.price | currency }}</td>
+      <td><span class="text-danger" ng-click="item.decrQty()"> - </span>{{ item.quantity }} <span class="text-success" ng-click="item.incrQty()"> + </span></td>
+      <td>{{ item.product.price  *  item.quantity | currency }}</td>
+    </tr>
+    <tr>
+      <td colspan="3"></td>
+      <td class="totalAmount">Grand Total:</td>
+      <td class="totalAmount">{{ getTotal() | currency }}</td>
+    <tr>
+  </tbody>
+</table>
