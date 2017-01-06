@@ -25,7 +25,7 @@
       <h1 class="navbar-brand" ui-sref="products.index">Viking Store</h1>
       <div class="navbar-brand pull-right">
         <a href="#" ui-sref="cart">
-        <span> {{ items.length }} items in the cart</span>
+        <span> {{ numItems() }} items in the cart</span>
         <img class="cart-logo" src="images/icon_empty_cart.png" />
         </a>
         <a href="#" ng-show="signed_out" ng-init="signed_out=true" ng-click="signed_out=false">Sign In</a>

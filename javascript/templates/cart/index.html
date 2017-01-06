@@ -17,8 +17,9 @@
       <td>{{ item.product.price  *  item.quantity | currency }}</td>
     </tr>
     <tr>
-      <td colspan="4"></td>
-      <td class="totalAmount">  {{ getTotal() | currency }}</td>
+      <td colspan="3"></td>
+      <td class="totalAmount">Grand Total:</td>
+      <td class="totalAmount">{{ getTotal() | currency }}</td>
     <tr>
   </tbody>
 </table>
