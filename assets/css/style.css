@@ -262,3 +262,13 @@ CART
 .thumbnail-container {
   width: 120px;
 }
+
+/*
+==================
+CHECKOUT
+==================
+*/
+
+.ng-invalid input{
+  border: 1px solid red;
+}
