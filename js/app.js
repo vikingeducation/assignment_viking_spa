@@ -27,7 +27,7 @@ store.config(function($stateProvider, $urlRouterProvider){
     .state('checkout.payment', {
       url: "/payment",
       templateUrl: "/js/partials/checkout/payment.html"
-    }),
+    })
     .state('checkout.confirm', {
       url: "/confirm",
       templateUrl: "/js/partials/checkout/confirm.html"
