@@ -15,12 +15,27 @@ store.factory('cartService', ["productService", function(productService) {
   }
 
   var listAll = function(){
-    returnObj = {}
+    returnObj = {};
     for(var productid in _cart){
-      var product = productService.find(productid)
-      returnObj[productid] = product
-      product["quantity"] = _cart[productid]
-    } 
+      var product = productService.find(productid);
+      returnObj[productid] = product;
+      product["quantity"] = _cart[productid];
+    }
     return returnObj
+  }
+
+  var count = function(){
+    var total = 0;
+    for(var p_id in _cart) {
+      total += _cart[p_id];
+    }
+
+    return total
+  }
+
+  return {
+    listAll: listAll,
+    addItem: addItem,
+    removeItem: removeItem
   }
 }]);
