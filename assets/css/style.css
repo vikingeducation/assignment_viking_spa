@@ -252,3 +252,13 @@ footer img{
   display: inline-block;
   vertical-align: middle;
 }
+
+/*
+==================
+CART
+==================
+*/
+
+.thumbnail-container {
+  width: 120px;
+}

@@ -2,7 +2,8 @@ store.factory('cartService', ["productService", function(productService) {
   _cart = {}
 
   var addItem = function(product, quantity){
-    _cart[product.id] = quantity
+    _cart[product.id] = angular.copy(product, {});
+    _cart[product.id].quantity = quantity;
   }
 
   var removeItem = function(product, quantity){
@@ -14,28 +15,23 @@ store.factory('cartService', ["productService", function(productService) {
     }
   }
 
-  var listAll = function(){
-    returnObj = {};
-    for(var productid in _cart){
-      var product = productService.find(productid);
-      returnObj[productid] = product;
-      product["quantity"] = _cart[productid];
-    }
-    return returnObj
+  var get = function(){
+    return _cart
   }
 
   var count = function(){
     var total = 0;
     for(var p_id in _cart) {
-      total += _cart[p_id];
+      total += _cart[p_id].quantity;
     }
 
     return total
   }
 
   return {
-    listAll: listAll,
+    get: get,
     addItem: addItem,
-    removeItem: removeItem
+    removeItem: removeItem,
+    count: count
   }
 }]);

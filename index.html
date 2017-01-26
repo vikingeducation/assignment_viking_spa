@@ -16,13 +16,12 @@
   </head>
   <body ng-cloak class="grid">
     <nav class="topbar">
-      <div class="text left">Viking Store</div>
+      <div class="text left"><a ui-sref="products">Viking Store</a></div>
 
-      <div class="right">
-      <a ui-sref="cart"><img src="http://fillmurray.com/200/300">
-      </a>
-
-      <a class="text" ui-sref="cart">Your Cart</a>
+      <div class="right" ng-controller="CartCtrl">
+        <a ui-sref="cart"><img src="http://fillmurray.com/200/300">
+          {{ totalItems() }}
+        </a>
       </div>
     </nav>
 
@@ -43,6 +42,7 @@
     <script src="js/services/cart_service.js"></script>
     <script src="js/controllers/products_ctrl.js"></script>
     <script src="js/controllers/ProductCtrl.js"></script>
+    <script src="js/controllers/CartCtrl.js"></script>
     <script src="js/filters/toArrayFilter.js"></script>
   </body>
 
