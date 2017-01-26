@@ -22,12 +22,16 @@ store.factory('productService',[ 'categoryService', function(categoryService) {
     }
   }
 
+  var findProduct = function(id){
+    return _products[id]
+  }
 
   var returnProducts = function(){
     return _products
   }
 
   return {
-    get: returnProducts
+    get: returnProducts,
+    find: findProduct
   }
 }]);
