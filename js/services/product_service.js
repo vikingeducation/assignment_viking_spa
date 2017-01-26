@@ -16,7 +16,7 @@ store.factory('productService',[ 'categoryService', function(categoryService) {
       name: faker.commerce.productName(),
       price: faker.commerce.price(),
       id: i,
-      image: faker.image.cats(),
+      image: "http://fillmurray.com/30" + i + "/400",
       description: faker.lorem.paragraph(),
       category: randomCat()
     }

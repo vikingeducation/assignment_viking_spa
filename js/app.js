@@ -1,13 +1,17 @@
 var store = angular.module('store', ['ui.router'])
 
 store.config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise("/index")
+  $urlRouterProvider.otherwise("/products")
 
   $stateProvider
-    .state('index',{
-      url: "/index",
+    .state('products',{
+      url: "/products",
       templateUrl: "/js/partials/products.html",
       controller: "ProductsCtrl"
     })
-
+    .state('show', {
+      url:"/:productId",
+      templateUrl: 'js/partials/product.html',
+      controller: "ProductCtrl"
+    })
 })
