@@ -1,10 +1,15 @@
-<div class="itembox">
+
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
   <h3 class="itemtext">{{product.name}}</h3>
-  <container class="framebg">
+
     <h5 class="price">{{product.price | currency : $}}</h5>
     <a ui-sref="show({productId: product.id})">
       <img class="item" ng-src="{{product.image}}">
     </a>
-  </container>
+
   <h3 class="itemtext"><button class="buybtn" ng-click="addToCart({ product: product })">Add To Cart</button></h3>
-</div>

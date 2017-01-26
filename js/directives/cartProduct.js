@@ -1,9 +1,8 @@
 store.directive('product', function() {
   return {
-    templateUrl: '/js/directives/product.html',
+    templateUrl: '/js/directives/cartProduct.html',
     scope: {
       product: "=",
-      addToCart: '&'
     },
     restrict: 'E'
   }

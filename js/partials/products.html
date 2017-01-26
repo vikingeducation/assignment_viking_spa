@@ -5,7 +5,9 @@
 </select>
 
 <div class="frame">
-  <product ng-repeat="product in products | toArrayFilter | filter:{category: { id: categoryFilter } }:true | limitTo:6" product="product">
+  <product ng-repeat="product in products | toArrayFilter | filter:{category: { id: categoryFilter } }:true | limitTo:6"
+           product="product"
+           add-to-cart="addToCart(product)">
   </product>
 </div>
 
