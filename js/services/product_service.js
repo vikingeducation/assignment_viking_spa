@@ -1,5 +1,5 @@
 store.factory('productService',[ 'categoryService', function(categoryService) {
-  
+
   var _products = {};
 
 
@@ -11,7 +11,7 @@ store.factory('productService',[ 'categoryService', function(categoryService) {
   }
 
 
-  for (var i = 0; i < 6; i ++) {
+  for (var i = 0; i < 20; i ++) {
     _products[i] = {
       name: faker.commerce.productName(),
       price: faker.commerce.price(),
@@ -25,7 +25,7 @@ store.factory('productService',[ 'categoryService', function(categoryService) {
 
   var returnProducts = function(){
     return _products
-  } 
+  }
 
   return {
     get: returnProducts
