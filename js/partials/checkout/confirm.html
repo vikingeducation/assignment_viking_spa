@@ -1,7 +1,51 @@
-<h1>Confirmation!</h1>
+<h1>Are you sure you want to proceed?</h1>
 
+<h2>Shipping Address:</h2>
+<div class="shippingAddress">
+  <p>First name: {{ formData.address.firstName }}</p>
+  <p>Last name: {{ formData.address.lastName }}</p>
+  <p>Street: {{ formData.address.street }}</p>
+  <p>City: {{ formData.address.city }}</p>
+  <p>State: {{ formData.address.state }}</p>
+  <p>Zip: {{ formData.address.zip }}</p>
+  <p>Country: {{ formData.address.country }}</p>
+</div>
 
-{{formData}}
+<h2>Billing Address:</h2>
+<div class="shippingAddress">
+  <p>First name: {{ formData.billingAddress.firstName }}</p>
+  <p>Last name: {{ formData.billingAddress.lastName }}</p>
+  <p>Street: {{ formData.billingAddress.street }}</p>
+  <p>City: {{ formData.billingAddress.city }}</p>
+  <p>State: {{ formData.billingAddress.state }}</p>
+  <p>Zip: {{ formData.billingAddress.zip }}</p>
+  <p>Country: {{ formData.billingAddress.country }}</p>
+</div>
 
-<button class="btn btn-primary" ui-sref="checkout.feedback">next</button>
-<button class="btn btn-primary" ui-sref="checkout.payment">back</button>
+<h2>Credit Card: **{{ formData.creditCard.number | limitTo:4:-4 }}</h2>
+
+<h2>Total: {{ totalCost | currency }}</h2>
+
+<table class="table">
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+  <tr ng-repeat="product in cart">
+    <td>
+      <div class="thumbnail-container">
+        <img class="img-thumbnail" ng-src="{{product.image}}">
+      </div>
+    </td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.price * product.quantity | currency }}</td>
+    <td>{{ product.quantity }}
+    </td>
+  </tr>
+</table>
+
+<button class="btn btn-success" ng-click="processOrder()" ui-sref="checkout.feedback">Confirm</button>
+<br>
+<button class="btn btn-danger" ng-click="processOrder()" ui-sref="products">Cancel</button>

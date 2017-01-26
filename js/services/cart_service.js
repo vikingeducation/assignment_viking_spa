@@ -28,10 +28,28 @@ store.factory('cartService', ["productService", function(productService) {
     return total
   }
 
+  var reset = function reset() {
+    angular.copy({}, _cart)
+
+    return _cart
+  }
+
+  var getTotal = function() {
+    var total = 0;
+
+    for(var p_id in _cart) {
+      total += _cart[p_id].quantity * _cart[p_id].price;
+    }
+
+    return total
+  }
+
   return {
     get: get,
     addItem: addItem,
     removeItem: removeItem,
-    count: count
+    count: count,
+    reset: reset,
+    getTotal: getTotal
   }
 }]);

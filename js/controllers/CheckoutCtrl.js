@@ -2,7 +2,9 @@ store.controller('CheckoutCtrl', ['$scope', '$state', 'cartService',
   function($scope, $state, cartService) {
 
     $scope.formData = {};
-    $scope.sameAsShipping = false
+    $scope.cart = cartService.get();
+    $scope.totalCost = cartService.getTotal();
+
 
     $scope.checkValid = function(form, state, sameAsShipping){
       console.log("form in checkValid", form)
@@ -14,5 +16,10 @@ store.controller('CheckoutCtrl', ['$scope', '$state', 'cartService',
         }
         $state.go(state)
       }
+    }
+
+    $scope.processOrder = function(){
+      cartService.reset();
+      $scope.formData = {};
     }
   }]);
