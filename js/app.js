@@ -16,12 +16,11 @@ store.config(function($stateProvider, $urlRouterProvider){
     })
     .state('checkout', {
       url:"/checkout",
-      abstract: true,
-      template: "<div class='checkout' ui-view></div>",
+      template: "<div class='checkout container' ui-view></div>",
       controller: 'CheckoutCtrl'
     })
     .state('checkout.address', {
-      url: "",
+      url: "/address",
       templateUrl: "/js/partials/checkout/address.html"
     })
     .state('checkout.payment', {
