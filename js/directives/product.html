@@ -1,9 +1,9 @@
 <div class="itembox">
 
-  <h3 class="itemtext">Dainty Daisy</h3>
+  <h3 class="itemtext">{{product.name}}</h3>
   <container class="framebg">
-    <h5 class="price">$250</h5>
-    <img class="item" src="assets/images/dainty.jpg">
+    <h5 class="price">{{product.price | currency : $}}</h5>
+    <img class="item" ng-src="{{product.image}}">
 
   </container>
     <h3 class="itemtext"><button class="buybtn">Add To Cart</button></h3>
