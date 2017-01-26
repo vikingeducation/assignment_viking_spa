@@ -1,5 +1,22 @@
 <h1>Give us money!</h1>
 <form class="form" name="paymentForm">
+  <p>Credit Card Information</p>
+
+    <div class="form-group">
+      <label>Credit Card Number</label>
+      <input type="text" class="form-control" ng-model="formData.creditCard.number" required>
+    </div>
+
+    <div class="form-group">
+      <label>Confirmation Code</label>
+      <input type="number" class="form-control" ng-model="formData.creditCard.confirmation" required>
+    </div>
+
+    <div class="form-group">
+      <label>Expiration</label>
+      <input type="date" class="form-control" ng-model="formData.creditCard.expiration" required>
+    </div>
+
   <p>Billing Address:</p>
   <label>
     <input type="checkbox" ng-model="sameAsShipping">Same as shipping?
@@ -46,7 +63,6 @@
 
 </form>
 <button class="btn btn-danger" ui-sref="cart">Cancel!</button>
-<button class="btn btn-primary" ng-disabled="addressForm.$invalid" ng-click="checkValid(addressForm, 'checkout.payment')">Next</button>
+<button class="btn btn-primary" ng-disabled="addressForm.$invalid" ng-click="checkValid(paymentForm, 'checkout.confirm', sameAsShipping)">Next</button>
 
-<button class="btn btn-primary" ui-sref="checkout.confirm">next</button>
 <button class="btn btn-primary" ui-sref="checkout.address">back</button>
