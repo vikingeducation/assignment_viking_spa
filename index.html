@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="store" ng-controller="ProductsCtrl">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoSQL Bulletin Board</title>
@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="vendor/ui-router.js"></script>
+    <script src="vendor/faker.js"></script>
   </head>
   <body ng-cloak class="grid">
     <nav class="topbar">
@@ -36,76 +37,9 @@
     </div>
 
     <div class="frame">
-
-      <div class="itembox">
-
-        <h3 class="itemtext">Cunning Cutter</h3>
-        <div class="framebg">
-          <h5 class="price">$200</h5>
-          <img class="item" src="http://fillmurray.com/200/300">
-
-        </div>
-          <h3 class="itemtext"><button class="buybtn">Add To Cart</button></h3>
-     </div>
-
-    <div class="itembox">
-
-      <h3 class="itemtext">Dainty Daisy</h3>
-      <container class="framebg">
-        <h5 class="price">$250</h5>
-        <img class="item" src="assets/images/dainty.jpg">
-
-      </container>
-        <h3 class="itemtext"><button class="buybtn">Add To Cart</button></h3>
-
+    
+      <product ng-repeat="product in products"></product>
     </div>
-
-    <div class="itembox">
-      <h3 class="itemtext">The Silent Night</h3>
-      <container class="framebg">
-        <h5 class="price">$120</h5>
-        <img class="item" src="assets/images/silentnight.jpg">
-
-      </container>
-        <h3 class="itemtext"><button class="buybtn">Add To Cart</button></h3>
-
-    </div>
-
-    <div class="separator"></div>
-
-     <div class="itembox">
-
-      <h3 class="itemtext">The Whispering Wind</h3>
-      <container class="framebg">
-        <h5 class="price">$200</h5>
-        <img class="item" src="assets/images/whisperwind.jpg">
-      </container>
-        <h3 class="itemtext"><button class="buybtn">Add To Cart</button></h3>
-    </div>
-
-    <div class="itembox">
-
-      <h3 class="itemtext">The Double Trouble</h3>
-      <container class="framebg">
-        <h5 class="price">$1200</h5>
-        <img class="item" src="assets/images/2trouble.jpg">
-      </container>
-        <h3 class="itemtext"><button class="buybtn">Add To Cart</button></h3>
-
-    </div>
-
-    <div class="itembox">
-
-      <h3 class="itemtext">The Kingmaker</h3>
-      <container class="framebg">
-        <h5 class="price">$200</h5>
-        <img class="item" src="assets/images/kingmaker.jpg">
-      </container>
-        <h3 class="itemtext"><button class="buybtn">Add To Cart</button></h3>
-
-    </div>
-
-  </div>
 
   <nav class="pages">
     <a href="prev.html"><< Prev</a>
@@ -119,6 +53,9 @@
   </nav>
 
   <script src="js/app.js"></script>
+  <script src="js/directives/product.js"></script>
+  <script src="js/services/product_service.js"></script>
+  <script src="js/controllers/products_ctrl.js"></script>
   </body>
 
   <footer>
