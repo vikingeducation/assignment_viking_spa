@@ -1,0 +1,23 @@
+
+<select class="" ng-model="categoryFilter">
+  <option value=""></option>
+  <option ng-repeat="category in categories" value="{{ category.id }}">{{ category.name }}</option>
+</select>
+
+<div class="frame">
+  <product ng-repeat="product in products | toArrayFilter | filter:{category: { id: categoryFilter } }:true | limitTo:6"
+           product="product"
+           add-to-cart="addToCart(product)">
+  </product>
+</div>
+
+<nav class="pages">
+<a href="prev.html"><< Prev</a>
+<a href="1.html">1</a>
+<h4 class="inline">2</h4>
+<div class="inline">...</div>
+<a href="3.html">3</a>
+<a href="8.html">8</a>
+<a href="9.html">9</a>
+<a href="next.html">Next >></a>
+</nav>

@@ -1,0 +1,28 @@
+<h1>Your Shopping Cart</h1>
+
+<h2>Total: {{ getTotal() | currency }}</h2>
+
+<table class="table">
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+  <tr ng-repeat="product in cart">
+    <td>
+      <div class="thumbnail-container">
+        <img class="img-thumbnail" ng-src="{{product.image}}">
+      </div>
+    </td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.price * product.quantity | currency }}</td>
+    <td>
+      <input type="number" min="1" max="1000" ng-model="product.quantity">
+    </td>
+  </tr>
+</table>
+
+<div>
+  <button class="btn btn-primary" ui-sref="checkout.address">Checkout</button>
+</div>

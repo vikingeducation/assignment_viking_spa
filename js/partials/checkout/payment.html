@@ -1,0 +1,68 @@
+<h1>Give us money!</h1>
+<form class="form" name="paymentForm">
+  <p>Credit Card Information</p>
+
+    <div class="form-group">
+      <label>Credit Card Number</label>
+      <input type="text" class="form-control" ng-model="formData.creditCard.number" required>
+    </div>
+
+    <div class="form-group">
+      <label>Confirmation Code</label>
+      <input type="number" class="form-control" ng-model="formData.creditCard.confirmation" required>
+    </div>
+
+    <div class="form-group">
+      <label>Expiration</label>
+      <input type="date" class="form-control" ng-model="formData.creditCard.expiration" required>
+    </div>
+
+  <p>Billing Address:</p>
+  <label>
+    <input type="checkbox" ng-model="sameAsShipping">Same as shipping?
+  </label> 
+  <div class="shippingAddress" ng-if="sameAsShipping">
+    <p>First name: {{ formData.address.firstName }}</p>
+    <p>Last name: {{ formData.address.lastName }}</p>
+    <p>Street: {{ formData.address.street }}</p>
+    <p>City: {{ formData.address.city }}</p>
+    <p>State: {{ formData.address.state }}</p>
+    <p>Zip: {{ formData.address.zip }}</p>
+    <p>Country: {{ formData.address.country }}</p>
+  </div>
+  <div class="billingAddress" ng-if="!sameAsShipping">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" ng-model="formData.billingAddress.firstName" required>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" ng-model="formData.billingAddress.lastName" required>
+    </div>
+    <div class="form-group">
+      <label>Street</label>
+      <input type="text" class="form-control" ng-model="formData.billingAddress.street" required>
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" class="form-control" ng-model="formData.billingAddress.city" required>
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" class="form-control" ng-model="formData.billingAddress.state" required>
+    </div>
+    <div class="form-group">
+      <label>Zip</label>
+      <input type="text" class="form-control" ng-model="formData.billingAddress.zip" required>
+    </div>
+    <div class="form-group">
+      <label>Country </label>
+      <input type="text" class="form-control" ng-model="formData.billingAddress.country">
+    </div>
+  </div>
+
+</form>
+<button class="btn btn-danger" ui-sref="cart">Cancel!</button>
+<button class="btn btn-primary" ng-disabled="addressForm.$invalid" ng-click="checkValid(paymentForm, 'checkout.confirm', sameAsShipping)">Next</button>
+
+<button class="btn btn-primary" ui-sref="checkout.address">back</button>

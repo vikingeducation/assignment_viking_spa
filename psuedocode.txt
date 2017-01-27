@@ -1,0 +1,15 @@
+Cart
+-id
+
+- list of product ids (perhaps key id and value quantity), multiple ids if multiple of a product  - {"0": {id: "0"}}
+    - or full product objects? (backup plan)
+    - along with quantity
+
+- total (maybe just a method?), or updated when product added/removed
+
+Product
+
+- name
+- id
+- price
+- image
