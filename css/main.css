@@ -33,3 +33,9 @@
 .main-stuff h5 {
   color: white;
 }
+
+
+#footer {
+  height: 60px;
+  background-color: black;
+}

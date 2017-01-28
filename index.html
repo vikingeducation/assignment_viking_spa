@@ -35,7 +35,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+            <li><a ui-sref="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
               <li><a ui-sref="signin">Sign In</a></li>
             </ul>
           </div>
@@ -48,17 +48,22 @@
         <div ui-view>
         </div>
 
-        <!-- <footer >
+
+      <div id="footer">
+        <div class="container">
           <h5>Contact</h5>
           <h5>1-800-763-33-55</h5>
           <h5>support@vikingstore.com</h5>
-        </footer> -->
-
-        
+        </div>
+      </div>
     </div>
+
+
+    
     <script type="text/javascript" src="js/lib/faker.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="js/controllers/productController.js"></script>
+    <script type="text/javascript" src="js/controllers/cartController.js"></script>
     <script type="text/javascript" src="js/services/productsService.js"></script>
   </body>
 </html>
