@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SPA Angular</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="/js/lib/angular-ui-router.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body ng-app="VikingStore">
+
+      <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" ui-sref="products">Viking Store</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+              <li><a ui-sref="about">About</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+              <li><a ui-sref="signin">Sign In</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <br /><br /><br />
+      <div class="main-stuff">
+
+        <div ui-view>
+        </div>
+
+
+      <div id="footer">
+        <div class="container">
+          <h5>Contact</h5>
+          <h5>1-800-763-33-55</h5>
+          <h5>support@vikingstore.com</h5>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="js/lib/faker.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="js/controllers/productController.js"></script>
+    <script type="text/javascript" src="js/controllers/cartController.js"></script>
+    <script type="text/javascript" src="js/services/productsService.js"></script>
+  </body>
+</html>

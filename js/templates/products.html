@@ -1,0 +1,21 @@
+<h2 class="text-center">The Viking Store</h2>
+<h1 class="text-center" id="spa">The Best Viking Gear on the Whole Web</h1>
+
+
+<section ng-repeat="product in products">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h6><a ui-sref="products.show({ productId:product.id })"><span>ID: {{ product.id }}</span> {{ product.name }}</a></h6>
+    </div>
+    <div class="panel-body">
+      <h6>{{ product.company }}</h6>
+      <p>Description: {{ product.description }}</p>
+      <h6>{{ product.prod }}</h6>
+    </div>
+    <div class="panel-footer">
+      <h6>{{ product.price | currency}}</h6>
+      <button href="#" class="btn btn-primary" ng-click="addToCart(product)">Add to Cart</button>
+    </div>
+  </div>
+</section>
+<div ui-view></div>
