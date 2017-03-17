@@ -1,0 +1,7 @@
+<h1 class="text-center">Your Cart</h1>
+
+<div ng-repeat="order in cart">
+  <h3>Item {{products[order.item].name}}</h3>
+  <h3>Quantity: {{order.quantity}}</h3>
+  <button ng-click="removeItem(order.item)">Remove Item</button>
+</div>

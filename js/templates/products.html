@@ -1,0 +1,13 @@
+<select ng-model="selectedCat" >
+  <option value="">All Categories</option>
+  <option ng-repeat="category in categories" ng-value="category.id">{{category.name}}</option>
+</select>
+<button ng-click="setCategoryFilter()">Apply Filter</button>
+
+<br><br>
+
+<div ng-repeat="product in products | filter: {categoryID: catFilterValue} ">
+  <div class="col-sm-3" product="product" add-product="addProduct(id)"></div>
+</div>
+
+<div ui-view></div>
