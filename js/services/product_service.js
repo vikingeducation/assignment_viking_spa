@@ -26,11 +26,7 @@ Spa.factory("ProductService", ["CategoryService", "_", function(CategoryService,
 
     return _products;
   }
-
-  // ProductService.getName = function(id) {
-  //   return _.find(_products, {id: id});
-  // }
-
+  
   return ProductService;
 
 }])
