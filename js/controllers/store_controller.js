@@ -1,4 +1,4 @@
-Spa.controller("StoreCtrl", ["$scope", "CategoryService", "ProductService", "$stateParams", function($scope, CategoryService, ProductService, $stateParams) {
+Spa.controller("StoreCtrl", ["$scope", "CategoryService", "ProductService", "$stateParams", "CartService", function($scope, CategoryService, ProductService, $stateParams, CartService) {
 
   $scope.productID;
   $scope.catFilterValue = '';
@@ -8,6 +8,14 @@ Spa.controller("StoreCtrl", ["$scope", "CategoryService", "ProductService", "$st
 
   $scope.setCategoryFilter = function() {
     $scope.catFilterValue = $scope.selectedCat;
+  }
+
+  $scope.addProduct = function(objectID) {
+    CartService.addItem(objectID, 1);
+  }
+
+  $scope.numCartItems = function() {
+    return CartService.listAll().length;
   }
 
 }]);

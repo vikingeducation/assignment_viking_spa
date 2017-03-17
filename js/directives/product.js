@@ -3,7 +3,8 @@ Spa.directive("product", function() {
     restrict: "A",
     templateUrl: "js/templates/product.html",
     scope: {
-      product: "="
+      product: "=",
+      addProduct: "&"
     }
   }
 })

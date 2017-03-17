@@ -20,10 +20,6 @@ Spa.factory("CategoryService", ["_", function(_) {
     return _categories;
   }
 
-  CategoryService.getCategories = function() {
-    return _categories;
-  }
-
 
   return CategoryService;
 

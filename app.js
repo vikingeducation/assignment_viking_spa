@@ -30,6 +30,19 @@ Spa.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'js/templates/product_show.html',
       controller: "ProductCtrl"
     })
+
+    .state("products.cart", {
+      url: "/cart",
+      templateUrl: 'js/templates/cart.html',
+      controller: ["$scope", "CartService", "ProductService", function($scope, CartService, ProductService) {
+        $scope.cart = CartService.listAll();
+        $scope.products = ProductService.makeProducts();
+        $scope.removeItem = function(id) {
+          CartService.removeItem(id);
+        }
+      }]
+
+    })
 });
 
 Spa.factory('_', ['$window', function($window) {

@@ -1,6 +1,6 @@
-<div class="text-center">
-  <h5>{{product.name}}</h5>
-  <!-- <img src="{{product.photo}}">  -->
-  <a ui-sref="products.show({productID: product.id})">click here to go to product show page</a> 
+<div class="text-center product-display">
+  <h3><a ui-sref="products.show({productID: product.id})">{{product.name}}</a></h3>
+  <img src="{{product.photo}}"> <br><br>
+  <button ng-click="addProduct({id: product.id})">Add to Cart</button>
 </div>
 

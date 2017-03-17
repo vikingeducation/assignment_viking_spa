@@ -6,7 +6,7 @@ Spa.factory("ProductService", ["CategoryService", "_", function(CategoryService,
 
   ProductService.makeProducts = function() {
     if (_products.length === 0) {
-      var catNum = CategoryService.getCategories().length;
+      var catNum = CategoryService.makeCategories().length;
       var id = 0;
       for(var i = 0; i < 20; i++) {
         var newProduct = {
@@ -27,9 +27,9 @@ Spa.factory("ProductService", ["CategoryService", "_", function(CategoryService,
     return _products;
   }
 
-  ProductService.getProducts = function() {
-    return _products;
-  }
+  // ProductService.getName = function(id) {
+  //   return _.find(_products, {id: id});
+  // }
 
   return ProductService;
 
