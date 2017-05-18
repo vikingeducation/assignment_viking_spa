@@ -15,24 +15,63 @@
 
   </head>
 
-  <body class="container" ng-controller="">
+  <body class="container">
+
+  <!-- Navbar -->
+  <div class="row">
+    <div class="col-xs-2">
+      <h2>Viking Store</h2>
+    </div>
+
+    <div class="col-xs-offset-6 col-xs-4">
+      <h2>Cart placeholder</h2>
+    </div>
+  </div>
+
+  <hr>
 
 
 
 
 
+  <div ui-view>
 
+  </div>
+
+<hr>
+<a ui-sref="state1">Clicking this fills ui-view with route1</a>
+    <a ui-sref="state2">Clicking this fills ui-view with route2</a>
+<hr>
+
+
+
+
+  <hr>
+
+  <!-- footer -->
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Contact</h2>
+      <ul class="list-unstyled">
+        <li>1-800-123-12345</li>
+        <li>asdf@zxcvzsdfg.com</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- angular app -->
     <script src = "javascripts/app.js"></script>
+
+  <!-- routes -->
+
 
   <!-- services -->
     <!-- <script src = "javascripts/services/postService.js"></script>
     <script src = "javascripts/services/commentService.js"></script> -->
 
   <!-- controllers -->
-    <script src = "javascripts/controllers/PostsCtrl.js"></script>
-    <!-- <script src = "javascripts/controllers/CommentsCtrl.js"></script> -->
+
+    <script src = "javascripts/controllers/MainCtrl.js"></script>
 
   <!-- directives -->
     <!-- <script src = "javascripts/directives/posts.js"></script> -->
