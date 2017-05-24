@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="VikingApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Viking Store</title>
+
+    <!-- Angular -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <!-- UI router -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+
+    <!-- faker -->
+      <script src="faker.js"></script>
+
+    <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+
+  <body class="container">
+
+  <!-- Navbar -->
+  <div class="row">
+    <div class="col-xs-4">
+    <a ui-sref = "products.index">
+      <h2>Viking Store</h2>
+    </a>
+
+
+    </div>
+
+    <div class="col-xs-offset-4 col-xs-4">
+    <a ui-sref="cart">
+      <h3>View/Update Cart</h3>
+    </a>
+      <p ng-controller="ShoppingCartCtrl" ng-show="cartLength()">
+        {{ cartLength() }} items
+      </p>
+    </div>
+  </div>
+
+  <hr>
+<!-- navbar end -->
+
+
+
+  <div ui-view></div>
+
+
+
+
+
+<!-- footer begin -->
+
+  <hr>
+
+  <!-- footer -->
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Contact</h2>
+      <ul class="list-unstyled">
+        <li>1-800-123-12345</li>
+        <li>asdf@zxcvzsdfg.com</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- angular app -->
+    <script src = "javascripts/app.js"></script>
+
+  <!-- services -->
+    <script src = "javascripts/services/productService.js"></script>
+    <script src = "javascripts/services/shoppingCartService.js"></script>
+
+  <!-- controllers -->
+
+    <script src = "javascripts/controllers/products/products_index_ctrl.js"></script>
+    <script src = "javascripts/controllers/products/products_show_ctrl.js"></script>
+    <script src = "javascripts/controllers/ShoppingCartCtrl.js"></script>
+
+  <!-- directives -->
+    <script src = "javascripts/directives/products.js"></script>
+
+  </body>
+</html>
