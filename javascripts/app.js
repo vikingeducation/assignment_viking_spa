@@ -18,6 +18,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: "ProductsIndexCtrl"
     })
 
+    .state('products.show', {
+      url: "/:productId",
+      templateUrl: "javascripts/templates/products/show.html",
+      controller: "ProductsShowCtrl"
+    })
+
+    .state('cart', {
+      url: "/cart",
+      templateUrl: "javascripts/templates/shoppingCart.html",
+      controller: "ShoppingCartCtrl"
+    })
+
 });
 
 // debugging

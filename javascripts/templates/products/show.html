@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="panel-group" >
+    <div class="panel panel-success "
+      >
+      <div class="panel-heading">{{ product.name }}</div>
+      <div class="panel-body">
+      {{ product.category }}
+      <br>
+      {{ product.description }}
+      <br>
+      {{ product.price | currency }}
+      <br>
+
+  <form name="buyForm" ng-submit="addItem(product, formData)">
+  <label>
+      Quantity
+      <input type="text" ng-model="formData.quantity">
+  </label>
+      <button type="submit">Buy!</button>
+
+  </form>
+
+
+<br>
+
+    <a ui-sref = "products.index">
+      << Back
+    </a>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+

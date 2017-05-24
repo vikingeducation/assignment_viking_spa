@@ -1,6 +1,7 @@
 app.controller("ProductsIndexCtrl",
-  ['$scope', "productService", function($scope, productService){
+  ['$scope', "productService", "shoppingCartService", function($scope, productService, shoppingCartService){
     $scope.products = productService.products;
-    $scope.categories = ['', 'Summer', 'Fall', 'Winter', 'Spring',]
-  }]
-);
+    $scope.categories = ['', 'Summer', 'Fall', 'Winter', 'Spring'];
+
+
+}]);

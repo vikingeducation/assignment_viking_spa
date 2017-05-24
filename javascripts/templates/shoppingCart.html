@@ -1,0 +1,30 @@
+<h1>Shopping Cart</h1>
+
+<ul>
+  <li ng-repeat="item in allItems">
+    {{ item.quantity }} -- {{ item.name }} -- {{ item.price | currency }}
+
+    <button class="btn btn-xs btn-link"
+      ng-click="removeItem( item.id )">
+        Delete
+    </button>
+
+    <br>
+
+    <form name="buyForm" ng-submit="addItem(item, formData)">
+    <label>
+        Update Quantity
+        <input type="text" ng-model="formData.quantity">
+    </label>
+        <button type="submit">Update</button>
+
+    </form>
+
+
+  </li>
+</ul>
+
+<hr>
+<a ui-sref = "products.index">
+  << Back
+</a>

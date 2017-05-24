@@ -3,9 +3,7 @@ app.factory('productService', function(){
   var service = {};
   service.categories = ['Summer', 'Fall', 'Winter', 'Spring'];
 
-
   service.products = [];
-
 
   // create Products Data via Faker
   for (var id = 0; id <= 20; id++) {
