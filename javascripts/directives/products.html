@@ -1,0 +1,19 @@
+
+
+<hr>
+<div class="row">
+  <div class="panel-group col-xs-4" ng-repeat="product in products | filter: {category: selectedCategory }">
+    <div class="panel panel-success "
+      >
+      <div class="panel-heading">{{ product.name }}</div>
+      <div class="panel-body">
+      {{ product.category }}
+      <br>
+      {{ product.description }}
+      <br>
+      {{ product.price | currency }}
+
+      </div>
+    </div>
+  </div>
+</div>
